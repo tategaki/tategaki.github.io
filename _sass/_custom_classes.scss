@@ -1,0 +1,14 @@
+// Writing Modes
+// -----------------
+.vert {
+  @include wm-vrl;
+
+  p {
+    margin: 0 0 0 1em;
+    text-indent: 1em;
+  }
+}
+
+.hol {
+  @include wm-htb;
+}
