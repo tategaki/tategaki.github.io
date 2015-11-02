@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>ruby-annotation</title>
+      <style>.markdown-preview, .markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 16px; line-height: 1.6; word-wrap: break-word; overflow: scroll; box-sizing: border-box; padding: 20px; background-color: rgb(255, 255, 255); }
+.markdown-preview > :first-child, .markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview > :last-child, .markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview a:not([href]), .markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview .absent, .markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview .anchor, .markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview .anchor:focus, .markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview h1, .markdown-preview[data-use-github-style] h1, .markdown-preview h2, .markdown-preview[data-use-github-style] h2, .markdown-preview h3, .markdown-preview[data-use-github-style] h3, .markdown-preview h4, .markdown-preview[data-use-github-style] h4, .markdown-preview h5, .markdown-preview[data-use-github-style] h5, .markdown-preview h6, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview h1 .octicon-link, .markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview h2 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview h3 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview h4 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview h5 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview h6 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview h1:hover .anchor, .markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview h2:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview h3:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview h4:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview h5:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview h6:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview h6:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview h1 tt, .markdown-preview[data-use-github-style] h1 tt, .markdown-preview h2 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview h3 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview h4 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview h5 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview h6 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview h1 code, .markdown-preview[data-use-github-style] h1 code, .markdown-preview h2 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview h3 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview h4 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview h5 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview h6 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview h1, .markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview h1 .anchor, .markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview h2, .markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview h2 .anchor, .markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview h3, .markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview h3 .anchor, .markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview h4, .markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview h4 .anchor, .markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview h5, .markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview h5 .anchor, .markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview h6, .markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview h6 .anchor, .markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview p, .markdown-preview[data-use-github-style] p, .markdown-preview blockquote, .markdown-preview[data-use-github-style] blockquote, .markdown-preview ul, .markdown-preview[data-use-github-style] ul, .markdown-preview ol, .markdown-preview[data-use-github-style] ol, .markdown-preview dl, .markdown-preview[data-use-github-style] dl, .markdown-preview table, .markdown-preview[data-use-github-style] table, .markdown-preview pre, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview hr, .markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview ul, .markdown-preview[data-use-github-style] ul, .markdown-preview ol, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview ul.no-list, .markdown-preview[data-use-github-style] ul.no-list, .markdown-preview ol.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview ul ul, .markdown-preview[data-use-github-style] ul ul, .markdown-preview ul ol, .markdown-preview[data-use-github-style] ul ol, .markdown-preview ol ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview ol ul, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview li > p, .markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview dl, .markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview dl dt, .markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview dl dd, .markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview blockquote, .markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview blockquote > :first-child, .markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview blockquote > :last-child, .markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview table, .markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: normal; }
+.markdown-preview table th, .markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview table th, .markdown-preview[data-use-github-style] table th, .markdown-preview table td, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview table tr, .markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview table tr:nth-child(2n), .markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview img, .markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview .emoji, .markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview span.frame, .markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview span.frame > span, .markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview span.frame span img, .markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview span.frame span span, .markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview span.align-center, .markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview span.align-center > span, .markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview span.align-center span img, .markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview span.align-right, .markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview span.align-right > span, .markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview span.align-right span img, .markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview span.float-left, .markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview span.float-left span, .markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview span.float-right, .markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview span.float-right > span, .markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview code, .markdown-preview[data-use-github-style] code, .markdown-preview tt, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview code::before, .markdown-preview[data-use-github-style] code::before, .markdown-preview tt::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview code::after, .markdown-preview[data-use-github-style] code::after, .markdown-preview tt::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: ' '; }
+.markdown-preview code br, .markdown-preview[data-use-github-style] code br, .markdown-preview tt br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview del code, .markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview pre > code, .markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview .highlight, .markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview .highlight pre, .markdown-preview[data-use-github-style] .highlight pre, .markdown-preview pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview .highlight pre, .markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview pre, .markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview pre code, .markdown-preview[data-use-github-style] pre code, .markdown-preview pre tt, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview pre code::before, .markdown-preview[data-use-github-style] pre code::before, .markdown-preview pre tt::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview pre code::after, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview pre tt::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview kbd, .markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview, .markdown-preview[data-use-github-style], .markdown-preview code, .markdown-preview[data-use-github-style] code { color: rgb(51, 51, 51); }
+.markdown-preview h1, .markdown-preview[data-use-github-style] h1, .markdown-preview h2, .markdown-preview[data-use-github-style] h2, .markdown-preview h3, .markdown-preview[data-use-github-style] h3, .markdown-preview h4, .markdown-preview[data-use-github-style] h4, .markdown-preview h5, .markdown-preview[data-use-github-style] h5, .markdown-preview h6, .markdown-preview[data-use-github-style] h6 { -webkit-font-smoothing: antialiased; cursor: text; }
+.markdown-preview > h1:first-child, .markdown-preview[data-use-github-style] > h1:first-child, .markdown-preview > h1:first-child + h2, .markdown-preview[data-use-github-style] > h1:first-child + h2, .markdown-preview > h2:first-child, .markdown-preview[data-use-github-style] > h2:first-child, .markdown-preview > h3:first-child, .markdown-preview[data-use-github-style] > h3:first-child, .markdown-preview > h4:first-child, .markdown-preview[data-use-github-style] > h4:first-child, .markdown-preview > h5:first-child, .markdown-preview[data-use-github-style] > h5:first-child, .markdown-preview > h6:first-child, .markdown-preview[data-use-github-style] > h6:first-child { margin-top: 0px; padding-top: 0px; }
+.markdown-preview a, .markdown-preview[data-use-github-style] a, .markdown-preview a code, .markdown-preview[data-use-github-style] a code { color: rgb(65, 131, 196); }
+.markdown-preview a:first-child h1, .markdown-preview[data-use-github-style] a:first-child h1, .markdown-preview a:first-child h2, .markdown-preview[data-use-github-style] a:first-child h2, .markdown-preview a:first-child h3, .markdown-preview[data-use-github-style] a:first-child h3, .markdown-preview a:first-child h4, .markdown-preview[data-use-github-style] a:first-child h4, .markdown-preview a:first-child h5, .markdown-preview[data-use-github-style] a:first-child h5, .markdown-preview a:first-child h6, .markdown-preview[data-use-github-style] a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+.markdown-preview h1 + p, .markdown-preview[data-use-github-style] h1 + p, .markdown-preview h2 + p, .markdown-preview[data-use-github-style] h2 + p, .markdown-preview h3 + p, .markdown-preview[data-use-github-style] h3 + p, .markdown-preview h4 + p, .markdown-preview[data-use-github-style] h4 + p, .markdown-preview h5 + p, .markdown-preview[data-use-github-style] h5 + p, .markdown-preview h6 + p, .markdown-preview[data-use-github-style] h6 + p { margin-top: 0px; }
+.markdown-preview li p.first, .markdown-preview[data-use-github-style] li p.first { display: inline-block; }
+.markdown-preview ul li > :first-child, .markdown-preview[data-use-github-style] ul li > :first-child, .markdown-preview ol li > :first-child, .markdown-preview[data-use-github-style] ol li > :first-child, .markdown-preview ul li ul:first-of-type, .markdown-preview[data-use-github-style] ul li ul:first-of-type, .markdown-preview ol li ul:first-of-type, .markdown-preview[data-use-github-style] ol li ul:first-of-type { margin-top: 0px; }
+.markdown-preview ol > li, .markdown-preview[data-use-github-style] ol > li { list-style-type: decimal; }
+.markdown-preview ul > li, .markdown-preview[data-use-github-style] ul > li { list-style-type: disc; }
+.markdown-preview dl dt:first-child, .markdown-preview[data-use-github-style] dl dt:first-child { padding: 0px; }
+.markdown-preview dl dt > :first-child, .markdown-preview[data-use-github-style] dl dt > :first-child { margin-top: 0px; }
+.markdown-preview dl dt > :last-child, .markdown-preview[data-use-github-style] dl dt > :last-child { margin-bottom: 0px; }
+.markdown-preview dl dd > :first-child, .markdown-preview[data-use-github-style] dl dd > :first-child { margin-top: 0px; }
+.markdown-preview dl dd > :last-child, .markdown-preview[data-use-github-style] dl dd > :last-child { margin-bottom: 0px; }
+.markdown-preview blockquote p, .markdown-preview[data-use-github-style] blockquote p { font-size: 16px; line-height: 1.5; }
+.markdown-preview pre.editor-colors, .markdown-preview[data-use-github-style] pre.editor-colors { padding: 16px; overflow: auto; font-size: 84%; line-height: 1.45; border-radius: 3px; background-color: rgb(29, 31, 33); }
+.markdown-preview pre.editor-colors, .markdown-preview[data-use-github-style] pre.editor-colors { margin-bottom: 16px; word-break: normal; }
+.markdown-preview code, .markdown-preview[data-use-github-style] code, .markdown-preview tt, .markdown-preview[data-use-github-style] tt, .markdown-preview pre.editor-colors, .markdown-preview[data-use-github-style] pre.editor-colors { font-family: Consolas, 'Liberation Mono', Courier, monospace; }
+.markdown-preview .emoji, .markdown-preview[data-use-github-style] .emoji { height: 20px; width: 20px; }
+.markdown-preview code { text-shadow: none; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 1px dashed rgba(250, 128, 114, 0.5);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #1d1f21;
+  color: #c5c8c6;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(197, 200, 198, 0.2);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(197, 200, 198, 0.2);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(197, 200, 198, 0.1);
+}
+pre.editor-colors .gutter,
+.host .gutter {
+  background-color: #292c2f;
+}
+pre.editor-colors .gutter .cursor-line,
+.host .gutter .cursor-line {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+pre.editor-colors .line-number.cursor-line-no-selection,
+.host .line-number.cursor-line-no-selection {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #fba0e3;
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #c5c8c6;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-color: #ffffff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #444444;
+}
+pre.editor-colors .source.gfm,
+.host .source.gfm {
+  color: #999;
+}
+pre.editor-colors .gfm .markup.heading,
+.host .gfm .markup.heading {
+  color: #eee;
+}
+pre.editor-colors .gfm .link,
+.host .gfm .link {
+  color: #555;
+}
+pre.editor-colors .gfm .variable.list,
+.host .gfm .variable.list,
+pre.editor-colors .gfm .support.quote,
+.host .gfm .support.quote {
+  color: #555;
+}
+pre.editor-colors .gfm .link .entity,
+.host .gfm .link .entity {
+  color: #ddd;
+}
+pre.editor-colors .gfm .raw,
+.host .gfm .raw {
+  color: #aaa;
+}
+pre.editor-colors .markdown .paragraph,
+.host .markdown .paragraph {
+  color: #999;
+}
+pre.editor-colors .markdown .heading,
+.host .markdown .heading {
+  color: #eee;
+}
+pre.editor-colors .markdown .raw,
+.host .markdown .raw {
+  color: #aaa;
+}
+pre.editor-colors .markdown .link,
+.host .markdown .link {
+  color: #555;
+}
+pre.editor-colors .markdown .link .string,
+.host .markdown .link .string {
+  color: #555;
+}
+pre.editor-colors .markdown .link .string.title,
+.host .markdown .link .string.title {
+  color: #ddd;
+}
+.bracket-matcher .region {
+  border-bottom: 1px solid #f8de7e;
+  margin-top: -1px;
+  opacity: .7;
+}
+.comment {
+  color: #7C7C7C;
+}
+.entity {
+  color: #FFD2A7;
+}
+.entity.name.type {
+  text-decoration: underline;
+  color: #FFFFB6;
+}
+.entity.other.inherited-class {
+  color: #9B5C2E;
+}
+.keyword {
+  color: #96CBFE;
+}
+.keyword.control {
+  color: #96CBFE;
+}
+.keyword.operator {
+  color: #EDEDED;
+}
+.storage {
+  color: #CFCB90;
+}
+.storage.modifier {
+  color: #96CBFE;
+}
+.constant {
+  color: #99CC99;
+}
+.constant.numeric {
+  color: #FF73FD;
+}
+.variable {
+  color: #C6C5FE;
+}
+.invalid.deprecated {
+  text-decoration: underline;
+  color: #FD5FF1;
+}
+.invalid.illegal {
+  color: #FD5FF1;
+  background-color: rgba(86, 45, 86, 0.75);
+}
+.string .source,
+.string .meta.embedded.line {
+  color: #EDEDED;
+}
+.string .punctuation.section.embedded {
+  color: #00A0A0;
+}
+.string .punctuation.section.embedded .source {
+  color: #00A0A0;
+}
+.string {
+  color: #A8FF60;
+}
+.string .constant {
+  color: #00A0A0;
+}
+.string.regexp {
+  color: #E9C062;
+}
+.string.regexp .constant.character.escape,
+.string.regexp .source.ruby.embedded,
+.string.regexp .string.regexp.arbitrary-repetition {
+  color: #FF8000;
+}
+.string.regexp.group {
+  color: #C6A24F;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.string.regexp.character-class {
+  color: #B18A3D;
+}
+.string .variable {
+  color: #8A9A95;
+}
+.support {
+  color: #FFFFB6;
+}
+.support.function {
+  color: #DAD085;
+}
+.support.constant {
+  color: #FFD2A7;
+}
+.support.type.property-name.css {
+  color: #EDEDED;
+}
+.source .entity.name.tag,
+.source .punctuation.tag {
+  color: #96CBFE;
+}
+.source .entity.other.attribute-name {
+  color: #C6C5FE;
+}
+.entity.other.attribute-name {
+  color: #C6C5FE;
+}
+.entity.name.tag.namespace,
+.entity.other.attribute-name.namespace {
+  color: #E18964;
+}
+.meta.preprocessor.c {
+  color: #8996A8;
+}
+.meta.preprocessor.c .keyword {
+  color: #AFC4DB;
+}
+.meta.cast {
+  color: #676767;
+}
+.meta.sgml.html .meta.doctype,
+.meta.sgml.html .meta.doctype .entity,
+.meta.sgml.html .meta.doctype .string,
+.meta.xml-processing,
+.meta.xml-processing .entity,
+.meta.xml-processing .string {
+  color: #494949;
+}
+.meta.tag .entity,
+.meta.tag > .punctuation,
+.meta.tag.inline .entity {
+  color: #C6C5FE;
+}
+.meta.tag .name,
+.meta.tag.inline .name,
+.meta.tag > .punctuation {
+  color: #96CBFE;
+}
+.meta.selector.css .entity.name.tag {
+  text-decoration: underline;
+  color: #96CBFE;
+}
+.meta.selector.css .entity.other.attribute-name.tag.pseudo-class {
+  color: #8F9D6A;
+}
+.meta.selector.css .entity.other.attribute-name.id {
+  color: #8B98AB;
+}
+.meta.selector.css .entity.other.attribute-name.class {
+  color: #62B1FE;
+}
+.meta.property-group .support.constant.property-value.css,
+.meta.property-value .support.constant.property-value.css {
+  color: #F9EE98;
+}
+.meta.preprocessor.at-rule .keyword.control.at-rule {
+  color: #8693A5;
+}
+.meta.property-value .support.constant.named-color.css,
+.meta.property-value .constant {
+  color: #87C38A;
+}
+.meta.constructor.argument.css {
+  color: #8F9D6A;
+}
+.meta.diff,
+.meta.diff.header {
+  color: #F8F8F8;
+  background-color: #0E2231;
+}
+.meta.separator {
+  color: #60A633;
+  background-color: #242424;
+}
+.meta.line.entry.logfile,
+.meta.line.exit.logfile {
+  background-color: rgba(238, 238, 238, 0.16);
+}
+.meta.line.error.logfile {
+  background-color: #751012;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1 id="-">ルビ</h1>
+<p>ルビは文字の傍に配置される、読みや説明などの役割を果たす小さな文字のことです。ルビを付けられる側の文字を親文字（base text）といいます。</p>
+<p><img src="/Users/takasehiroshi/Dropbox/08.east/ruby-1.png" alt="&#x30EB;&#x30D3;&#x306E;&#x8868;&#x793A;&#x4F8B;&#xFF1A;&#x6A2A;&#x66F8;&#x304D;"></p>
+<p><img src="/Users/takasehiroshi/Dropbox/08.east/ruby-1-v.png" alt="&#x30EB;&#x30D3;&#x306E;&#x8868;&#x793A;&#x4F8B;&#xFF1A;&#x7E26;&#x66F8;&#x304D;"></p>
+<p>19世紀後半、イギリスの活版印刷では活字の大きさを宝石の名前で表現することがありました。ルビーと呼ばれていた5.5ptの大きさの活字は、明治時代の日本に輸入されると、本文の傍に小さく書かれたふりがなや説明に使われるようになります。これがルビという名称の由来といわれています。</p>
+<h2 id="-">ルビの構成要素</h2>
+<p>ルビに使われる要素には次の種類があります。</p>
+<!--
+- ruby
+- rb
+- rt
+- rtc
+- rp
+-->
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ruby</code></td>
+<td>ルビと親文字のまとまりを表す要素です。</td>
+</tr>
+<tr>
+<td><code>rb</code></td>
+<td>親文字を表します。</td>
+</tr>
+<tr>
+<td><code>rt</code></td>
+<td>ルビを表します。</td>
+</tr>
+<tr>
+<td><code>rtc</code></td>
+<td>ひとつの親文字に対して２つのルビを付ける場合に、ルビをrtc要素に入れてグループ化することができます。</td>
+</tr>
+<tr>
+<td><code>rp</code></td>
+<td>ルビをサポートしないブラウザ向けのフォールバックを提供します。</td>
+</tr>
+</tbody>
+</table>
+<p>ruby要素の内容には次のルールがあります。</p>
+<ul>
+<li>1つ以上の親文字にあたるフレージングコンテンツ、またはそれを内容とするrb要素を持つこと</li>
+<li>1つ以上のrt要素、またはrtc要素を持つこと</li>
+<li>rp要素を持つ場合、rp要素はrt要素またはrtc要素の直前または直後に記述すること</li>
+</ul>
+<p>シンプルなルビのマークアップ例を示します。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日本語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>にほんご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>rt要素に後続のコンテンツがない場合、終了タグは省略できます。また、rt要素の後にrb、rt、rtc、rp要素がくる場合も省略できます。終了タグを明示的に記述する場合は次のようなマークアップになります。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日本語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>にほんご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>これまでの例では、「日本語」は暗黙的に親文字とみなされています。rb要素によって明示的に親文字を示すこともできます。rb要素を利用すると、CSSセレクタによって親文字だけにレイアウトを指定するのに役立ちます。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日本語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>にほんご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>rb要素もまた後続のコンテンツがない場合、終了タグを省略できます。また、rb要素の後にrb、rt、rtc、rp要素がくる場合も省略できます。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日本語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>にほんご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>次のセクションでは、上記の例では触れてこなかったrtc要素やrp要素も交えながら、ルビの様々なマークアップ方法を紹介します。</p>
+<h2 id="-">ルビの種類とマークアップ方法</h2>
+<h3 id="-">モノルビ</h3>
+<p>親文字の1字ごとに対応してルビを付ける方法を<strong>モノルビ</strong>といいます。これは次のようなマークアップで表現できます。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>に</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>本</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>ほん</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>ご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<h3 id="-">グループルビ</h3>
+<p>複数の親文字で構成される語全体にルビを付ける方法を<strong>グループルビ</strong>といいます。これは次のようなマークアップで表現できます。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>今日</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>きょう</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>ブラウザのレンダリングにおいて、グループルビの1行の中にひとまとまりとして扱われます。途中で改行されることはありません。</p>
+<h3 id="-">熟語ルビ</h3>
+<p>熟語ルビはモノルビともグループルビとも異なる挙動を示すルビの呼称です。必ずしも日本語の熟語に付けられたルビを指すものではありません。</p>
+<p>熟語ルビはモノルビと同様に親文字とルビを対応させて記述できますが、ルビが複数の親文字にまたがるようにレンダリングされるのが一般的です。</p>
+<p>次の例では、親文字とルビがそれぞれ３つのペアを構成しています。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>法</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>華</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>経</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>ほ</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>け</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>きょう</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<h3 id="-">インラインルビ</h3>
+<p>ルビをサポートしないブラウザでは親文字とルビが一列に並んで表示されます。また、ルビを表示するのに十分な行高がない場合に、同様のインライン化をすることがあります。</p>
+<p>ルビをサポートしないブラウザのためのフォールバック手段としてrp要素があります。rp要素の内容テキストはルビのをサポートしないブラウザでのみ表示されるので、括弧をなどの文字を入れることで、ルビを本文と区別できます。次のマークアップはルビをサポートしないブラウザでは「日本語（にほんご）」と表示されます。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日本語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>（</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>にほんご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>）</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>モノルビや熟語ルビをマークアップする際には親文字とルビの並び順に注意します。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>（</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>に</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>）</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>本</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>（</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>ほん</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>）</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>（</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>ご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>）</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>上記の例は、フォールバック時に「日（に）本（ほん）語（ご）」と表示されます。このマークアップは読みやすいとはいえません。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>本</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rb</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>（</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>に</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>ほん</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>ご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rp</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>）</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>上記の例は、フォールバック時に「日本語（にほんご）」と表示されます。こちらのマークアップは親文字とルビがグループ化されているので読みやすいです。</p>
+<h3 id="-">両側ルビ</h3>
+<p>稀に親文字に対して２つのルビを付けることがあります。このようなケースでは、ルビを親文字の上下（横書き）または左右（縦書き）に配置するのが一般的です。親文字の両側にルビが付くので両側ルビと呼ばれます。</p>
+<p><img src="/Users/takasehiroshi/Dropbox/08.east/both-ruby.png" alt="&#x4E21;&#x5074;&#x30EB;&#x30D3;&#x306E;&#x8868;&#x793A;&#x4F8B;&#xFF1A;&#x6A2A;&#x66F8;&#x304D;"></p>
+<p><img src="/Users/takasehiroshi/Dropbox/08.east/both-ruby-v.png" alt="&#x4E21;&#x5074;&#x30EB;&#x30D3;&#x306E;&#x8868;&#x793A;&#x4F8B;&#xFF1A;&#x7E26;&#x66F8;&#x304D;"></p>
+<p>２つのルビを付けるには、rtc要素を利用してそれぞれのルビを区別します。次の例では親文字に対してふりがなと英語での表記という２種類のルビを付けています。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日本語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>にほんご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rtc</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Japanese</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>言語属性を付与すれば英語のテキストであることを明示できます。</p>
+<pre class="editor-colors lang-html"><div class="line"><span class="text html basic"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>日本語</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>にほんご</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>rtc</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>lang</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>en</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Japanese</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>ruby</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>両側ルビとしてレンダリングするには、ルビの位置を指定するCSSのプロパティ ruby-position を使います。次の例では言語属性が英語（en）のrtc要素を下に（縦書きでは左に）配置するように指定しています。</p>
+<pre class="editor-colors lang-css"><div class="line"><span class="source css"><span class="meta selector css"><span class="entity name tag css"><span>rtc</span></span><span>:lang(en</span></span><span>)&nbsp;</span><span class="meta property-list css"><span class="punctuation section property-list begin css"><span>{</span></span></span></span></div><div class="line"><span class="source css"><span class="meta property-list css"><span>&nbsp;&nbsp;</span><span class="meta property-name css"><span class="support type property-name css"><span>ruby-position</span></span></span><span class="meta property-value css"><span class="punctuation separator key-value css"><span>:</span></span><span>&nbsp;</span><span>under</span><span class="punctuation terminator rule css"><span>;</span></span></span></span></span></div><div class="line"><span class="source css"><span class="meta property-list css"><span class="punctuation section property-list end css"><span>}</span></span></span></span></div></pre>
+<p>ruby-postion はルビのレイアウトを定義するCSSのモジュール <a href="http://www.w3.org/TR/css-ruby-1/">CSS Ruby Layout Module Level 1</a> が定義するプロパティです。このプロパティには次の値があります（本稿の値は W3C <a href="http://www.w3.org/TR/2014/WD-css-ruby-1-20140805/">Working Draft, 5 August 2014</a>を参照しています）。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>over</code></td>
+<td>親文字が横書きの時にルビを上に配置します。</td>
+</tr>
+<tr>
+<td><code>under</code></td>
+<td>親文字が横書きの時にルビを下に配置します。</td>
+</tr>
+<tr>
+<td><code>inter-character</code></td>
+<td>親文字が横書きの時にルビをそれぞれ対応関係にある親文字の右に縦書きで配置します。主に台湾で使われる注音符号（Bopomofo）に用いられます。</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>親文字が縦書きの時にルビを右に配置します。</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>親文字が縦書きの時にルビを左に配置します。</td>
+</tr>
+</tbody>
+</table>
+<p>なおこれまで紹介したマークアップとCSSプロパティは、本稿執筆時点では、すべてのブラウザでサポートされているものではありません。利用に際しては実装状況を確認するようにしてください。</p></body>
+</html>

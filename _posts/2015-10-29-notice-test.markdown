@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 img: nil
 category: notice
 title:  縦書きWebデザインアワードのサイトを公開しました。

@@ -11,7 +11,7 @@
     cursor: pointer;
     text-decoration: none;
     flex-flow: column nowrap;
-    flex-grow: 1;
+    flex-grow: none;
     justify-content: center;
     &:hover {
       // need some effects
@@ -46,7 +46,7 @@
     .tanzaku-item {
     	padding: 2em 1em 3em;
       flex-flow: row nowrap;
-      width: 300px;
+      width: 100px;
       &:hover {
         // need some effects
       }
