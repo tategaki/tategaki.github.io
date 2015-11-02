@@ -12,3 +12,233 @@
 .hol {
   @include wm-htb;
 }
+
+// flex-box
+// -----------------
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.f-row {
+  flex-grow:1;
+  flex-direction: row;
+  flex-basis: 300px;
+}
+
+.item-body {
+  float: right;
+  @include wm-vrl;
+  padding: 1em;
+  .item-heading {
+  	margin-left: $spacer;
+  	font-family: $font-family-sans-serif;
+  	font-weight: bold;
+  	text-align: left;
+  }
+  text-align: justify;
+  word-break: break-word;
+  font-family: $font-family-serif;
+  height: 20em;
+}
+
+// v-flex-box
+// -----------------
+.v-flex {
+  width: 100%;
+  @include wm-vrl;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+
+.v-f-row {
+  display: flex;
+  flex-grow:1;
+  flex-direction: column;
+  height: 20em;
+  justify-content: center;
+}
+
+.v-item-body {
+
+}
+
+// Sections
+// -----------------
+.section {
+  padding: 3em 0;
+}
+.section-header {
+  margin-bottom: $spacer;
+}
+.section-heading {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.section-subheading {
+  margin: .5em 0;
+  font-family: $font-family-sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  font-weight: normal;
+  color: $gray;
+}
+
+
+// Notice
+// -----------------
+#notice {
+  background: #e2e2e2;
+}
+.notice-list {
+  margin: 0 1em;
+  border-radius: 3px;
+  padding: 1em;
+  background-color: #fff;
+}
+.notice-list-item {
+  margin-bottom: 5px;
+  a {
+  	color: inherit;
+    &:before {
+    	width: .8em;
+    	height: .8em;
+    	margin-right: .5em;
+    	display: inline-block;
+    	background-image: url('../images/tategaki/right_orange.png');
+    	background-repeat: no-repeat;
+    	background-position: center bottom;
+    	background-size: contain;
+    	content: "";
+    }
+  }
+}
+// Sections
+// -----------------
+.bg1 {
+  background: $gray-lighter;
+}
+
+.bg2 {
+  color: white;
+  background: $gray;
+}
+
+#logo-type-img {
+  position: relative;
+  bottom: 3px;
+  height: 35px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.site-title {
+  margin: 0;
+  padding: 20px 0;
+  background-color: $navbar-inverse-bg;
+  font-size: 25px;
+  a {
+  	color: #fff;
+  	text-decoration: none;
+  }
+}
+
+#header {
+  .navbar-nav {
+  	float: none;
+  	width: 100%;
+  	margin: auto;
+  }
+  .nav > li {
+  	display: inline-block;
+    &:nth-child(2n) {
+      > a:before {
+      	  background-image: url('../images/tategaki/daiya_orange.png');
+      }
+    }
+  	> a {
+      display: inline-block;
+      font-size: 1.3em;
+      &:before {
+      	display: inline-block;
+      	position: relative;
+      	top: 2px;
+      	width: 1em;
+      	height: 1em;
+      	margin-right: .5em;
+      	background-image: url('../images/tategaki/daiya.png');
+    	background-repeat: no-repeat;
+    	background-position: center center;
+    	background-size: contain;
+    	content: "";
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #header {
+    .navbar-nav > li {
+      float: none;
+    }
+  }
+}
+
+// Multi-Columns
+// -----------------
+.m-col-container {
+  margin: 0 2em;
+  p {
+  	margin: 0 0 1em 0;
+  	text-indent: 1em;
+  	font-size: 15px;
+  	line-height: 1.8;
+  	text-align: justify;
+  	word-break: break-word;
+  }
+  .section-heading {
+  	font-size: 1.3em;
+  	margin: 0 0 2em 0;
+  }
+}
+
+$column-size: 2;
+$column-width: 18em;
+$column-gap: 3em;
+
+@media (min-width: $screen-xs-max) {
+  .m-col-container {
+  	width: 600px;
+  	max-width: 600px;
+  	max-height: 40em;
+  	margin: 0 auto 3em;
+  	@include wm-vrl;
+  	-webkit-column-size: $column-size;
+  	-moz-column-size: $column-size;
+  	column-size: $column-size;
+  	-webkit-column-width: $column-width;
+  	-moz-column-width: $column-width;
+  	column-width: $column-width;
+  	-webkit-column-gap: $column-gap;
+  	-moz-column-gap: $column-gap;
+  	column-gap: $column-gap;
+  	-webkit-column-fill: balance;
+  	-moz-column-fill: balance;
+  	column-fill: balance;
+    .section-heading {
+  	  margin: 0 0 0 2em;
+  	  -webkit-column-span: all;
+  	  -moz-column-span: all;
+  	  column-span: all;
+    }
+  	p {
+  	  margin: 0 0 0 1em;
+  	}
+  }
+}

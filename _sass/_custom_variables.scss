@@ -1,6 +1,16 @@
 $font-family-serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
 $font-family-base: $font-family-serif !default;
 
+
+$font-family-base: $font-family-serif; 
+
 $spacer: 1em;
 $spacer-md: 2em;
 $spacer-lg: 3em;
+
+// navbar
+$navbar-border-radius: 0;
+
+$navbar-inverse-color: #fff;
+$navbar-inverse-bg: #444;
+$navbar-inverse-link-color: #fff;

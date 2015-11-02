@@ -58,8 +58,21 @@
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
-// Footer
+// 
 @import "./custom_classes";
+
+// 
+@import "./_tanzaku";
+
+// Top
+@import "./top";
 
 // Footer
 @import "./footer";
+
+// Fox for flex box
+@import "./fox";
+
+body {
+  font-family: $font-family-base;
+}
