@@ -15,8 +15,9 @@ CSS3では、テキストの進行方向に関する仕様は「Writing Modesモ
 
 行の進行方向、文字の進行方向、文字の向き、などの書字方向全般の仕様がWriting Modesモジュールで定義されている。
 
-(図を挿入: samples/writing-mode-3.png)
-(図のキャプション: Writing Modesモジュールで扱っている書字方向の概略図 )
+![Writing Modesモジュールで扱っている書字方向の概略図](/images/tategaki/writing-mode-3.png)
+
+Writing Modesモジュールで扱っている書字方向の概略図
 
 
 ### 基本操作
@@ -42,9 +43,11 @@ body {
 
 <small>※ IE向けには-ms-writing-mode: tb-rlを使用する。歴史的に、IEは早期にこの値で縦書き対応していたため、値が異なる。</small>
 
-(図を挿入: samples/writing-mode--horizontal-tb.png)
-(図を挿入: samples/writing-mode--vertical-rl.png)
-(図のキャプション: 同一のHTMLから得られる2つの描画結果)
+![](/images/tategaki/writing-mode--horizontal-tb.png)
+
+![](/images/tategaki/writing-mode--vertical-rl.png)
+
+同一のHTMLから得られる2つの描画結果
 
 上の2つの図は、bodyでwriting-mode: vertical-rlの指定があるかどうかが違う、同一のHTMLから得られている。
 下記の点に注目されたい。
@@ -91,8 +94,7 @@ writing-modeを指定すると、HTMLのほとんどの要素が、回転する�
 <p class="ja_rtl">東京駅ニテ列車ヲ待ツ</p>
 ```
 
-(図を挿入: samples/tokyo-station-rtl.png)
-
+![](/images/tategaki/tokyo-station-rtl.png)
 
 ### 文字の向き
 
@@ -128,7 +130,7 @@ sidewaysを指定すると、mixedで自動で正立になるような記号を�
 <span class="sideways">sideways © 2015</span>
 ```
 
-mixedのときに各文字が置かれる方向は、Unicodeの付属文書「UTR#50」(http://unicode.org/reports/tr50/)を参考に決められている。
+mixedのときに各文字が置かれる方向は、Unicodeの付属文書「UTR#50」(<http://unicode.org/reports/tr50/>)を参考に決められている。
 UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tuの記号が振られている文字は原則的に正立(縦書きグリフがあれば使用する)という2分類となっている。
 
 例
@@ -189,7 +191,7 @@ UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tu�
 <p class="tcy_2">「8月、10月、12月」</p>
 ```
 
-(図を挿入: samples/writing-mode--horizontal-tb-ie.png)
+![](/images/tategaki/writing-mode--horizontal-tb-ie.png)
 
 
 ### 用語の再定義

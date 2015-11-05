@@ -24,7 +24,7 @@
   	<a href="/tategaki">
   	  <img id="logo-type-img" src="/images/tategaki/tategaki_logo.png" alt="縦書きWeb普及委員会ロゴ">
     </a>
-  	<a href="/tategaki">縦書きWeb普及委員会</a>
+  	<a href="/">縦書きWeb普及委員会</a>
   </h1>
   <nav class="navbar navbar-inverse">
     <div class="container">
@@ -41,9 +41,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">縦書きWebとは</a></li>
-          <li><a href="#">委員会について</a></li>
-          <li><a href="#">縦書きWebデザインアワード</a></li>
+          <li><a href="/">縦書きWebとは</a></li>
+          <li><a href="/">委員会について</a></li>
+          <li><a href="/">縦書きWebデザインアワード</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -51,12 +51,12 @@
 </header>
 
     <div class="container row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-3"></div>
+  <div class="col-md-8">
     <header class="post-header">
       <h1 class="post-title">CSS3 Writing Modesの仕様解説</h1>
       <p class="post-meta">Oct 29, 2015</p>
     </header>
-
     <article class="post-content">
       <h2 id="writing-modes">Writing Modes</h2>
 
@@ -66,8 +66,9 @@
 
 <p>行の進行方向、文字の進行方向、文字の向き、などの書字方向全般の仕様がWriting Modesモジュールで定義されている。</p>
 
-<p>(図を挿入: samples/writing-mode-3.png)<br />
-(図のキャプション: Writing Modesモジュールで扱っている書字方向の概略図 )</p>
+<p><img src="/images/tategaki/writing-mode-3.png" alt="Writing Modesモジュールで扱っている書字方向の概略図" /></p>
+
+<p>Writing Modesモジュールで扱っている書字方向の概略図</p>
 
 <h3 id="section">基本操作</h3>
 
@@ -96,9 +97,11 @@
 
 <p><small>※ IE向けには-ms-writing-mode: tb-rlを使用する。歴史的に、IEは早期にこの値で縦書き対応していたため、値が異なる。</small></p>
 
-<p>(図を挿入: samples/writing-mode–horizontal-tb.png)<br />
-(図を挿入: samples/writing-mode–vertical-rl.png)<br />
-(図のキャプション: 同一のHTMLから得られる2つの描画結果)</p>
+<p><img src="/images/tategaki/writing-mode--horizontal-tb.png" alt="" /></p>
+
+<p><img src="/images/tategaki/writing-mode--vertical-rl.png" alt="" /></p>
+
+<p>同一のHTMLから得られる2つの描画結果</p>
 
 <p>上の2つの図は、bodyでwriting-mode: vertical-rlの指定があるかどうかが違う、同一のHTMLから得られている。<br />
 下記の点に注目されたい。</p>
@@ -149,7 +152,7 @@ writing-mode: vertical-rlを指定すると、右から左に積まれるよう�
 </div>
 </div>
 
-<p>(図を挿入: samples/tokyo-station-rtl.png)</p>
+<p><img src="/images/tategaki/tokyo-station-rtl.png" alt="" /></p>
 
 <h3 id="section-4">文字の向き</h3>
 
@@ -197,7 +200,7 @@ sidewaysを指定すると、mixedで自動で正立になるような記号を�
 </div>
 </div>
 
-<p>mixedのときに各文字が置かれる方向は、Unicodeの付属文書「UTR#50」(http://unicode.org/reports/tr50/)を参考に決められている。<br />
+<p>mixedのときに各文字が置かれる方向は、Unicodeの付属文書「UTR#50」(<a href="http://unicode.org/reports/tr50/">http://unicode.org/reports/tr50/</a>)を参考に決められている。<br />
 UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tuの記号が振られている文字は原則的に正立(縦書きグリフがあれば使用する)という2分類となっている。</p>
 
 <p>例</p>
@@ -267,7 +270,7 @@ UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tu�
 </div>
 </div>
 
-<p>(図を挿入: samples/writing-mode–horizontal-tb-ie.png)</p>
+<p><img src="/images/tategaki/writing-mode--horizontal-tb-ie.png" alt="" /></p>
 
 <h3 id="section-6">用語の再定義</h3>
 
@@ -285,8 +288,9 @@ writing-modeの変更に応じて指す方向を変えたい場合には、下�
 
     </article>
   </div>
-
 </div>
+
+
 
     <footer id="footer" class="text-center">
   <div class="container">
