@@ -19,9 +19,9 @@ $column-gap: 3em !default;
   .section-heading-vertical {
     text-align: center;
     margin: 0 0 2em 0;
-    padding: 1rem 0;
-    border-top: 4px double $gray;
-    border-bottom: 4px double $gray;
+    //padding: 1rem 0;
+    //border-top: 4px double $gray;
+    //border-bottom: 4px double $gray;
     font-size: 1.5em;
     font-weight: bold;
   }
@@ -46,10 +46,10 @@ $column-gap: 3em !default;
   .m-col-container {
     .section-heading-vertical {
       margin: 0 0 0 2em;
-      padding: 0 1rem;
+      //padding: 0 1rem;
       border: none;
-      border-right: 4px double $gray;
-      border-left: 4px double $gray;
+      //border-right: 4px double $gray;
+      //border-left: 4px double $gray;
       font-size: 1.7em;
       text-align: left;
       @include prop-set-prefix(column-span, all);

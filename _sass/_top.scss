@@ -1,3 +1,57 @@
+#t {
+  display: flex;
+  position: relative;
+  min-width: 100%;
+  min-height: 30em;
+  //margin-top: 2em;
+  //margin-bottom: 2em;
+  background-image: url('../images/tategaki/background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.sbody {
+  margin: auto;
+  width: 90px;
+}
+
+p.catch-phrase {
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+p.sub-catch {
+  display: none;
+}
+
+@media (min-width: $screen-xs-max) {
+  #t {
+    background-size: cover;
+    height: 60em;
+    //margin-top: 4em;
+    //margin-bottom: 4em;
+  }
+
+  .sbody {
+    width: 130px;
+  }
+
+  p.catch-phrase {
+    font-size: 54px;
+  }
+
+  p.sub-catch {
+    display: block;
+    margin-right: 1.2em;
+    line-height: 1.5;
+    text-indent: 0;
+    color: $gray-light;
+  }
+}
+
 .vert {
   p.catch-phrase {
   	margin: 0;
@@ -21,21 +75,10 @@
   width: 100%;
   height: 100%;
   max-height: 38em;
-  background-image: url('../images/tategaki/top_mainimg.png');
+  background-image: url('../images/tategaki/background.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
   z-index: -1;
 }
-.sbody {
-	margin: auto;
-	width: 110px;
-}
-p.catch-phrase {
-  position: relative;
-  top: 0;
-  //right: 1.5em;
-  font-size: 48px;
-  font-weight: bold;
-  line-height: 1.2;
-}
+

@@ -52,7 +52,7 @@
   background-size: cover;
   margin-left: $spacer;
   &:hover {
-    outline: 4px solid $gray-light;
+    outline: 4px solid $gray;
   }
 }
 
@@ -69,7 +69,8 @@
 // Notice
 // -----------------
 #notice {
-  background: #e2e2e2;
+  //background: #e2e2e2;
+  background: lighten($gray-lighter, 2%);
 }
 .notice-list {
   margin: 0 1em;
@@ -188,8 +189,10 @@
   }
 }
 .social-button-container {
+  margin-top: $spacer-lg;
   padding-top: $spacer;
-  background: $gray-dark;
+  //background: $navbar-inverse-bg;
+  background: $gray-lighter;
 }
 
 .creator-list {
