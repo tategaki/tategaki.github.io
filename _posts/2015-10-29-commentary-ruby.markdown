@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: post
 img: nil
-category: commentary
+category: Commentaries
 title: ルビ
 description: |
 ---
