@@ -13,3 +13,12 @@
     -ms-writing-mode:vertical-rl;
     writing-mode: vertical-rl;
 }
+
+$set-prefix: '' , -moz- , -webkit-, -ms-;
+
+@mixin prop-set-prefix($name, $value) {
+  @each $prefix in $set-prefix {
+    #{$prefix}#{$name}: $value;
+  }
+}
+

@@ -1,21 +1,42 @@
 ---
 layout: default
+ex_items:
+  - name: くらげごはん
+    img: http://placehold.it/128x128
+    description: 二つは胸のまねぶん人が野ねずみへしゴーシュございた。まずはどう正確ましだという血ますた。
+    url: http://ex.com
+  - name: 自作ゲーム大年表
+    img: http://placehold.it/128x128
+    description: 晩は川をすぐにまげてセロをからだのようで立っから足がわからでもう工合へまげと来た。しきりにまるで朝飯にセロをとまったた。
+    url: http://ex.com
+  - name: 名前３
+    img: http://placehold.it/128x128
+    description: おまえも一生の所のいきなり前のままへ来ましまし。楽長は口とご音楽をつかれるて顔がかっこうへこわれてまるで今日なっられたままを云いましじ。
+    url: http://ex.com
+  - name: 名前４
+    img: http://placehold.it/128x128
+    description: 何は生意気そうより出してなあ狸セロのやっとだ鼻のゴーシュを聞えるてはいりや云いて出しござい。形は弾くてゴーシュにやめですでし。
+    url: http://ex.com
+  - name: 名前５
+    img: http://placehold.it/128x128
+    description: それもまるで沓は永くものたと足はいきなりよくんたう。「毎晩のいまの茎に。し。」おまえはしばらくなんたます。
+    url: http://ex.com
+  - name: 名前６
+    img: http://placehold.it/128x128
+    description: 勢はセロへやめから前まし。それからこんどはもうすましまし。面白いきょろきょろましと走って来てトマトをひけようた狸を見でするとむっとマッチが毛教えたます。
+    url: http://ex.com
 ---
 
-<div class="home">
+{% include tategaki/top.html %}
 
-  <h1 class="page-heading">Posts</h1>
+{% include tategaki/notice.html %}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+{% include tategaki/m-col.html %}
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+{% include tategaki/commentaries.html %}
 
-</div>
+{% include tategaki/examples.html %}
+
+{% include tategaki/ex.html %}
+
+{% include tategaki/about.html %}

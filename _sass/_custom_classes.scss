@@ -12,3 +12,182 @@
 .hol {
   @include wm-htb;
 }
+
+// flex-box
+// -----------------
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.f-row {
+  flex-grow:1;
+  flex-direction: row;
+  flex-basis: 300px;
+}
+
+.item-block {
+  float: right;
+  @include wm-vrl;
+  padding: 1em;
+  .item-heading {
+  	margin-left: $spacer;
+  	font-family: $font-family-sans-serif;
+  	font-weight: bold;
+  	text-align: left;
+  }
+  text-align: justify;
+  word-break: break-word;
+  font-family: $font-family-serif;
+  height: 18em;
+}
+
+.item-img-container {
+  width: 128px;
+  height: 128px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-left: $spacer;
+}
+
+// Sections
+// -----------------
+.section {
+  padding: 3em 0;
+}
+.section-header {
+  margin-bottom: $spacer;
+}
+.section-heading {
+  margin: 0;
+  font-size: 1.7em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.section-subheading {
+  margin: $spacer auto;
+  display: block;
+  max-width: 30em;
+  font-family: $font-family-sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  font-weight: normal;
+  color: $gray;
+  text-align: left;
+}
+
+
+// Notice
+// -----------------
+#notice {
+  background: #e2e2e2;
+}
+.notice-list {
+  margin: 0 1em;
+  border-radius: 3px;
+  padding: 1em;
+  background-color: #fff;
+}
+.notice-list-item {
+  margin-bottom: 5px;
+  a {
+  	color: inherit;
+    &:before {
+    	width: .8em;
+    	height: .8em;
+    	margin-right: .5em;
+    	display: inline-block;
+    	background-image: url('../images/tategaki/right_orange.png');
+    	background-repeat: no-repeat;
+    	background-position: center bottom;
+    	background-size: contain;
+    	content: "";
+    }
+  }
+}
+// Sections
+// -----------------
+.f-row-odd {
+  background: #f8f8f8;
+}
+
+.f-row-even {
+  //color: white;
+  background: #fff;
+}
+
+@media (max-width: 500px) {
+  .f-row-odd {
+    //background-image: url('http://placehold.it/128x128');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+  .f-row-even {
+    //background-image: url('http://placehold.it/128x128');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+}
+
+#logo-type-img {
+  position: relative;
+  bottom: 3px;
+  height: 35px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.site-title {
+  margin: 0;
+  padding: 20px 0;
+  background-color: $navbar-inverse-bg;
+  font-size: 25px;
+  a {
+  	color: #fff;
+  	text-decoration: none;
+  }
+}
+
+#header {
+  .navbar-nav {
+  	float: none;
+  	width: 100%;
+  	margin: auto;
+  }
+  .nav > li {
+  	display: inline-block;
+    &:nth-child(2n) {
+      > a:before {
+      	  background-image: url('../images/tategaki/daiya_orange.png');
+      }
+    }
+  	> a {
+      display: inline-block;
+      font-size: 1.3em;
+      &:before {
+      	display: inline-block;
+      	position: relative;
+      	top: 2px;
+      	width: 1em;
+      	height: 1em;
+      	margin-right: .5em;
+      	background-image: url('../images/tategaki/daiya.png');
+    	background-repeat: no-repeat;
+    	background-position: center center;
+    	background-size: contain;
+    	content: "";
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #header {
+    .navbar-nav > li {
+      float: none;
+    }
+  }
+}

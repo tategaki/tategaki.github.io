@@ -1,0 +1,50 @@
+// Multi-Columns
+// -----------------
+
+$column-size: 3 !default;
+$column-width: 17em !default;
+$column-gap: 3em !default;
+
+.m-col-container {
+  @extend .container;
+  margin: 0 2em;
+  p {
+    margin: 0 0 1em 0;
+    text-indent: 1em;
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: justify;
+    word-break: break-word;
+  }
+  .section-heading {
+    text-align: center;
+    margin: 0 0 2em 0;
+  }
+}
+
+// スマホ以外
+@media (min-width: $screen-xs-max) {
+  .m-col-container {
+    @include wm-vrl;
+    @include wm-vrl;
+    @include prop-set-prefix(column-size, $column-size);
+    @include prop-set-prefix(column-width, $column-width);
+    @include prop-set-prefix(column-gap, $column-gap);
+    max-width: 600px;
+    min-height: ($column-width) * $column-size;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: $screen-xs-max) {
+  .m-col-container {
+    .section-heading {
+      margin: 0 0 0 2em;
+      text-align: left;
+      @include prop-set-prefix(column-span, all);
+    }
+    p {
+      margin: 0 0 0 1em;
+    }
+  }
+}
