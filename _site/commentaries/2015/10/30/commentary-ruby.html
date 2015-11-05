@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ルビの解説とマークアップ方法</title>
+  <meta name="description" content="ルビは文字の傍に配置される、読みや説明などの役割を果たす小さな文字のことです。ルビを付けられる側の文字を親文字（base text）といいます。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="canonical" href="http://yourdomain.com/commentaries/2015/10/30/commentary-ruby.html">
+  <link rel="alternate" type="application/rss+xml" title="縦書きWeb普及委員会" href="http://yourdomain.com/feed.xml" />
+
+</head>
+
+
+  <body>
+
+    <header id="header">
+  <h1 class="site-title text-center">
+  	<a href="/tategaki">
+  	  <img id="logo-type-img" src="/images/tategaki/tategaki_logo.png" alt="縦書きWeb普及委員会ロゴ">
+    </a>
+  	<a href="/tategaki">縦書きWeb普及委員会</a>
+  </h1>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">縦書きWebとは</a></li>
+          <li><a href="#">委員会について</a></li>
+          <li><a href="#">縦書きWebデザインアワード</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+
+    <div class="container row">
+  <div class="col-md-8 col-md-offset-2">
+    <header class="post-header">
+      <h1 class="post-title">ルビの解説とマークアップ方法</h1>
+      <p class="post-meta">Oct 30, 2015</p>
+    </header>
+
+    <article class="post-content">
+      <p>ルビは文字の傍に配置される、読みや説明などの役割を果たす小さな文字のことです。ルビを付けられる側の文字を親文字（base text）といいます。</p>
+
+<p><img src="/images/tategaki/ruby-1.png" alt="ルビの表示例：横書き" /></p>
+
+<p><img src="/images/tategaki/ruby-1-v.png" alt="ルビの表示例：縦書き" /></p>
+
+<p>19世紀後半、イギリスの活版印刷では活字の大きさを宝石の名前で表現することがありました。ルビーと呼ばれていた5.5ptの大きさの活字は、明治時代の日本に輸入されると、本文の傍に小さく書かれたふりがなや説明に使われるようになります。これがルビという名称の由来といわれています。</p>
+
+<h2 id="section">ルビの構成要素</h2>
+
+<p>ルビに使われる要素には次の種類があります。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>要素</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ruby</code></td>
+      <td>ルビと親文字のまとまりを表す要素です。</td>
+    </tr>
+    <tr>
+      <td><code>rb</code></td>
+      <td>親文字を表します。</td>
+    </tr>
+    <tr>
+      <td><code>rt</code></td>
+      <td>ルビを表します。</td>
+    </tr>
+    <tr>
+      <td><code>rtc</code></td>
+      <td>ひとつの親文字に対して２つのルビを付ける場合に、ルビをrtc要素に入れてグループ化することができます。</td>
+    </tr>
+    <tr>
+      <td><code>rp</code></td>
+      <td>ルビをサポートしないブラウザ向けのフォールバックを提供します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ruby要素の内容には次のルールがあります。</p>
+
+<ul>
+  <li>1つ以上の親文字にあたるフレージングコンテンツ、またはそれを内容とするrb要素を持つこと</li>
+  <li>1つ以上のrt要素、またはrtc要素を持つこと</li>
+  <li>rp要素を持つ場合、rp要素はrt要素またはrtc要素の直前または直後に記述すること</li>
+</ul>
+
+<p>シンプルなルビのマークアップ例を示します。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日本語<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>にほんご<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>rt要素に後続のコンテンツがない場合、終了タグは省略できます。また、rt要素の後にrb、rt、rtc、rp要素がくる場合も省略できます。終了タグを明示的に記述する場合は次のようなマークアップになります。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日本語<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>にほんご<span style="color:#070;font-weight:bold">&lt;/rt&gt;</span><span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>これまでの例では、「日本語」は暗黙的に親文字とみなされています。rb要素によって明示的に親文字を示すこともできます。rb要素を利用すると、CSSセレクタによって親文字だけにレイアウトを指定するのに役立ちます。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span><span style="color:#070;font-weight:bold">&lt;rb&gt;</span>日本語<span style="color:#070;font-weight:bold">&lt;/rb&gt;</span><span style="color:#070;font-weight:bold">&lt;rt&gt;</span>にほんご<span style="color:#070;font-weight:bold">&lt;/rt&gt;</span><span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>rb要素もまた後続のコンテンツがない場合、終了タグを省略できます。また、rb要素の後にrb、rt、rtc、rp要素がくる場合も省略できます。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span><span style="color:#070;font-weight:bold">&lt;rb&gt;</span>日本語<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>にほんご<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>次のセクションでは、上記の例では触れてこなかったrtc要素やrp要素も交えながら、ルビの様々なマークアップ方法を紹介します。</p>
+
+<h2 id="section-1">ルビの種類とマークアップ方法</h2>
+
+<h3 id="section-2">モノルビ</h3>
+
+<p>親文字の1字ごとに対応してルビを付ける方法を<strong>モノルビ</strong>といいます。これは次のようなマークアップで表現できます。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>に<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>本<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>ほん<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>語<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>ご<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="section-3">グループルビ</h3>
+
+<p>複数の親文字で構成される語全体にルビを付ける方法を<strong>グループルビ</strong>といいます。これは次のようなマークアップで表現できます。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>今日<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>きょう<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>ブラウザのレンダリングにおいて、グループルビの1行の中にひとまとまりとして扱われます。途中で改行されることはありません。</p>
+
+<h3 id="section-4">熟語ルビ</h3>
+
+<p>熟語ルビはモノルビともグループルビとも異なる挙動を示すルビの呼称です。必ずしも日本語の熟語に付けられたルビを指すものではありません。</p>
+
+<p>熟語ルビはモノルビと同様に親文字とルビを対応させて記述できますが、ルビが複数の親文字にまたがるようにレンダリングされるのが一般的です。</p>
+
+<p>次の例では、親文字とルビがそれぞれ３つのペアを構成しています。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>法<span style="color:#070;font-weight:bold">&lt;rb&gt;</span>華<span style="color:#070;font-weight:bold">&lt;rb&gt;</span>経<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>ほ<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>け<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>きょう<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="section-5">インラインルビ</h3>
+
+<p>ルビをサポートしないブラウザでは親文字とルビが一列に並んで表示されます。また、ルビを表示するのに十分な行高がない場合に、同様のインライン化をすることがあります。</p>
+
+<p>ルビをサポートしないブラウザのためのフォールバック手段としてrp要素があります。rp要素の内容テキストはルビのをサポートしないブラウザでのみ表示されるので、括弧をなどの文字を入れることで、ルビを本文と区別できます。次のマークアップはルビをサポートしないブラウザでは「日本語（にほんご）」と表示されます。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日本語<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>（<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>にほんご<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>）<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>モノルビや熟語ルビをマークアップする際には親文字とルビの並び順に注意します。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>（<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>に<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>）<span style="color:#070;font-weight:bold">&lt;rb&gt;</span>本<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>（<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>ほん<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>）<span style="color:#070;font-weight:bold">&lt;rb&gt;</span>語<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>（<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>ご<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>）<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>上記の例は、フォールバック時に「日（に）本（ほん）語（ご）」と表示されます。このマークアップは読みやすいとはいえません。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日<span style="color:#070;font-weight:bold">&lt;rb&gt;</span>本<span style="color:#070;font-weight:bold">&lt;rb&gt;</span>語<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>（<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>に<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>ほん<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>ご<span style="color:#070;font-weight:bold">&lt;rp&gt;</span>）<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>上記の例は、フォールバック時に「日本語（にほんご）」と表示されます。こちらのマークアップは親文字とルビがグループ化されているので読みやすいです。</p>
+
+<h3 id="section-6">両側ルビ</h3>
+
+<p>稀に親文字に対して２つのルビを付けることがあります。このようなケースでは、ルビを親文字の上下（横書き）または左右（縦書き）に配置するのが一般的です。親文字の両側にルビが付くので両側ルビと呼ばれます。</p>
+
+<p><img src="/images/tategaki/both-ruby.png" alt="両側ルビの表示例：横書き" /></p>
+
+<p><img src="/images/tategaki/both-ruby-v.png" alt="両側ルビの表示例：縦書き" /></p>
+
+<p>２つのルビを付けるには、rtc要素を利用してそれぞれのルビを区別します。次の例では親文字に対してふりがなと英語での表記という２種類のルビを付けています。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日本語<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>にほんご<span style="color:#070;font-weight:bold">&lt;rtc&gt;</span>Japanese<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>言語属性を付与すれば英語のテキストであることを明示できます。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;ruby&gt;</span>日本語<span style="color:#070;font-weight:bold">&lt;rt&gt;</span>にほんご<span style="color:#070;font-weight:bold">&lt;rtc</span> <span style="color:#b48">lang</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">en</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Japanese<span style="color:#070;font-weight:bold">&lt;/ruby&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>両側ルビとしてレンダリングするには、ルビの位置を指定するCSSのプロパティ ruby-position を使います。次の例では言語属性が英語（en）のrtc要素を下に（縦書きでは左に）配置するように指定しています。</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">rtc</span><span style="color:#00C;font-weight:bold">:lang</span>(<span style="color:#070;font-weight:bold">en</span>) {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#606">ruby-position</span>: <span style="color:#088">under</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>}
+</pre></div>
+</div>
+</div>
+
+<p>ruby-postion はルビのレイアウトを定義するCSSのモジュール <a href="http://www.w3.org/TR/css-ruby-1/">CSS Ruby Layout Module Level 1</a> が定義するプロパティです。このプロパティには次の値があります（本稿の値は W3C <a href="http://www.w3.org/TR/2014/WD-css-ruby-1-20140805/">Working Draft, 5 August 2014</a>を参照しています）。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>値</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>over</code></td>
+      <td>親文字が横書きの時にルビを上に配置します。</td>
+    </tr>
+    <tr>
+      <td><code>under</code></td>
+      <td>親文字が横書きの時にルビを下に配置します。</td>
+    </tr>
+    <tr>
+      <td><code>inter-character</code></td>
+      <td>親文字が横書きの時にルビをそれぞれ対応関係にある親文字の右に縦書きで配置します。主に台湾で使われる注音符号（Bopomofo）に用いられます。</td>
+    </tr>
+    <tr>
+      <td><code>right</code></td>
+      <td>親文字が縦書きの時にルビを右に配置します。</td>
+    </tr>
+    <tr>
+      <td><code>left</code></td>
+      <td>親文字が縦書きの時にルビを左に配置します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>なおこれまで紹介したマークアップとCSSプロパティは、本稿執筆時点では、すべてのブラウザでサポートされているものではありません。利用に際しては実装状況を確認するようにしてください。</p>
+
+    </article>
+  </div>
+
+</div>
+
+    <footer id="footer" class="text-center">
+  <div class="container">
+    <small class="copyright-notice">Copyright (C) 2015 copyrights.TATEGAKI Web All Rights Reserved.</small>
+  </div>
+</footer>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-git1.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>
