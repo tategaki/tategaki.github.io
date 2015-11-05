@@ -1,7 +1,7 @@
 // Multi-Columns
 // -----------------
 
-$column-size: 3 !default;
+$column-size: 2 !default;
 $column-width: 17em !default;
 $column-gap: 3em !default;
 
@@ -16,9 +16,14 @@ $column-gap: 3em !default;
     text-align: justify;
     word-break: break-word;
   }
-  .section-heading {
+  .section-heading-vertical {
     text-align: center;
     margin: 0 0 2em 0;
+    padding: 1rem 0;
+    border-top: 4px double $gray;
+    border-bottom: 4px double $gray;
+    font-size: 1.5em;
+    font-weight: bold;
   }
 }
 
@@ -32,14 +37,20 @@ $column-gap: 3em !default;
     @include prop-set-prefix(column-gap, $column-gap);
     max-width: 600px;
     min-height: ($column-width) * $column-size;
+    max-height: ($column-width) * $column-size * 1.5;
     margin: 0 auto;
   }
 }
 
 @media (min-width: $screen-xs-max) {
   .m-col-container {
-    .section-heading {
+    .section-heading-vertical {
       margin: 0 0 0 2em;
+      padding: 0 1rem;
+      border: none;
+      border-right: 4px double $gray;
+      border-left: 4px double $gray;
+      font-size: 1.7em;
       text-align: left;
       @include prop-set-prefix(column-span, all);
     }

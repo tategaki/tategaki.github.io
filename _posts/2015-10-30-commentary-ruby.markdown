@@ -2,7 +2,7 @@
 layout: post
 img: nil
 category: Commentaries
-title: ルビの仕様解説
+title: ルビの解説とマークアップ方法
 description: |
 ---
 
