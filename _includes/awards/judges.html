@@ -1,2 +1,26 @@
-<section id="judges">
+<section id="judges" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-heading">審査員</h2>
+      <p class="section-subheading">Judges</p>
+    </header>
+
+    <div class="flex">
+    {% for item in page.judges %}
+      {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+      <div class="f-row f-row-{{thecycle}}">
+        <div class="item-block">
+          <a href="{{item.url}}">
+          <div class="item-img-container" style="background-image:url('/images/awards/{{item.img}}')">
+          </div>
+          </a>
+          <div class="item-heading">{{item.name}}</div>
+          <div class="item-body">
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
 </section>

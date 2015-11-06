@@ -1,0 +1,105 @@
+#t {
+  display: flex;
+  position: relative;
+  min-width: 100%;
+  min-height: 40em;
+  //margin-top: 2em;
+  //margin-bottom: 2em;
+  background-image: url('../images/awards/background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.sbody {
+  margin: auto;
+  width: 200px;
+}
+
+p.catch-phrase {
+    position: relative;
+    margin: 0;
+    padding: 2rem 3rem;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    background-color: $gray;
+    text-indent: 0;
+}
+
+p.sub-catch {
+  margin: 0;
+  margin-left: 2rem;
+  font-size: 24px;
+  font-family: monospace;
+  font-style: italic;
+  line-height: 1;
+  text-indent: 0;
+  color: $gray-light;
+  //display: none;
+}
+
+p.top-kicker {
+  margin: 0;
+  margin-right: 2rem;
+  text-indent: 0;
+  font-family: $font-family-sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+  color: $gray-light;
+  //display: none;
+}
+
+@media (min-width: $screen-xs-max) {
+  #t {
+    background-size: cover;
+    height: 60em;
+    //margin-top: 4em;
+    //margin-bottom: 4em;
+  }
+
+  .sbody {
+    width: 330px;
+  }
+
+  p.catch-phrase {
+    font-size: 54px;
+  }
+
+  p.sub-catch {
+    display: block;
+    font-size: 32px;
+    margin-right: 1.2em;
+    line-height: 1.5;
+  }
+
+  p.top-kicker {
+    font-size: 24px;
+  }
+}
+
+#top {
+  display: flex;
+  position: relative;
+  margin-bottom: 2em;
+  flex-flow: column nowrap;
+  height: 40em;
+  justify-content: center;
+}
+.top-bg {
+  box-sizing: border-box;
+  position: absolute;
+  top: 1em;
+  left: center;
+  width: 100%;
+  height: 100%;
+  max-height: 38em;
+  background-image: url('../images/tategaki/background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  z-index: -1;
+}
+

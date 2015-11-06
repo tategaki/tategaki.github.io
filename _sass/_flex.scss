@@ -1,0 +1,52 @@
+// flex-box
+// -----------------
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.f-row {
+  flex-grow:1;
+  flex-direction: row;
+  flex-basis: 300px;
+}
+
+.item-block {
+  float: right;
+  @include wm-vrl;
+  padding: 1em;
+  .item-heading {
+  	margin-left: $spacer;
+  	font-family: $font-family-sans-serif;
+  	font-weight: bold;
+  	text-align: left;
+  }
+  text-align: justify;
+  word-break: break-word;
+  font-family: $font-family-serif;
+  height: 18em;
+}
+
+.item-img-container {
+  width: 10em;
+  height: 10em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-left: $spacer;
+  &:hover {
+    outline: 4px solid $gray;
+  }
+}
+
+@media (min-width: $screen-xs-max) {
+  .item-block {
+    height: 20em;
+  }
+  .item-img-container {
+    width: 128px;
+    height: 128px;
+  }
+}

@@ -6068,6 +6068,52 @@ button.close {
     line-height: 1.5;
     color: #555555; }
 
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.f-row {
+  flex-grow: 1;
+  flex-direction: row;
+  flex-basis: 300px; }
+
+.item-block {
+  float: right;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  -ms-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  padding: 1em;
+  text-align: justify;
+  word-break: break-word;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  height: 18em; }
+  .item-block .item-heading {
+    margin-left: 1em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: left; }
+
+.item-img-container {
+  width: 10em;
+  height: 10em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-left: 1em; }
+  .item-img-container:hover {
+    outline: 4px solid #555555; }
+
+@media (min-width: 767px) {
+  .item-block {
+    height: 20em; }
+
+  .item-img-container {
+    width: 128px;
+    height: 128px; } }
 .section {
   padding: 3em 0; }
 
