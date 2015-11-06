@@ -6098,8 +6098,8 @@ button.close {
     text-align: left; }
 
 .item-img-container {
-  width: 10em;
-  height: 10em;
+  width: 7em;
+  height: 7em;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -6159,7 +6159,7 @@ button.close {
 
 .sbody {
   margin: auto;
-  width: 90px; }
+  width: 80px; }
 
 p.catch-phrase {
   position: relative;
@@ -6176,7 +6176,7 @@ p.sub-catch {
     height: 60em; }
 
   .sbody {
-    width: 130px; }
+    width: 180px; }
 
   p.catch-phrase {
     font-size: 54px; }
@@ -6322,7 +6322,7 @@ p.sub-catch {
     -ms-column-gap: 3em;
     max-width: 600px;
     min-height: 34em;
-    max-height: 51em;
+    max-height: 68em;
     margin: 0 auto; } }
 @media (min-width: 767px) {
   .m-col-container .section-heading-vertical {
