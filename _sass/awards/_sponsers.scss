@@ -1,0 +1,20 @@
+.sponser-img-container {
+  display: block;
+  cursor: pointer;
+  width: 280px;
+  max-width: 100%;
+  height: 60px;
+  margin-bottom: $spacer / 2;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-left: $spacer;
+  &:hover {
+    //outline: 4px solid $gray;
+  }
+}
+
+.sponser-img-caption {
+  font-family: $font-family-sans-serif;
+}

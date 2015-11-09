@@ -4,8 +4,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@import "./_custom_variables";
-@import "./_custom_mixins";
+@import "awards/custom_variables";
+@import "./custom_mixins";
 
 // Core variables and mixins
 @import "bootstrap/variables";
@@ -64,11 +64,21 @@
 // Flexbox
 @import "awards/flex";
 
+// Section
+@import "awards/section";
+
 // Top
 @import "awards/top";
+
+// Sponsers
+@import "./awards/sponsers";
 
 // Social Buttons
 @import "./social-buttons";
 
 // Footer
 @import "./footer";
+
+#sponsers {
+  background-color: #F6F6F7;
+}

@@ -1071,7 +1071,7 @@ body {
   font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #333333;
+  color: #646464;
   background-color: #fff; }
 
 input,
@@ -1083,10 +1083,10 @@ textarea {
   line-height: inherit; }
 
 a {
-  color: #337ab7;
+  color: #646464;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #23527c;
+    color: #ff7ea5;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -2793,7 +2793,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373; }
+  color: #a4a4a4; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -3084,7 +3084,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     background-color: #fff; }
 
 .btn-link {
-  color: #337ab7;
+  color: #646464;
   font-weight: normal;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link[disabled], fieldset[disabled] .btn-link {
@@ -3094,7 +3094,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
   .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
     border-color: transparent; }
   .btn-link:hover, .btn-link:focus {
-    color: #23527c;
+    color: #ff7ea5;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
@@ -3579,7 +3579,7 @@ tbody.collapse.in {
         cursor: not-allowed; }
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #eeeeee;
-    border-color: #337ab7; }
+    border-color: #646464; }
   .nav .nav-divider {
     height: 1px;
     margin: 9px 0;
@@ -4093,7 +4093,7 @@ tbody.collapse.in {
       padding: 6px 12px;
       line-height: 1.42857;
       text-decoration: none;
-      color: #337ab7;
+      color: #646464;
       background-color: #fff;
       border: 1px solid #ddd;
       margin-left: -1px; }
@@ -4110,7 +4110,7 @@ tbody.collapse.in {
   .pagination > li > span:hover,
   .pagination > li > span:focus {
     z-index: 3;
-    color: #23527c;
+    color: #ff7ea5;
     background-color: #eeeeee;
     border-color: #ddd; }
   .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
@@ -4272,7 +4272,7 @@ a.label:hover, a.label:focus {
     top: 0;
     padding: 1px 5px; }
   .list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-    color: #337ab7;
+    color: #646464;
     background-color: #fff; }
   .list-group-item > .badge {
     float: right; }
@@ -4336,12 +4336,12 @@ a.badge:hover, a.badge:focus {
     margin-right: auto; }
   .thumbnail .caption {
     padding: 9px;
-    color: #333333; }
+    color: #646464; }
 
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #337ab7; }
+  border-color: #646464; }
 
 .alert {
   padding: 15px;
@@ -5847,7 +5847,7 @@ button.close {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin-left: 1em; }
+  margin-left: 0.5em; }
   .item-img-container:hover {
     outline: 4px solid #555555; }
 
@@ -6005,6 +6005,39 @@ button.close {
 @media (min-width: 767px) {
   .item-block {
     height: 34em; } }
+.section {
+  padding: 3em 0; }
+
+.section-header {
+  margin-bottom: 3em;
+  padding-left: 4rem;
+  background-image: url("../images/awards/section-heading.png");
+  background-repeat: no-repeat;
+  background-position: left center; }
+
+.section-heading {
+  margin: 0;
+  font-size: 2.5em;
+  line-height: 1.2;
+  font-weight: bold; }
+
+.section-subheading {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.2;
+  font-weight: normal;
+  color: #555555; }
+
+.subsection-heading {
+  margin-bottom: 2em;
+  padding-left: 3rem;
+  font-size: 1.3em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: url("../images/awards/daiya.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain; }
+
 #t {
   display: flex;
   position: relative;
@@ -6090,6 +6123,22 @@ p.top-kicker {
   background-position: center center;
   background-size: contain;
   z-index: -1; }
+
+.sponser-img-container {
+  display: block;
+  cursor: pointer;
+  width: 280px;
+  max-width: 100%;
+  height: 60px;
+  margin-bottom: 0.5em;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-left: 1em; }
+
+.sponser-img-caption {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /*!
  * Social Buttons for Twitter Bootstrap v1.0.0
@@ -6737,3 +6786,6 @@ footer {
 
 .copyright-notice {
   font-size: 10px; }
+
+#sponsers {
+  background-color: #F6F6F7; }

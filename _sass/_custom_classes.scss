@@ -50,7 +50,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin-left: $spacer;
+  margin-left: $spacer / 2;
   &:hover {
     outline: 4px solid $gray;
   }

@@ -5952,7 +5952,7 @@ button.close {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin-left: 1em; }
+  margin-left: 0.5em; }
   .item-img-container:hover {
     outline: 4px solid #555555; }
 
