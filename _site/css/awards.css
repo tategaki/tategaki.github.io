@@ -5877,7 +5877,7 @@ button.close {
     text-decoration: none; }
 
 .btn {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif; }
 
 .inline-button .btn {
   margin-bottom: 1em; }
@@ -5896,7 +5896,7 @@ button.close {
     display: inline-block;
     padding-bottom: 1em;
     font-size: .9em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
     line-height: 1.5;
     color: #555555; }
 
@@ -5909,7 +5909,7 @@ button.close {
 
 .note-list {
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: .75em; }
 
 .flex {
@@ -5937,7 +5937,7 @@ button.close {
   height: 28em; }
   .item-block .item-heading {
     margin-left: 1em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
     font-weight: bold;
     text-align: left; }
   .item-block .item-body {
@@ -5979,20 +5979,22 @@ button.close {
   margin: 0;
   font-size: 2.5em;
   line-height: 1.2;
+  font-family: "ModeMinAStd-B", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   font-weight: bold; }
 
 .section-subheading {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.5em;
+  margin-top: 0.25em;
+  font-family: "ModeMinAStd-B", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-size: 1.25em;
   line-height: 1.2;
   font-weight: normal;
-  color: #555555; }
+  color: #919191; }
 
 .subsection-heading {
   margin-bottom: 2em;
   padding-left: 3rem;
   font-size: 1.3em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   background-image: url("../images/awards/daiya.png");
   background-repeat: no-repeat;
   background-position: left center;
@@ -6001,7 +6003,8 @@ button.close {
 #header .navbar-nav {
   float: none;
   width: 100%;
-  margin: auto; }
+  margin: auto;
+  font-family: "CometStd-B", YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif; }
 #header .nav > li {
   display: inline-block; }
   #header .nav > li:nth-child(2n) > a:before {
@@ -6030,7 +6033,7 @@ button.close {
     padding-left: 1.5rem;
     position: relative;
     font-size: 1.2rem;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "CometStd-B", YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
     font-weight: bold;
     line-height: 1.32rem;
     height: 4rem; }
@@ -6060,6 +6063,7 @@ p.catch-phrase {
   position: relative;
   margin: 0;
   padding: 2rem 3rem;
+  font-family: "CometStd-B", YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 36px;
   font-weight: bold;
   line-height: 1;
@@ -6071,7 +6075,7 @@ p.sub-catch {
   margin: 0;
   margin-left: 2rem;
   font-size: 24px;
-  font-family: monospace;
+  font-family: "CometStd-B", YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-style: italic;
   line-height: 1;
   text-indent: 0;
@@ -6081,7 +6085,7 @@ p.top-kicker {
   margin: 0;
   margin-right: 2rem;
   text-indent: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "CometStd-B", YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-weight: bold;
   font-size: 18px;
   line-height: 1;
@@ -6143,7 +6147,7 @@ p.top-kicker {
 .sponser-img-caption {
   padding-left: 1.25em;
   line-height: 28px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   background-image: url("../images/awards/green_right.png");
   background-repeat: no-repeat;
   background-position: left center; }
@@ -6799,7 +6803,7 @@ p.top-kicker {
   border: 0; }
 
 .table {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif; }
   .table th {
     font-size: .9em;
     font-weight: normal;

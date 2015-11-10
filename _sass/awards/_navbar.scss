@@ -3,6 +3,7 @@
   	float: none;
   	width: 100%;
   	margin: auto;
+    font-family: $font-family-top;
   }
   .nav > li {
   	display: inline-block;
@@ -40,7 +41,7 @@
     position: relative;
     //bottom: 10px;
     font-size: 1.2rem;
-    font-family: $font-family-sans-serif;
+    font-family: $font-family-top;
     font-weight: bold;
     line-height: 1.32rem;
     height: 4rem;
