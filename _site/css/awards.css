@@ -3566,7 +3566,7 @@ tbody.collapse.in {
     .nav > li > a {
       position: relative;
       display: block;
-      padding: 10px 15px; }
+      padding: 20px 15px; }
       .nav > li > a:hover, .nav > li > a:focus {
         text-decoration: none;
         background-color: #eeeeee; }
@@ -3674,7 +3674,7 @@ tbody.collapse.in {
 
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 100px;
   margin-bottom: 0;
   border: 1px solid transparent; }
   .navbar:before, .navbar:after {
@@ -3776,10 +3776,10 @@ tbody.collapse.in {
 
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 40px 15px;
   font-size: 18px;
   line-height: 20px;
-  height: 50px; }
+  height: 100px; }
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
   .navbar-brand > img {
@@ -3793,8 +3793,8 @@ tbody.collapse.in {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 33px;
+  margin-bottom: 33px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
@@ -3813,7 +3813,7 @@ tbody.collapse.in {
       display: none; } }
 
 .navbar-nav {
-  margin: 7.5px -15px; }
+  margin: 20px -15px; }
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -3841,8 +3841,8 @@ tbody.collapse.in {
       .navbar-nav > li {
         float: left; }
         .navbar-nav > li > a {
-          padding-top: 15px;
-          padding-bottom: 15px; } }
+          padding-top: 40px;
+          padding-bottom: 40px; } }
 
 .navbar-form {
   margin-left: -15px;
@@ -3852,8 +3852,8 @@ tbody.collapse.in {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px; }
+  margin-top: 33px;
+  margin-bottom: 33px; }
   @media (min-width: 768px) {
     .navbar-form .form-group {
       display: inline-block;
@@ -3921,18 +3921,18 @@ tbody.collapse.in {
   border-bottom-left-radius: 0; }
 
 .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px; }
+  margin-top: 33px;
+  margin-bottom: 33px; }
   .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
-    margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-top: 35px;
+    margin-bottom: 35px; }
   .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
-    margin-top: 14px;
-    margin-bottom: 14px; }
+    margin-top: 39px;
+    margin-bottom: 39px; }
 
 .navbar-text {
-  margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-top: 40px;
+  margin-bottom: 40px; }
   @media (min-width: 768px) {
     .navbar-text {
       float: left;
@@ -3949,8 +3949,8 @@ tbody.collapse.in {
     .navbar-right ~ .navbar-right {
       margin-right: 0; } }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7; }
+  background-color: #fff;
+  border-color: 0px; }
   .navbar-default .navbar-brand {
     color: #777; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -3965,7 +3965,7 @@ tbody.collapse.in {
       background-color: transparent; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #555;
-    background-color: #e7e7e7; }
+    background-color: #eeeeee; }
   .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
     color: #ccc;
     background-color: transparent; }
@@ -3977,9 +3977,9 @@ tbody.collapse.in {
       background-color: #888; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
-    border-color: #e7e7e7; }
+    border-color: 0px; }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #e7e7e7;
+    background-color: #eeeeee;
     color: #555; }
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -3989,7 +3989,7 @@ tbody.collapse.in {
         background-color: transparent; }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
       color: #555;
-      background-color: #e7e7e7; }
+      background-color: #eeeeee; }
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }
@@ -6019,7 +6019,7 @@ button.close {
 #header .nav > li {
   display: inline-block; }
   #header .nav > li:nth-child(2n) > a:before {
-    background-image: url("../images/tategaki/daiya_orange.png"); }
+    background-image: url("../images/awards/daiya_blue.png"); }
   #header .nav > li > a {
     display: inline-block;
     font-size: 1.3em; }
@@ -6030,11 +6030,28 @@ button.close {
       width: 1em;
       height: 1em;
       margin-right: .5em;
-      background-image: url("../images/tategaki/daiya.png");
+      background-image: url("../images/awards/daiya.png");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
       content: ""; }
+
+.navbar-brand {
+  position: relative;
+  padding-top: 30px; }
+  .navbar-brand .brand-text {
+    display: inline-block;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.2rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.32rem;
+    height: 4rem; }
+  .navbar-brand img {
+    display: inline-block;
+    position: relative;
+    bottom: 14px; }
 
 @media (min-width: 768px) {
   #header .navbar-nav > li {
@@ -6128,18 +6145,22 @@ p.top-kicker {
 .sponser-img-container {
   display: block;
   cursor: pointer;
-  width: 280px;
+  width: 255px;
   max-width: 100%;
   height: 60px;
   margin-bottom: 0.5em;
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
-  margin-left: 1em; }
+  background-size: contain; }
 
 .sponser-img-caption {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  padding-left: 1.25em;
+  line-height: 28px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: url("/images/awards/green_right.png");
+  background-repeat: no-repeat;
+  background-position: left center; }
 
 /*!
  * Social Buttons for Twitter Bootstrap v1.0.0

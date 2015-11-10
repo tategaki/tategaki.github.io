@@ -10,10 +10,8 @@
       {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
       <div class="f-row f-row-{{thecycle}}">
         <div class="item-block">
-          <a href="{{item.url}}">
           <div class="item-img-container" style="background-image:url('/images/awards/{{item.img}}')">
           </div>
-          </a>
           <div class="item-heading">{{item.name}}</div>
           <div class="item-body">
             <p>{{item.description}}</p>
