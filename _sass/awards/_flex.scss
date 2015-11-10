@@ -10,7 +10,8 @@
 .f-row {
   flex-grow:1;
   flex-direction: row;
-  flex-basis: 300px;
+  flex-basis: 280px;
+
 }
 
 .item-block {
@@ -29,12 +30,13 @@
   height: 28em;
   .item-body {
     font-size: .9em;
+    line-height: 1.5;
   }
 }
 
 .item-img-container {
-  width: 6em;
-  height: 6em;
+  width: 5em;
+  height: 5em;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -45,11 +47,16 @@
 }
 
 @media (min-width: $screen-xs-max) {
+  .f-row {
+    flex-grow:1;
+    flex-direction: row;
+    flex-basis: 320px;
+  }
   .item-block {
-    height: 34em;
+    height: 26em;
   }
   .item-img-container {
-    //width: 128px;
-    //height: 128px;
+    width: 6em;
+    height: 6em;
   }
 }

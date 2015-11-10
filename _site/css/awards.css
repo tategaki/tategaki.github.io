@@ -5812,52 +5812,16 @@ button.close {
   -ms-writing-mode: horizontal-tb;
   writing-mode: horizontal-tb; }
 
-.flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; }
+.tcy {
+  text-combine: horizontal;
+  -moz-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine: horizontal;
+  text-combine-horizontal: all;
+  -moz-text-combine-horizontal: all;
+  -webkit-text-combine-horizontal: all;
+  -ms-text-combine-horizontal: all; }
 
-.f-row {
-  flex-grow: 1;
-  flex-direction: row;
-  flex-basis: 300px; }
-
-.item-block {
-  float: right;
-  -webkit-writing-mode: vertical-rl;
-  -moz-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  -ms-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  padding: 1em;
-  text-align: justify;
-  word-break: break-word;
-  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-  height: 18em; }
-  .item-block .item-heading {
-    margin-left: 1em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    text-align: left; }
-
-.item-img-container {
-  width: 10em;
-  height: 10em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  margin-left: 1em; }
-  .item-img-container:hover {
-    outline: 4px solid #555555; }
-
-@media (min-width: 767px) {
-  .item-block {
-    height: 20em; }
-
-  .item-img-container {
-    width: 128px;
-    height: 128px; } }
 #notice {
   background: #f4f4f4; }
 
@@ -5921,7 +5885,7 @@ button.close {
 .social-button-container {
   margin-top: 3em;
   padding-top: 1em;
-  background: #eeeeee; }
+  background-color: #e2e2e2; }
 
 .creator-list {
   margin-top: 0;
@@ -5936,6 +5900,18 @@ button.close {
     line-height: 1.5;
     color: #555555; }
 
+#note {
+  padding: 2em 0;
+  background: #eeeeee;
+  color: #333; }
+  #note a {
+    color: inherit; }
+
+.note-list {
+  margin-bottom: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .75em; }
+
 .flex {
   display: flex;
   flex-direction: row;
@@ -5945,7 +5921,7 @@ button.close {
 .f-row {
   flex-grow: 1;
   flex-direction: row;
-  flex-basis: 300px; }
+  flex-basis: 280px; }
 
 .item-block {
   float: right;
@@ -5965,19 +5941,29 @@ button.close {
     font-weight: bold;
     text-align: left; }
   .item-block .item-body {
-    font-size: .9em; }
+    font-size: .9em;
+    line-height: 1.5; }
 
 .item-img-container {
-  width: 6em;
-  height: 6em;
+  width: 5em;
+  height: 5em;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   margin-left: 1em; }
 
 @media (min-width: 767px) {
+  .f-row {
+    flex-grow: 1;
+    flex-direction: row;
+    flex-basis: 320px; }
+
   .item-block {
-    height: 34em; } }
+    height: 26em; }
+
+  .item-img-container {
+    width: 6em;
+    height: 6em; } }
 .section {
   padding: 3em 0; }
 
@@ -6162,6 +6148,14 @@ p.top-kicker {
   background-repeat: no-repeat;
   background-position: left center; }
 
+.sponser-list {
+  text-align: center; }
+  .sponser-list .sponser-img-caption {
+    text-align: left; }
+
+@media (min-width: 767px) {
+  .sponser-list {
+    text-align: left; } }
 /*!
  * Social Buttons for Twitter Bootstrap v1.0.0
  *
@@ -6807,6 +6801,7 @@ p.top-kicker {
 .table {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .table th {
+    font-size: .9em;
     font-weight: normal;
     vertical-align: center; }
 

@@ -23,3 +23,16 @@
   background-repeat: no-repeat;
   background-position: left center;
 }
+
+.sponser-list {
+  text-align: center;
+  .sponser-img-caption {
+  	text-align: left;
+  }
+}
+
+@media (min-width: $screen-xs-max) {
+  .sponser-list {
+    text-align: left;
+  }
+}
