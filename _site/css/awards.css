@@ -5847,7 +5847,7 @@ button.close {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin-left: 0.5em; }
+  margin-left: 1em; }
   .item-img-container:hover {
     outline: 4px solid #555555; }
 
@@ -5912,33 +5912,6 @@ button.close {
     color: #fff;
     text-decoration: none; }
 
-#header .navbar-nav {
-  float: none;
-  width: 100%;
-  margin: auto; }
-#header .nav > li {
-  display: inline-block; }
-  #header .nav > li:nth-child(2n) > a:before {
-    background-image: url("../images/tategaki/daiya_orange.png"); }
-  #header .nav > li > a {
-    display: inline-block;
-    font-size: 1.3em; }
-    #header .nav > li > a:before {
-      display: inline-block;
-      position: relative;
-      top: 2px;
-      width: 1em;
-      height: 1em;
-      margin-right: .5em;
-      background-image: url("../images/tategaki/daiya.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      content: ""; }
-
-@media (min-width: 768px) {
-  #header .navbar-nav > li {
-    float: none; } }
 .btn {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
@@ -6009,6 +5982,7 @@ button.close {
   padding: 3em 0; }
 
 .section-header {
+  margin-top: 3em;
   margin-bottom: 3em;
   padding-left: 4rem;
   background-image: url("../images/awards/section-heading.png");
@@ -6038,6 +6012,33 @@ button.close {
   background-position: left center;
   background-size: contain; }
 
+#header .navbar-nav {
+  float: none;
+  width: 100%;
+  margin: auto; }
+#header .nav > li {
+  display: inline-block; }
+  #header .nav > li:nth-child(2n) > a:before {
+    background-image: url("../images/tategaki/daiya_orange.png"); }
+  #header .nav > li > a {
+    display: inline-block;
+    font-size: 1.3em; }
+    #header .nav > li > a:before {
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      width: 1em;
+      height: 1em;
+      margin-right: .5em;
+      background-image: url("../images/tategaki/daiya.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      content: ""; }
+
+@media (min-width: 768px) {
+  #header .navbar-nav > li {
+    float: none; } }
 #t {
   display: flex;
   position: relative;
@@ -6777,6 +6778,33 @@ p.top-kicker {
 .btn-youtube.active {
   background-color: #3e0309 \9; }
 
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  height: 6em;
+  vertical-align: middle;
+  border: 0; }
+
+.table {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .table th {
+    font-weight: normal;
+    vertical-align: center; }
+
+.application-table > thead > tr > th, .application-table > thead > tr > td, .application-table > tbody > tr > th, .application-table > tbody > tr > td, .application-table > tfoot > tr > th, .application-table > tfoot > tr > td {
+  border: 10px solid #f8f8f8; }
+
+.event-table > thead > tr > th, .event-table > thead > tr > td, .event-table > tbody > tr > th, .event-table > tbody > tr > td, .event-table > tfoot > tr > th, .event-table > tfoot > tr > td {
+  border: 10px solid #fff; }
+
+.table tr:nth-child(3n+1) th {
+  background-color: #c3ffe2; }
+.table tr:nth-child(3n+2) th {
+  background-color: #ddfff9; }
+.table tr:nth-child(3n+0) th {
+  background-color: #dfffd4; }
+
+@media (min-width: 767px) {
+  .table th {
+    text-align: center; } }
 /*フッター*/
 footer {
   padding: 18px 0;
@@ -6786,6 +6814,12 @@ footer {
 
 .copyright-notice {
   font-size: 10px; }
+
+.brand-logo {
+  height: 1.3em; }
+
+#application {
+  background-color: #f8f8f8; }
 
 #sponsers {
   background-color: #F6F6F7; }

@@ -67,6 +67,9 @@
 // Section
 @import "awards/section";
 
+// Navbar
+@import "./navbar";
+
 // Top
 @import "awards/top";
 
@@ -76,8 +79,19 @@
 // Social Buttons
 @import "./social-buttons";
 
+// Tables
+@import "./awards/tables";
+
 // Footer
 @import "./footer";
+
+.brand-logo {
+  height: 1.3em;
+}
+
+#application {
+  background-color: #f8f8f8;	
+}
 
 #sponsers {
   background-color: #F6F6F7;

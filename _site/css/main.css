@@ -5952,7 +5952,7 @@ button.close {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin-left: 0.5em; }
+  margin-left: 1em; }
   .item-img-container:hover {
     outline: 4px solid #555555; }
 
@@ -6017,33 +6017,6 @@ button.close {
     color: #fff;
     text-decoration: none; }
 
-#header .navbar-nav {
-  float: none;
-  width: 100%;
-  margin: auto; }
-#header .nav > li {
-  display: inline-block; }
-  #header .nav > li:nth-child(2n) > a:before {
-    background-image: url("../images/tategaki/daiya_orange.png"); }
-  #header .nav > li > a {
-    display: inline-block;
-    font-size: 1.3em; }
-    #header .nav > li > a:before {
-      display: inline-block;
-      position: relative;
-      top: 2px;
-      width: 1em;
-      height: 1em;
-      margin-right: .5em;
-      background-image: url("../images/tategaki/daiya.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      content: ""; }
-
-@media (min-width: 768px) {
-  #header .navbar-nav > li {
-    float: none; } }
 .btn {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
@@ -6147,6 +6120,33 @@ button.close {
   line-height: 1.2;
   font-weight: bold; }
 
+#header .navbar-nav {
+  float: none;
+  width: 100%;
+  margin: auto; }
+#header .nav > li {
+  display: inline-block; }
+  #header .nav > li:nth-child(2n) > a:before {
+    background-image: url("../images/tategaki/daiya_orange.png"); }
+  #header .nav > li > a {
+    display: inline-block;
+    font-size: 1.3em; }
+    #header .nav > li > a:before {
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      width: 1em;
+      height: 1em;
+      margin-right: .5em;
+      background-image: url("../images/tategaki/daiya.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      content: ""; }
+
+@media (min-width: 768px) {
+  #header .navbar-nav > li {
+    float: none; } }
 #t {
   display: flex;
   position: relative;

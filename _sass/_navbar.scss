@@ -1,0 +1,40 @@
+#header {
+  .navbar-nav {
+  	float: none;
+  	width: 100%;
+  	margin: auto;
+  }
+  .nav > li {
+  	display: inline-block;
+    &:nth-child(2n) {
+      > a:before {
+      	  background-image: url('../images/tategaki/daiya_orange.png');
+      }
+    }
+  	> a {
+      display: inline-block;
+      font-size: 1.3em;
+      &:before {
+      	display: inline-block;
+      	position: relative;
+      	top: 2px;
+      	width: 1em;
+      	height: 1em;
+      	margin-right: .5em;
+      	background-image: url('../images/tategaki/daiya.png');
+    	  background-repeat: no-repeat;
+    	  background-position: center center;
+    	  background-size: contain;
+    	  content: "";
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #header {
+    .navbar-nav > li {
+      float: none;
+    }
+  }
+}
