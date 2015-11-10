@@ -1,0 +1,61 @@
+#header {
+  .navbar-nav {
+  	float: none;
+  	width: 100%;
+  	margin: auto;
+  }
+  .nav > li {
+  	display: inline-block;
+    &:nth-child(2n) {
+      > a:before {
+      	  background-image: url('../images/awards/daiya_blue.png');
+      }
+    }
+  	> a {
+      display: inline-block;
+      font-size: 1.3em;
+      &:before {
+      	display: inline-block;
+      	position: relative;
+      	top: 2px;
+      	width: 1em;
+      	height: 1em;
+      	margin-right: .5em;
+      	background-image: url('../images/awards/daiya.png');
+    	  background-repeat: no-repeat;
+    	  background-position: center center;
+    	  background-size: contain;
+    	  content: "";
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  position: relative;
+  padding-top: 30px;
+  .brand-text {
+    display: inline-block;
+    padding-left: 1.5rem;
+    position: relative;
+    //bottom: 10px;
+    font-size: 1.2rem;
+    font-family: $font-family-sans-serif;
+    font-weight: bold;
+    line-height: 1.32rem;
+    height: 4rem;
+  }
+  img {
+    display: inline-block;
+    position: relative;
+    bottom: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  #header {
+    .navbar-nav > li {
+      float: none;
+    }
+  }
+}

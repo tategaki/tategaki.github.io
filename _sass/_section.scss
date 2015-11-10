@@ -1,0 +1,40 @@
+// Sections
+// -----------------
+.section {
+  padding: 3em 0;
+}
+.section-header {
+
+  margin-bottom: $spacer;
+}
+.section-heading {
+  margin: 0 auto $spacer-lg;
+  padding: 1em 1em;
+  //max-width: $screen-xs-max;
+  //max-width: 66.66667%;
+  font-size: 1.7em;
+  line-height: 1.2;
+  font-weight: bold;
+  color: white;
+  background-color: $gray;
+}
+.section-subheading {
+  margin: 0 auto $spacer;
+  padding: .25em 1em;
+  display: block;
+  max-width: $screen-xs-max;
+  max-width: 66.66667%;
+  font-family: $font-family-sans-serif;
+  font-size: .9em;
+  line-height: 1.2;
+  font-weight: normal;
+  color: $gray;
+}
+.section-heading-btn {
+  margin: 0;
+  font-size: 1.7em;
+  line-height: 1.2;
+  font-weight: bold;
+
+}
+

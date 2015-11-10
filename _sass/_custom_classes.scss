@@ -13,77 +13,16 @@
   @include wm-htb;
 }
 
-// flex-box
-// -----------------
-.flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+.tcy {
+  @include prop-set-prefix(text-combine, horizontal);
+  @include prop-set-prefix(text-combine-horizontal, all);
 }
-
-.f-row {
-  flex-grow:1;
-  flex-direction: row;
-  flex-basis: 300px;
-}
-
-.item-block {
-  float: right;
-  @include wm-vrl;
-  padding: 1em;
-  .item-heading {
-  	margin-left: $spacer;
-  	font-family: $font-family-sans-serif;
-  	font-weight: bold;
-  	text-align: left;
-  }
-  text-align: justify;
-  word-break: break-word;
-  font-family: $font-family-serif;
-  height: 18em;
-}
-
-.item-img-container {
-  width: 128px;
-  height: 128px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  margin-left: $spacer;
-}
-
-// Sections
-// -----------------
-.section {
-  padding: 3em 0;
-}
-.section-header {
-  margin-bottom: $spacer;
-}
-.section-heading {
-  margin: 0;
-  font-size: 1.7em;
-  line-height: 1.2;
-  font-weight: bold;
-}
-.section-subheading {
-  margin: $spacer auto;
-  display: block;
-  max-width: 30em;
-  font-family: $font-family-sans-serif;
-  font-size: 1em;
-  line-height: 1.2;
-  font-weight: normal;
-  color: $gray;
-  text-align: left;
-}
-
 
 // Notice
 // -----------------
 #notice {
-  background: #e2e2e2;
+  //background: #e2e2e2;
+  background: lighten($gray-lighter, 2%);
 }
 .notice-list {
   margin: 0 1em;
@@ -151,43 +90,50 @@
   }
 }
 
-#header {
-  .navbar-nav {
-  	float: none;
-  	width: 100%;
-  	margin: auto;
+.btn {
+  font-family: $font-family-sans-serif;
+}
+
+.inline-button {
+  .btn {
+    margin-bottom: $spacer;
   }
-  .nav > li {
-  	display: inline-block;
-    &:nth-child(2n) {
-      > a:before {
-      	  background-image: url('../images/tategaki/daiya_orange.png');
-      }
-    }
-  	> a {
-      display: inline-block;
-      font-size: 1.3em;
-      &:before {
-      	display: inline-block;
-      	position: relative;
-      	top: 2px;
-      	width: 1em;
-      	height: 1em;
-      	margin-right: .5em;
-      	background-image: url('../images/tategaki/daiya.png');
-    	background-repeat: no-repeat;
-    	background-position: center center;
-    	background-size: contain;
-    	content: "";
-      }
-    }
+}
+.social-button-container {
+  margin-top: $spacer-lg;
+  padding-top: $spacer;
+  //background: $navbar-inverse-bg;
+  
+  background-color: darken($gray-lighter,5%);
+}
+
+.creator-list {
+  margin-top: 0;
+  margin-right: $spacer;
+  padding-top: 1em;
+  list-style-type: none;
+  li {
+    display: inline-block;
+    padding-bottom: 1em;
+    font-size: .9em;
+    font-family: $font-family-sans-serif;
+    line-height: 1.5;
+    color: $gray;
   }
 }
 
-@media (min-width: 768px) {
-  #header {
-    .navbar-nav > li {
-      float: none;
-    }
+#note {
+  //margin-top: $spacer-lg;
+  padding: $spacer-md 0;
+  background: $gray-lighter;
+  color: #333;
+  a {
+    color: inherit;
   }
+}
+
+.note-list {
+  margin-bottom: 0;
+  font-family: $font-family-sans-serif;
+  font-size: .75em;
 }

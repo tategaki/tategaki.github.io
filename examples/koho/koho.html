@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: RiiPop;
+  src: url("fonts/RiiPopkkR.woff");
+}
+
+html {
+  width: 1780px;
+  height: 1240px;
+}
+
+body {
+  font-family: "IPAexGothic";
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+
+  background-image: url("images/contents_koho-1.png");
+  background-size: cover;
+  width: 100%;
+}
+
+/* ページ上部の画像 */
+header {
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  -moz-writing-mode: horizontal-rl;
+  -ms-writing-mode: lr-tb;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+p {
+  text-indent: 1em;
+  line-height: 1.8em;
+  text-align: justify;
+  line-break: strict;
+  margin: 0;
+}
+
+.header-images {
+  display: table;
+}
+
+.header-image {
+  position: relative;
+  display: table-cell;
+}
+
+.header-caption {
+  position: absolute;
+  bottom: 5%;
+}
+
+.header-caption.right {
+  right: 6%;
+}
+
+.title {
+  top: 10%;
+  left: 5%;
+}
+
+.main {
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 95%;
+  height: 95%;
+  margin: 5%;
+  padding-right: 1%;
+}
+
+.main-right {
+  box-sizing: border-box;
+  width: 80%;
+}
+
+.main-left {
+  box-sizing: border-box;
+  width: 20%;
+  height: 100%;
+
+  padding: 0 2%;
+  background: url("images/border.png") no-repeat;
+  background-size: auto 95%;
+  background-position: 100% 0%;
+  text-align: center;
+}
+
+.main-article {
+  margin-top: 22%;
+  width: 100%;
+}
+.main-article:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.main-article h4 {
+  background: url("images/title-icon.png") no-repeat;
+  background-size: 100% auto;
+  background-position: 100% 0%;
+  margin-top: 5%;
+  padding-top: 5%;
+}
+
+.main-article h3 {
+  display: inline-block;
+  background-image: url("images/title-bracket-top.png"), url("images/title-bracket-bottom.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% auto;
+  background-position: 100% 0%, 0% 100%;
+  margin: 5px 0 0 5px;
+  padding: 5%;
+  font-size: 1.6em;
+}
+
+.main-article section {
+  width: 100%;
+  height: 33%;
+}
+
+.main-article p {
+  margin: 10px 0;
+}
+
+.main-article .article-image {
+  margin-left: 10px;
+}
+
+.top-section {
+  border-bottom: 2px dotted;
+}
+
+.top-section .article-body {
+  width: 55%;
+}
+
+.middle-section {
+  border-bottom: 2px dotted;
+}
+
+.middle-section .article-body {
+  width: 60%;
+}
+
+.bottom-section {
+}
+
+.bottom-section .article-body {
+  width: 40%;
+}
+
+.article-image {
+  position: relative;
+}
+
+.article-image figcaption {
+  position: absolute;
+  left: 0;
+  bottom: -0.8em;
+  letter-spacing: -1px;
+
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  -moz-writing-mode: horizontal-rl;
+  -ms-writing-mode: lr-tb;
+}
+
+.layered-image {
+  width: 40%;
+}
+
+.layered-image .top-figure {
+  margin-left: 30%;
+}
+
+.layered-image .bottom-figure {
+  margin-top: 5%;
+}
+
+.left-article {
+  width: 100%;
+  margin-top: 2%;
+}
+
+.left-title {
+  position: relative;
+  width: 300px;
+  height: 120px;
+  background: url("images/left-title.png") no-repeat;
+  background-size: 300px 120px;
+}
+
+.left-title .title-text {
+  position: absolute;
+  top: 35%;
+  font-size: 1.5em;
+}
+
+/* IE11 */
+*::-ms-backdrop, .left-title .title-text {
+  left: 50%;
+}
+
+.left-images {
+  margin: 0 0 10% 0;
+  padding: 10%;
+  background-color: #fbf6f2;
+}
+
+.saitogi {
+  font-family: "RiiPop";
+  font-size: 2em;
+  margin-bottom: 5%;
+}
+
+/* 部品 */
+.horizontal {
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  -moz-writing-mode: horizontal-rl;
+  -ms-writing-mode: lr-tb;
+}
+
+.text-combine-horizontal {
+  text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+.text-stroke {
+  font-family: "Meiryo", "Hiragino Kaku Gothic Pro";
+  color: #ffffff;
+  text-fill-color: #c80852;
+  text-stroke-width: 1px;
+  text-stroke-color: #ffffff;
+  -webkit-text-fill-color: #c80852;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+}
+
+.text-shadow-stroke {
+  color: #c80852;
+  text-shadow: 1px 0 0 rgba(255, 255, 255, 1),
+  0 1px 0 rgba(255, 255, 255, 1),
+  -1px 0 0 rgba(255, 255, 255, 1),
+  0 -1px 0 rgba(255, 255, 255, 1);
+}
+
+.svg-text {
+  fill: #c80852;
+}
+
+.svg-text-stroke {
+  stroke: #ffffff;
+  stroke-width: 4px;
+}
+
+.svg-ruby {
+  font-size: 0.5em;
+  fill: #c80852;
+}
+
+.svg-ruby-stroke {
+  font-size: 0.5em;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+.shadow {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.border-radius-8 {
+  border-radius: 8px;
+}
+
+.pink {
+  color: #c80852;
+}
+
+.light-pink {
+  color: #e1979f;
+}
+
+.orange {
+  color: #f18d00;
+}
+
+.brown {
+  color: #9e4921;
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="header-images">
+    <figure class="header-image">
+      <img src="images/contents_koho-5.png" width="480" height="306">
+      <figcaption class="header-caption">
+        <svg width="400">
+          <text x="20" y="120" class="svg-text-stroke">
+            浄法寺の漆を使用した漆器や漆芸品を厳選し
+          </text>
+          <text x="20" y="120" class="svg-text" stroke-linejoin="round">
+            浄法寺の漆を使用した漆器や漆芸品を厳選し
+          </text>
+
+          <text x="144" y="128" class="svg-ruby-stroke">
+            てきせいしゃ
+          </text>
+          <text x="144" y="128" class="svg-ruby">
+            てきせいしゃ
+          </text>
+
+          <text x="20" y="145" class="svg-text-stroke">
+            展示・販売する「滴生舎」の内観
+          </text>
+          <text x="20" y="145" class="svg-text" stroke-linejoin="round">
+            展示・販売する「滴生舎」の内観
+          </text>
+        </svg>
+      </figcaption>
+    </figure>
+
+    <figure class="header-image">
+      <img src="images/contents_koho-4.png" width="925" height="306">
+      <figcaption class="header-caption right text-shadow-stroke">豊かな自然と歴史の足跡を残す川又地区</figcaption>
+
+      <h2 class="header-caption title text-stroke">
+        この土地に息づく文化と技を見直しながら、<br>
+        まちの魅力を全国へ、そして世界へ発信しています。
+      </h2>
+    </figure>
+  </div>
+</header>
+<div class="main border-radius-8">
+  <div class="main-right" style="overflow: hidden">
+    <article class="main-article">
+      <section class="top-section" style="float: left">
+        <div class="article-body">
+          <h4 class="light-pink">
+            山中に埋もれていた古道で<br>
+            ウォーキングイベント開催
+          </h4>
+
+          <p>
+            新たな宝さがしの舞台となった川又地区はわずか<span class="text-combine-horizontal">52</span>世帯ほどの集落ですが、こうした活動を進めた結果、１００余りもの「宝」が見つかりました。
+          </p>
+
+          <p>
+            その中の一つが、かつて「御山街道」と呼ばれていた古道。同市にある名古刹、天台寺へと続く旧参道で、昔は多くの人たちが行き来し、地元の人たちにとっても重要な生活道でした。それがクルマ社会の広がりとともに山の中に埋もれてしまっていたのです。
+          </p>
+
+          <p>この地域の宝を磨きあげるために、学生たちの協力を得て草刈りを行うなど古道を整備。雪が降る前に、地区住民と街道を歩き地区を学ぶイベントを開催する予定です。</p>
+
+          <p>
+            同市では、<span class="text-combine-horizontal">20</span>年来の宝さがしが実を結び、すでに９つのグループや地域がエコツアーを実施しています。川又地区の宝さがしも、最終的にはエコツーリズムにまで結びつけ、地域に新しい元気を呼び起こすのが目標です。
+          </p>
+        </div>
+
+        <div class="images" style="margin-right: 150px">
+          <figure class="article-image">
+            <img src="images/contents_koho-11.png" width="200" height="214" class="border-radius-8">
+            <figcaption class="pink">御山街道の宝マップ</figcaption>
+          </figure>
+
+          <figure class="article-image">
+            <img src="images/contents_koho-3.png" width="214" height="214" class="border-radius-8">
+            <figcaption class="pink">弘法大師の伝説がある湧水</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="middle-section" style="float: left">
+        <div class="article-body">
+          <h3 class="pink">
+            世界遺産の修復にも。<br>
+            日本一の漆の生産地
+          </h3>
+
+          <p>
+            ウルシの木の樹液である「<ruby><rb>漆</rb><rt>うるし</rt></ruby>」。９千年前の縄文時代から、塗料や接着剤として用いられ、わが国の伝統文化になくてはならない天然塗料です。ところが近年では、ほとんどが中国産となり、国産の漆はわずか２％ほど。その国産漆の約７割を占める日本一の産地が同市の浄法寺地区です。
+          </p>
+
+          <p>
+            国産漆は外国産に比べて主成分のウルシオールの含有率が高く、塗膜が丈夫で長持ちするといわれています。特に同地区で生産される「浄法寺漆」は良質な漆として知られており、その品質は高く評価されています。そのため、文化財の保存修復に重宝され、世界遺産に登録されている平泉の中尊寺金色堂や京都の
+            <ruby><rb>鹿苑寺</rb><rt>ろくおんじ</rt></ruby>金閣をはじめ、日光の二社一寺の修復にも使用されています。
+          </p>
+
+          <p>同市では国産漆の伝統を守るために、技術の継承や後継者の育成、ウルシの植樹などさまざまな取組を進めています。</p>
+        </div>
+
+        <div class="images" style="margin-right: 100px">
+          <figure class="article-image">
+            <img src="images/contents_koho-9.png" width="158" height="178" class="border-radius-8">
+            <figcaption class="pink">
+              下地から惜しみなく<br>
+              浄法寺漆を使用<br>
+              (二社一寺の修復現場)
+            </figcaption>
+          </figure>
+
+          <figure class="article-image">
+            <img src="images/contents_koho-7.png" width="256" height="194" class="border-radius-8">
+            <figcaption class="pink" style="width: 110%">
+              将来の浄法寺漆を担う職人を養成する<br>
+              研修制度を実施
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="bottom-section" style="float: left">
+        <div class="article-body">
+          <h4 class="light-pink">
+            地元から海外まで<br>
+            伝統文化を広げていくために
+          </h4>
+
+          <p>
+            同市は「<ruby><rb>浄法寺塗</rb><rt>じょうぼうじぬり</rt></ruby>」として知られる漆器づくりの里でもあり、漆器の需要開拓にも力を注いでいます。
+          </p>
+
+          <p>
+            首都圏の飲食店で実際に漆器を使ってもらい、その反応を聞くモニター調査などのほか、都内各地のギャラリーでの展示販売も積極的に行っています。さらにニューヨークでのフェアに出展するなど、海外での販路拡大にもチャレンジしています。
+          </p>
+
+          <p>
+            「うるしはじめ事業」もユニークな取組です。これは、幼いうちから漆器に親しむ機会をつくろうと、同市の赤ちゃんを対象に「浄法寺塗」の器と<ruby><rb>匙</rb><rt>さじ</rt></ruby>を貸し出すもの。地元から海外まで、漆という伝統文化を受け継ぎ広げていくために、地域をあげて取り組んでいます。
+          </p>
+        </div>
+
+        <div class="images" style="margin-right: 40px">
+          <figure class="article-image">
+            <img src="images/contents_koho-2.png" width="212" height="192" class="border-radius-8">
+            <figcaption class="pink" style="width: 125%">
+              ニューヨークＭＴＣキッチンでの<br>
+              展示販売会の様子(昨年度)
+            </figcaption>
+          </figure>
+
+          <figure class="article-image">
+            <img src="images/contents_koho-8.png" width="214" height="236" class="border-radius-8">
+          </figure>
+
+          <div class="layered-image" style="position: relative;">
+            <figure class="article-image top-figure" style="float: left">
+              <img src="images/contents_koho-6.png" width="198" height="136" class="border-radius-8">
+              <figcaption class="pink" style="left: 30%; bottom: -2.2em; width: 70%;">
+                乳幼児から漆器<br>に親しむ様子
+              </figcaption>
+            </figure>
+
+            <figure class="article-image bottom-figure" style="position: absolute; bottom: -20px; right: 150px">
+              <img src="images/contents_koho-10.png" width="116" height="94" class="border-radius-8">
+              <figcaption class="pink" style="top: 40%; left: 100%; bottom: -2em; width: 100%">
+                お<ruby><rb>匙</rb><rt>さじ</rt></ruby>は口当たりが<br>良いと好評
+              </figcaption>
+            </figure>
+          </div>
+
+
+        </div>
+      </section>
+    </article>
+  </div>
+
+  <div class="main-left">
+    <article class="left-article horizontal">
+      <h3 class="left-title orange"><span class="title-text">郷土EYE</span></h3>
+
+      <figure class="left-images shadow text-center border-radius-8">
+        <figcaption class="title brown saitogi">サイトギ</figcaption>
+        <img src="images/contents_koho-13.png" width="232" height="214" class="border-radius-8">
+      </figure>
+
+      <p>
+        <ruby><rb>似鳥</rb><rt>にたどり</rt></ruby>地区にある似鳥八幡神社は、天正5年（1577）に修復されたという言い伝えが残る由緒ある神社。旧暦1月6日にあたる2月上旬、春の例大祭として行われる行事が「サイトギ」です。国の登録無形文化財に指定されています。
+      </p>
+
+      <p>
+        この伝統行事では、旧暦元旦に五穀入りのお<ruby><rb>米盛</rb><rt>こも</rt></ruby>りを神前に供えます。そして旧暦1月6日の夜8時頃、下帯姿の若者たちが<ruby><rb>水垢離</rb><rt>みずごり</rt></ruby>をした後、寒風に吹かれながら境内のお堂を参拝して巡ります。境内では<ruby><rb>井桁</rb><rt>いげた</rt></ruby>に組んだ生木が燃え盛り、お堂を巡ってきた若者たちがこれを囲み、丸太で突きながら井桁を揺さぶります。この時に舞い上がった火の粉の流れる方向で、その年の豊作・凶作を占います。南への流れが豊作の予兆といわれています。また、神前に供えたお米盛りの欠け方でも、同様に吉凶を占います。
+      </p>
+    </article>
+  </div>
+</div>
+</body>
+</html>

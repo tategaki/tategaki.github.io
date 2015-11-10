@@ -1,0 +1,38 @@
+// Sections
+// -----------------
+.section {
+  padding: 3em 0;
+}
+.section-header {
+  margin-top: $spacer-lg;
+  margin-bottom: $spacer-lg;
+  padding-left: 4rem;
+  background-image: url('../images/awards/section-heading.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.section-heading {
+  margin: 0;
+  font-size: 2.5em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.section-subheading {
+  font-family: $font-family-sans-serif;
+  font-size: 1.5em;
+  line-height: 1.2;
+  font-weight: normal;
+  color: $gray;
+}
+
+.subsection-heading {
+  margin-bottom: $spacer-md;
+  padding-left: 3rem;
+  font-size: 1.3em;
+  font-family: $font-family-sans-serif;
+  background-image: url('../images/awards/daiya.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+

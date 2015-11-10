@@ -1,9 +1,10 @@
 <section id="commentaries" class="section">
+    <header class="text-center section-header">
+      <h3 class="section-heading">技術解説</h3>
+      <p class="section-subheading">縦書きをはじめとする日本語レイアウトを実現するための仕様について解説します。</p>
+    </header>
   <div class="container">
-  	<header class="text-center section-header">
-  	  <h3 class="section-heading">技術解説</h3>
-      <p class="section-subheading">本叢書は洽ねく大家の手に成るもの、或は青年の必讀書として世に傳はるものゝ中より、特に我青年諸氏に利益と快樂とを與ふるものを撰拔せり。</p>
-  	</header>
+
   	<div class="tanzaku">
      {% for post in site.categories.commentaries reversed limit:5 %}
   	   <a class="tanzaku-item" href="{{ post.url }}">
@@ -11,8 +12,8 @@
   	   	  <div class="tanzaku-item-heading">
     	    {{ post.title }}
     	  </div>
-  	   	  <div class="tanzaku-item-body">
-    	  フィッシュフック付きＲ小文字，有声歯茎弾き音
+  	   	<div class="tanzaku-item-body">
+    	    {{ post.description }}
     	  </div>
     	</div>
   	   </a>

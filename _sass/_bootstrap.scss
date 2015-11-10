@@ -58,14 +58,32 @@
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
+// Custom classes
+@import "./custom_classes";
+
+// Flexbox
+@import "./flex";
+
+// Section
+@import "./section";
+
+// Navbar
+@import "./navbar";
+
+// Top
+@import "./top";
+
 // Tanzaku
 @import "./tanzaku";
 
 // mcol
 @import "./multi_col";
 
-// Footer
-@import "./custom_classes";
+// Social Buttons
+@import "./social-buttons";
 
 // Footer
 @import "./footer";
+
+// Posts
+@import "./posts";

@@ -1,0 +1,79 @@
+<section id="sponsers" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-heading">協賛</h2>
+  	  <p class="section-subheading">Sponsers</p>
+    </header>
+    <div class="section-body">
+      <section class="subsection">
+        <h3 class="subsection-heading">協賛企業</h3>
+        <div class="subsection-body">
+          <ul class="list-inline sponser-list">
+          {% for item in page.sponser_companies %}
+            <li>
+              <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+              </a>
+              <p class="sponser-img-caption"><a href="{{item.url}}">
+              {{item.name}}
+              </a></p>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </section>
+      <section class="subsection">
+        <h3 class="subsection-heading">協賛団体</h3>
+        <div class="subsection-body">
+          <ul class="list-inline sponser-list">
+          {% for item in page.sponser_organizations %}
+            <li>
+              <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+              </a>
+              <p class="sponser-img-caption"><a href="{{item.url}}">
+              {{item.name}}
+              </a></p>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </section>
+    </div>
+    <header class="section-header">
+      <h2 class="section-heading">後援</h2>
+  	  <p class="section-subheading">Support</p>
+    </header>
+    <div class="section-body">
+      <ul class="list-inline sponser-list">
+      {% for item in page.supports %}
+        <li>
+          <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+          </a>
+          <p class="sponser-img-caption"><a href="{{item.url}}">
+          {{item.name}}
+          </a></p>
+        </li>
+      {% endfor %}
+      </ul>
+      <p class="sponser-img-caption"><a href="http://www.w3c.jp/">
+          W3C/Keio
+          </a></p>
+    </div>
+    <header class="section-header">
+      <h2 class="section-heading">メディアパートナー</h2>
+      <p class="section-subheading">Media Partners</p>
+    </header>
+    <div class="section-body">
+      <ul class="list-inline sponser-list">
+      {% for item in page.partners %}
+        <li>
+          <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+          </a>
+          <p class="sponser-img-caption"><a href="{{item.url}}">
+          {{item.name}}
+          </a></p>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

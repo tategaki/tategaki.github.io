@@ -1,0 +1,61 @@
+.table {
+  > thead, > tbody, > tfoot {
+    > tr{
+    	> th, > td {
+    	  height: $spacer * 6;
+    	  vertical-align: middle;
+    	  border: 0;
+      }
+    } 
+  }
+}
+
+.table {
+  font-family: $font-family-sans-serif;
+  th {
+  	font-size: .9em;
+    font-weight: normal;
+    vertical-align: center;
+  }
+}
+
+.application-table {
+  > thead, > tbody, > tfoot {
+    > tr{
+    	> th, > td {
+    	  border: 10px solid #f8f8f8;
+      }
+    } 
+  }
+}
+
+.event-table {
+  > thead, > tbody, > tfoot {
+    > tr{
+    	> th, > td {
+    	  border: 10px solid $body-bg;
+      }
+    } 
+  }
+}
+
+// Cell color
+.table {
+  tr:nth-child(3n+1) th {
+  	background-color: $color-cell-first;
+  }
+  tr:nth-child(3n+2) th {
+  	background-color: $color-cell-second;
+  }
+  tr:nth-child(3n+0) th {
+  	background-color: $color-cell-third
+  }
+}
+
+@media (min-width: $screen-xs-max) {
+  .table {
+    th {
+      text-align: center;
+    }
+  }
+}

@@ -1,63 +1,92 @@
 .tanzaku {
-  background: #f8f8f8; }
-  .tanzaku .tanzaku-item {
-    background: #fff; }
-    .tanzaku .tanzaku-item .tanzaku-item-heading {
+  background: #f8f8f8;
+
+  .tanzaku-item {
+    background: #fff;
+
+    .tanzaku-item-heading {
       font-size: 1.5em;
       font-weight: bold;
       font-family: $font-family-serif;
-    .tanzaku .tanzaku-item .tanzaku-item-body {
+    }
+
+    .tanzaku-item-body {
       font-size: .9em;
-      font-family: $font-family-sans-serif; }
+      font-family: $font-family-sans-serif;
+    }
+  }
+}
 
 .tanzaku-item {
   color: inherit;
   cursor: pointer;
-  text-decoration: none; }
-  .tanzaku-item:hover {
-    background: $gray-lighter;
+  text-decoration: none;
+
+  &:hover {
+    background: $gray;
     color: #fff;
-    text-decoration: inherit; }
+    text-decoration: inherit;
+  }
+}
 
 .tanzaku {
   display: flex;
   width: 100%;
   height: auto;
   flex-flow: column nowrap;
-  justify-content: center; }
-  .tanzaku .tanzaku-item {
+  justify-content: center;
+
+  .tanzaku-item {
     display: flex;
     width: 100%;
     flex-shrink: none;
     flex-flow: column nowrap;
-    justify-content: center; }
-    .tanzaku .tanzaku-item .tanzaku-item-block {
-      padding: 0 2em;
-      flex-basis: 70px; }
-      .tanzaku .tanzaku-item .tanzaku-item-block .tanzaku-item-heading {
-        border: none;
-        padding: 0;
-        border-bottom: 1px solid #999; }
-      .tanzaku .tanzaku-item .tanzaku-item-block .tanzaku-item-body {
-        border: none;
-        padding: 0;
-        padding-top: .25rem; }
+    justify-content: center;
 
-@media (min-width: 767px) {
+    .tanzaku-item-block {
+      padding: 0 2em;
+      flex-basis: 70px;
+
+      .tanzaku-item-heading {
+        border: none;
+        padding: 0;
+        border-bottom: 1px solid #999;
+      }
+
+      .tanzaku-item-body {
+        border: none;
+        padding: 0;
+        padding-top: .25rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xs-max) {
   .tanzaku {
     height: 400px;
-    @include wm-vrl;}
-    .tanzaku .tanzaku-item {
-      flex-basis: 100px; }
-      .tanzaku .tanzaku-item .tanzaku-item-block {
+    @include wm-vrl;
+
+    .tanzaku-item {
+      flex-basis: 100px;
+
+      .tanzaku-item-block {
         padding: 2rem 0;
-        flex-basis: 70px; }
-        .tanzaku .tanzaku-item .tanzaku-item-block .tanzaku-item-heading {
+        flex-basis: 70px;
+
+        .tanzaku-item-heading {
           border: none;
           padding: 0;
           border-left: 1px solid #999;
-          padding-left: .25rem; }
-        .tanzaku .tanzaku-item .tanzaku-item-block .tanzaku-item-body {
+          padding-left: .25rem;
+        }
+
+        .tanzaku-item-body {
           border: none;
           padding: 0;
-          padding-right: .25rem; } }
+          padding-right: .25rem;
+        }
+      }
+    }
+  }
+}

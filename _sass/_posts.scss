@@ -1,0 +1,41 @@
+.post-header {
+  margin-top: $spacer-lg;
+  .post-title {
+  	margin: 0;
+  	font-family: $font-family-serif;
+  	font-weight: bold;
+  	line-height: 1.1;
+  }
+  .post-meta {
+  	font-size: 1rem;
+  	font-family: $font-family-sans-serif;
+  }
+}
+
+.post-content {
+  padding-bottom: $spacer-lg;
+  p img {
+  	max-width: 100%;
+  	display: block;
+  	margin: auto;
+  }
+  table {
+  	@extend .table;
+  	@extend .table-striped;
+  }
+  .line-numbers {
+  	padding-right: 1em;
+  }
+  h2, .h2 {
+  	margin-top: $spacer-md;
+    border-bottom: 1px solid $gray;
+  	font-weight: bold;
+  	font-family: $font-family-sans-serif;
+  }
+  h3, .h3 {
+  	margin-top: $spacer-md;
+  	margin-bottom: $spacer;
+  	font-weight: bold;
+  	font-family: $font-family-sans-serif;
+  }
+}

@@ -1,19 +1,27 @@
 <section class="section" id="examples">
-  <div class="container">
     <header class="text-center section-header">
-      <h3 class="section-heading">タイトル</h3>
-      <p class="section-subheading">本叢書は洽ねく大家の手に成るもの、或は青年の必讀書として世に傳はるものゝ中より、特に我青年諸氏に利益と快樂とを與ふるものを撰拔せり。</p>
+      <h3 class="section-heading">一般の方によるWebサイト</h3>
+      <p class="section-subheading">CSSによる縦書きを使用してデザインされたWebサイトを紹介します。</p>
     </header>
+  <div class="container">
+
     <div class="flex">
     {% for ex_item in page.ex_items %}
       {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
       <div class="f-row f-row-{{thecycle}}">
         <div class="item-block">
-          <div class="item-img-container" style="background-image:url('{{ex_item.img}}')">
+          <a href="{{ex_item.url}}">
+          <div class="item-img-container" style="background-image:url('/images/tategaki/examples/{{ex_item.img}}')">
           </div>
+          </a>
           <div class="item-heading">{{ex_item.name}}</div>
           <div class="item-body">
             <p>{{ex_item.description}}</p>
+            <ul class="creator-list">
+              <li>制作</li>
+            {% for creator in ex_item.creators %}
+              <li>{{creator}}</li>
+            {% endfor %}
           </div>
         </div>
       </div>
