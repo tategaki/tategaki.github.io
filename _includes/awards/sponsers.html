@@ -11,7 +11,7 @@
           <ul class="list-inline sponser-list">
           {% for item in page.sponser_companies %}
             <li>
-              <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+              <a class="sponser-img-container" style="background-image:url('{{ site.baseurl }}images/awards/{{item.img}}')" href="{{item.url}}">
               </a>
               <p class="sponser-img-caption"><a href="{{item.url}}">
               {{item.name}}
@@ -27,7 +27,7 @@
           <ul class="list-inline sponser-list">
           {% for item in page.sponser_organizations %}
             <li>
-              <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+              <a class="sponser-img-container" style="background-image:url('{{ site.baseurl }}images/awards/{{item.img}}')" href="{{item.url}}">
               </a>
               <p class="sponser-img-caption"><a href="{{item.url}}">
               {{item.name}}
@@ -46,7 +46,7 @@
       <ul class="list-inline sponser-list">
       {% for item in page.supports %}
         <li>
-          <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+          <a class="sponser-img-container" style="background-image:url('{{ site.baseurl }}images/awards/{{item.img}}')" href="{{item.url}}">
           </a>
           <p class="sponser-img-caption"><a href="{{item.url}}">
           {{item.name}}
@@ -66,7 +66,7 @@
       <ul class="list-inline sponser-list">
       {% for item in page.partners %}
         <li>
-          <a class="sponser-img-container" style="background-image:url('/images/awards/{{item.img}}')" href="{{item.url}}">
+          <a class="sponser-img-container" style="background-image:url('{{ site.baseurl }}images/awards/{{item.img}}')" href="{{item.url}}">
           </a>
           <p class="sponser-img-caption"><a href="{{item.url}}">
           {{item.name}}

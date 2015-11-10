@@ -2,7 +2,7 @@
 title: 縦書きWeb普及委員会
 email: tategaki@est.co.jp
 description: |
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/tategaki/" # the subpath of your site, e.g. /blog/
 url: "http://tategaki.github.io" # the base hostname & protocol for your site
 twitter_username: nil
 github_username:  nil
