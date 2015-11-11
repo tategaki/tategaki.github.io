@@ -5951,12 +5951,6 @@ button.close {
       background-size: contain;
       content: ""; }
 
-.f-row-odd {
-  background: #f8f8f8; }
-
-.f-row-even {
-  background: #fff; }
-
 @media (max-width: 500px) {
   .f-row-odd {
     background-repeat: no-repeat;
@@ -6063,6 +6057,12 @@ button.close {
   .item-img-container {
     width: 128px;
     height: 128px; } }
+.f-row-odd {
+  background: #f8f8f8; }
+
+.f-row-even {
+  background: #fff; }
+
 .section {
   padding: 3em 0; }
 
