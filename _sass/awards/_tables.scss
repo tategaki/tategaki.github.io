@@ -37,9 +37,11 @@
 .application-table {
   > thead, > tbody, > tfoot {
     > tr{
+      > td {
+        text-align: justify;
+      }
     	> th, > td {
     	  border: 10px solid #f8f8f8;
-        text-align: justify;
       }
     } 
   }
