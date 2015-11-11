@@ -29,4 +29,8 @@ $nav-link-padding: 20px 15px;
 
 $font-family-top: 'CometStd-B', $font-family-sans-serif;
 $font-family-heading: 'ModeMinAStd-B', $font-family-serif;
-$font-family-ud-sans-serif: IwaUDGoHonPro-Th, $font-family-sans-serif;
+$font-family-ud-sans-serif: 'IwaUDGoHonPro-Th', $font-family-sans-serif;
+
+$font-family-base: $font-family-ud-sans-serif;
+
+$font-family-sans-serif: $font-family-ud-sans-serif;
