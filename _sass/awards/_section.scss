@@ -1,13 +1,15 @@
 // Sections
 // -----------------
 .section {
-  padding: 3em 0;
+  padding: 2em 0;
 }
 .section-header {
   margin-top: $spacer-lg;
   margin-bottom: $spacer-lg;
-  padding-left: 4rem;
-  background-image: url('../images/awards/section-heading.png');
+  //padding-left: 5.5rem;
+  padding-left: 2.71em + $spacer;
+  //background-image: url('../images/awards/section-heading.png');
+  background-image: url('../images/awards/midashi_triangle.png');
   background-repeat: no-repeat;
   background-position: left center;
 }
@@ -15,12 +17,12 @@
   margin: 0;
   font-size: 2.5em;
   line-height: 1.2;
-  font-family: $font-family-heading;
+  font-family: $font-family-top;
   font-weight: bold;
 }
 .section-subheading {
   margin-top: $spacer / 4;
-  font-family: $font-family-heading;
+  font-family: $font-family-top;
   font-size: 1.25em;
   line-height: 1.2;
   font-weight: normal;

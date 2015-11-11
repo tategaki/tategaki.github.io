@@ -1087,7 +1087,7 @@ a {
   text-decoration: none; }
   a:hover, a:focus {
     color: #ff7ea5;
-    text-decoration: underline; }
+    text-decoration: none; }
   a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
@@ -3095,7 +3095,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     border-color: transparent; }
   .btn-link:hover, .btn-link:focus {
     color: #ff7ea5;
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent; }
   .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
     color: #777777;
@@ -5846,12 +5846,6 @@ button.close {
       background-size: contain;
       content: ""; }
 
-.f-row-odd {
-  background: #f8f8f8; }
-
-.f-row-even {
-  background: #fff; }
-
 @media (max-width: 500px) {
   .f-row-odd {
     background-repeat: no-repeat;
@@ -5964,14 +5958,20 @@ button.close {
   .item-img-container {
     width: 6em;
     height: 6em; } }
+.f-row-odd {
+  background: #fff; }
+
+.f-row-even {
+  background: #fff; }
+
 .section {
-  padding: 3em 0; }
+  padding: 2em 0; }
 
 .section-header {
   margin-top: 3em;
   margin-bottom: 3em;
-  padding-left: 4rem;
-  background-image: url("../images/awards/section-heading.png");
+  padding-left: 3.71em;
+  background-image: url("../images/awards/midashi_triangle.png");
   background-repeat: no-repeat;
   background-position: left center; }
 
@@ -5979,12 +5979,12 @@ button.close {
   margin: 0;
   font-size: 2.5em;
   line-height: 1.2;
-  font-family: "ModeMinAStd-B", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-family: "CometStd-B", YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-weight: bold; }
 
 .section-subheading {
   margin-top: 0.25em;
-  font-family: "ModeMinAStd-B", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-family: "CometStd-B", YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 1.25em;
   line-height: 1.2;
   font-weight: normal;
@@ -6147,10 +6147,18 @@ p.top-kicker {
 .sponser-img-caption {
   padding-left: 1.25em;
   line-height: 28px;
+  font-size: .9em;
   font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-  background-image: url("../images/awards/green_right.png");
   background-repeat: no-repeat;
-  background-position: left center; }
+  background-position: left center;
+  background-image: url("../images/awards/triangle_yellow.png"); }
+
+.sponser-list li:nth-child(3n+1) .sponser-img-caption {
+  background-image: url("../images/awards/triangle_green.png"); }
+.sponser-list li:nth-child(3n+2) .sponser-img-caption {
+  background-image: url("../images/awards/triangle_pink.png"); }
+.sponser-list li:nth-child(3n+0) .sponser-img-caption {
+  background-image: url("../images/awards/triangle_yellow.png"); }
 
 .sponser-list {
   text-align: center; }
@@ -6808,12 +6816,25 @@ p.top-kicker {
     font-size: .9em;
     font-weight: normal;
     vertical-align: center; }
+  .table th p, .table th dt, .table th dd, .table td p, .table td dt, .table td dd {
+    line-height: 1.6; }
+  .table th p, .table td p {
+    margin-bottom: 1em; }
+  .table th dl, .table td dl {
+    margin-top: 1em;
+    margin-left: 1em; }
+  .table th dd, .table td dd {
+    padding-left: 1em; }
 
 .application-table > thead > tr > th, .application-table > thead > tr > td, .application-table > tbody > tr > th, .application-table > tbody > tr > td, .application-table > tfoot > tr > th, .application-table > tfoot > tr > td {
-  border: 10px solid #f8f8f8; }
+  border: 10px solid #f8f8f8;
+  text-align: justify; }
 
-.event-table > thead > tr > th, .event-table > thead > tr > td, .event-table > tbody > tr > th, .event-table > tbody > tr > td, .event-table > tfoot > tr > th, .event-table > tfoot > tr > td {
+.table.event-table > thead > tr > th, .table.event-table > thead > tr > td, .table.event-table > tbody > tr > th, .table.event-table > tbody > tr > td, .table.event-table > tfoot > tr > th, .table.event-table > tfoot > tr > td {
   border: 10px solid #fff; }
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  line-height: 1.6; }
 
 .table tr:nth-child(3n+1) th {
   background-color: #c3ffe2; }
@@ -6841,5 +6862,5 @@ footer {
 #application {
   background-color: #f8f8f8; }
 
-#sponsers {
-  background-color: #F6F6F7; }
+#sponsors {
+  background-color: #f8f8f8; }
