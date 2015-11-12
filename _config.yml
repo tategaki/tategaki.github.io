@@ -12,3 +12,5 @@ github_username:  nil
 markdown: kramdown
 kramdown:
   input: GFM
+
+highlighter: pygments
