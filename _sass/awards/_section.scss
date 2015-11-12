@@ -29,14 +29,18 @@
   color: lighten($gray-light, 10%);
 }
 
-.subsection-heading {
+.subsection-header {
   margin-bottom: $spacer-md;
   padding-left: 3rem;
-  font-size: 1.3em;
-  font-family: $font-family-sans-serif;
   background-image: url('../images/awards/daiya.png');
   background-repeat: no-repeat;
-  background-position: left center;
-  background-size: contain;
+  background-position: left top;
+  background-size: 1.2em;
+}
+
+.subsection-heading {
+  font-size: 1.3em;
+  font-family: $font-family-top;
+
 }
 

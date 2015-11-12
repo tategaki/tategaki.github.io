@@ -1,3 +1,127 @@
+html {
+  font-size: $font-size-base;
+}
+
+$gd: 1.6rem;
+
+.post-header {
+  margin-top: $gd * 1;
+  margin-bottom: $gd * 2;
+  .post-title {
+    margin: 0;
+    font-family: $font-family-serif;
+    font-weight: bold;
+    font-size: $gd * 1.5 / 1.2;
+    line-height: $gd * 1.5;
+  }
+  .post-meta {
+    margin-left: .25rem;
+    font-size: .9rem;
+    line-height: $gd;
+    font-family: $font-family-sans-serif;
+    color: $gray-light;
+  }
+  .breadcrumb {
+    margin-bottom: $gd / 1;
+    font-family: $font-family-sans-serif;
+    a {
+      color: $gray-light;
+    }
+  }
+  .block {
+    margin-bottom: $gd;
+    padding: .5rem 1rem;
+    border: 1px solid lighten($gray-light, 30%);
+    border-radius: 5px;
+    font-family: $font-family-serif;
+  }
+  .lead {
+    margin: 0;
+    font-family: $font-family-serif;
+    font-size: .9rem;
+    line-height: $gd;
+  }
+}
+
+.post-content {
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  line-height: $gd;
+  margin-bottom: $gd * 6;
+  h2, .h2 {
+    margin-top: $gd * 2;
+    margin-bottom: .75rem;
+    border-bottom: 1px solid $gray-light;
+    padding-bottom: .25rem;
+    font-size: 1.4rem;
+    line-height: $gd;
+    font-weight: bold;
+  }
+  h3, .h3 {
+    margin-top: $gd;
+    margin-bottom: $gd / 2;
+    font-size: 1.2rem;
+    line-height: $gd;
+    font-weight: bold;
+    color: $gray;
+  }
+  h4, .h4 {
+    margin-top: $gd;
+    margin-bottom: $gd;
+    font-size: 1rem;
+    line-height: $gd;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: $gd;
+  }
+  .highlighter-coderay {
+    margin-bottom: $gd;
+  }
+  ul, ol {
+    margin-bottom: $gd;
+  }
+  li {
+    line-height: $gd;
+  }
+  table {
+    @extend .table;
+    @extend .table-striped;
+    margin-bottom: $gd;
+  }
+  .line-numbers {
+    padding-right: 1em;
+    a {
+      color: $gray-light;
+    }
+  }
+  p img {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    padding: .5rem 1rem;
+    border: 1px solid lighten($gray-light, 30%);
+    border-radius: 3px;
+ 
+  }
+  code {
+    color: $gray-dark;
+    padding: .2em 0;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px;
+
+    &:before,
+    &:after {
+      letter-spacing: -0.2em;
+      content: '\00a0';
+    }
+  }
+}
+
+
+/*
 .post-header {
   margin-top: $spacer-lg;
   .post-title {
@@ -13,6 +137,7 @@
 }
 
 .post-content {
+  font-family: $font-family-sans-serif;
   padding-bottom: $spacer-lg;
   p img {
   	max-width: 100%;
@@ -39,3 +164,4 @@
   	font-family: $font-family-sans-serif;
   }
 }
+*/
