@@ -21,7 +21,7 @@ Writing Modesモジュールでは、行の進行方向、文字の進行方向�
 
 <small>参照URL: <https://drafts.csswg.org/css-writing-modes-3/></small>
 
-![]({{ site.baseurl}}/examples/writing-modes/writing-mode-3.png)
+![左から右、右から左、上から下など言語によってさまざまな書字方向がある]({{ site.baseurl}}/examples/writing-modes/writing-mode-3.png)
 
 <p class="capiton">Writing Modesモジュールで扱っている書字方向の概略図</p>
 
@@ -50,9 +50,9 @@ body {
 
 <small>※ Internet Exploter 向けには-ms-writing-mode: tb-rlを使用します。歴史的に、IEは早期にこの値で縦書きに対応していたため、値が異なるものになっています。</small>
 
-![]({{ site.baseurl}}/examples/writing-modes/writing-mode--horizontal-tb.png)
+![Chrome 46でwriting-modeを指定しない場合の表示例]({{ site.baseurl}}/examples/writing-modes/writing-mode--horizontal-tb.png)
 
-![]({{ site.baseurl}}/examples/writing-modes/writing-mode--vertical-rl.png)
+![Chrome 46でwriting-modeに縦書きを指定した場合の表示例]({{ site.baseurl}}/examples/writing-modes/writing-mode--vertical-rl.png)
 
 <p class="caption">同一のHTMLから得られる2つの描画結果</p>
 
@@ -103,7 +103,7 @@ writing-modeを指定すると、HTMLのほとんどの要素が回転します�
 <p class="ja_rtl">東京駅ニテ列車ヲ待ツ</p>
 ```
 
-![]({{ site.baseurl}}/examples/writing-modes/tokyo-station-rtl.png)
+![日本語を右から左へ横書きで表示した例]({{ site.baseurl}}/examples/writing-modes/tokyo-station-rtl.png)
 
 
 ### 文字の向き
@@ -199,7 +199,7 @@ UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tu�
 <p class="tcy_2">「8月、10月、12月」</p>
 ```
 
-![]({{ site.baseurl}}/examples/writing-modes/writing-mode--horizontal-tb-ie.png)
+![Internet Explorer 11による自動縦中横の表示例]({{ site.baseurl}}/examples/writing-modes/writing-mode--horizontal-tb-ie.png)
 
 
 ### 用語の再定義
