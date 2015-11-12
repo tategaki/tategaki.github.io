@@ -1,0 +1,30 @@
+// Notice
+// -----------------
+#notice {
+  //background: #e2e2e2;
+  background: lighten($gray-lighter, 2%);
+  //background: $gray-lighter;
+}
+.notice-list {
+  margin: 0 1em;
+  border-radius: 3px;
+  padding: 1em;
+  background-color: #fff;
+}
+.notice-list-item {
+  margin-bottom: 5px;
+  a {
+  	color: inherit;
+    &:before {
+    	width: .8em;
+    	height: .8em;
+    	margin-right: .5em;
+    	display: inline-block;
+    	background-image: url('../images/tategaki/right_orange.png');
+    	background-repeat: no-repeat;
+    	background-position: center bottom;
+    	background-size: contain;
+    	content: "";
+    }
+  }
+}
