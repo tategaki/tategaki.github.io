@@ -4131,7 +4131,7 @@ tbody.collapse.in {
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
   border-radius: 4px; }
   .breadcrumb > li {
     display: inline-block; }
@@ -6009,7 +6009,7 @@ button.close {
 .note-list {
   margin-bottom: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: .75em; }
+  font-size: .78em; }
 
 .flex {
   display: flex;
@@ -6123,6 +6123,41 @@ button.close {
 @media (min-width: 768px) {
   #header .navbar-nav > li {
     float: none; } }
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none; }
+
+  .navbar-toggle {
+    display: block; }
+
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+
+  .navbar-collapse.collapse {
+    display: none !important; }
+
+  .navbar-nav {
+    float: none !important;
+    margin: 7.5px -15px; }
+
+  .navbar-nav > li {
+    float: none; }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+
+  .navbar-text {
+    float: none;
+    margin: 15px 0; }
+
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in {
+    display: block !important; }
+
+  .collapsing {
+    overflow: hidden !important; } }
 #t {
   display: flex;
   position: relative;
@@ -6959,32 +6994,140 @@ footer {
 .copyright-notice {
   font-size: 10px; }
 
+html {
+  font-size: 14px; }
+
 .post-header {
-  margin-top: 3em; }
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem; }
   .post-header .post-title {
     margin: 0;
     font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
     font-weight: bold;
-    line-height: 1.1; }
+    font-size: 2.0rem;
+    line-height: 2.4rem; }
   .post-header .post-meta {
-    font-size: 1rem;
+    margin-left: .25rem;
+    font-size: .9rem;
+    line-height: 1.6rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #777777; }
+  .post-header .breadcrumb {
+    margin-bottom: 1.6rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .post-header .breadcrumb a {
+      color: #777777; }
+  .post-header .block {
+    margin-bottom: 1.6rem;
+    padding: .5rem 1rem;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif; }
+  .post-header .lead {
+    margin: 0;
+    font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    font-size: .9rem;
+    line-height: 1.6rem; }
 
 .post-content {
-  padding-bottom: 3em; }
-  .post-content p img {
-    max-width: 100%;
-    display: block;
-    margin: auto; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin-bottom: 9.6rem; }
+  .post-content h2, .post-content .h2 {
+    margin-top: 3.2rem;
+    margin-bottom: .75rem;
+    border-bottom: 1px solid #777777;
+    padding-bottom: .25rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: bold; }
+  .post-content h3, .post-content .h3 {
+    margin-top: 1.6rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-weight: bold;
+    color: #555555; }
+  .post-content h4, .post-content .h4 {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: bold; }
+  .post-content p {
+    margin-bottom: 1.6rem; }
+  .post-content .highlighter-coderay {
+    margin-bottom: 1.6rem; }
+  .post-content ul, .post-content ol {
+    margin-bottom: 1.6rem; }
+  .post-content li {
+    line-height: 1.6rem; }
+  .post-content table {
+    margin-bottom: 1.6rem; }
   .post-content .line-numbers {
     padding-right: 1em; }
-  .post-content h2, .post-content .h2 {
-    margin-top: 2em;
-    border-bottom: 1px solid #555555;
-    font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .post-content h3, .post-content .h3 {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .post-content .line-numbers a {
+      color: #777777; }
+  .post-content p img {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    padding: .5rem 1rem;
+    border: 1px solid #c4c4c4;
+    border-radius: 3px; }
+  .post-content code {
+    color: #333333;
+    padding: .2em 0;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 3px; }
+    .post-content code:before, .post-content code:after {
+      letter-spacing: -0.2em;
+      content: '\00a0'; }
+
+/*
+.post-header {
+  margin-top: $spacer-lg;
+  .post-title {
+  	margin: 0;
+  	font-family: $font-family-serif;
+  	font-weight: bold;
+  	line-height: 1.1;
+  }
+  .post-meta {
+  	font-size: 1rem;
+  	font-family: $font-family-sans-serif;
+  }
+}
+
+.post-content {
+  font-family: $font-family-sans-serif;
+  padding-bottom: $spacer-lg;
+  p img {
+  	max-width: 100%;
+  	display: block;
+  	margin: auto;
+  }
+  table {
+  	@extend .table;
+  	@extend .table-striped;
+  }
+  .line-numbers {
+  	padding-right: 1em;
+  }
+  h2, .h2 {
+  	margin-top: $spacer-md;
+    border-bottom: 1px solid $gray;
+  	font-weight: bold;
+  	font-family: $font-family-sans-serif;
+  }
+  h3, .h3 {
+  	margin-top: $spacer-md;
+  	margin-bottom: $spacer;
+  	font-weight: bold;
+  	font-family: $font-family-sans-serif;
+  }
+}
+*/

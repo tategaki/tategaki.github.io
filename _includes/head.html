@@ -4,7 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.path | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="">
 
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -13,6 +23,5 @@
 
   <link href="{{ site.baseurl }}images/tategaki/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <!-- <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?dcA13TVgii4%3D&box=DpXNVDVIcmE%3D&aa=1" charset="utf-8"></script>  -->
   <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?dcA13TVgii4%3D&pm=1&aa=1" charset="utf-8"></script>
 </head>
