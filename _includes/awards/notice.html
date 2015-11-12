@@ -3,14 +3,14 @@
 
   	<div class="row">
   	  <div class="col-md-8 col-md-offset-2">
-    <header class="text-center section-header-">
-      <h3 class="section-heading-btn">お知らせ</h3>
+    <header class="text-center section-header-notice">
+      <h3 class="section-heading">お知らせ</h3>
       <p class="section-subheading">Information</p>
     </header>
   	    <ol class="list-unstyled notice-list">
   	    	{% for item in page.notice reversed limit:5 %}
   	    	  <li class="notice-list-item">
-  	    		{{ item.date }} {{ item.title }}
+  	    		  <span class="date">{{ item.date }}</span> {{ item.title }}
   	    	  </li>
   	    	{% endfor %}
   	    </ol>

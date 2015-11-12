@@ -31,10 +31,10 @@ p.catch-phrase {
 
 p.sub-catch {
   margin: 0;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
   font-size: 24px;
   font-family: $font-family-top;
-  font-style: italic;
+  //font-style: italic;
   line-height: 1;
   text-indent: 0;
   color: $gray-light;
@@ -62,7 +62,7 @@ p.top-kicker {
   }
 
   .sbody {
-    width: 330px;
+    width: 310px;
   }
 
   p.catch-phrase {

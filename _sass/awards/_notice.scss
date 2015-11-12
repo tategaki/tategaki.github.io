@@ -13,14 +13,15 @@
 }
 .notice-list-item {
   margin-bottom: 5px;
-  a {
+  .date {
+    margin-right: .5em;
   	color: inherit;
     &:before {
     	width: .8em;
     	height: .8em;
     	margin-right: .5em;
     	display: inline-block;
-    	background-image: url('../images/tategaki/right_orange.png');
+    	background-image: url('../images/awards/triangle_pink.png');
     	background-repeat: no-repeat;
     	background-position: center bottom;
     	background-size: contain;
