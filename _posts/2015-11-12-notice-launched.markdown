@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: notice
 img: nil
 category: notice
 title: 縦書きWeb普及委員会のサイトを公開しました。
