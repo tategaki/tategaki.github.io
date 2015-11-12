@@ -1,5 +1,7 @@
-$font-family-serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+$font-family-serif: "秀英明朝 M JIS2004", 'DNPShueiMinPr6N-M', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+$font-family-sans-serif: "FP-ヒラギノ角ゴ ProN W3", "FP-HiraKakuProN-W3", 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
 $font-family-base: $font-family-serif !default;
+$headings-font-family: "秀英明朝 B JIS2004", DNPShueiMinPr6N-B, $font-family-serif;
 
 $color-accent: #ffa4c0;
 
