@@ -3,7 +3,7 @@ layout: post
 img: nil
 category: Commentaries
 title: CSS3 Writing Modesの仕様解説
-description: CSS3 Writing Modesの仕様解説
+description: 縦書き、縦中横などの書字方向を扱います
 ---
 
 Writing Modes

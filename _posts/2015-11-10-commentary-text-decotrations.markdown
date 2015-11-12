@@ -3,7 +3,7 @@ layout: post
 img: nil
 category: Commentaries
 title: CSS Text Decorationの仕様解説
-description: 現SS Text Decorationの仕様解説
+description: 装飾線、圏点、影などの装飾を扱います
 ---
 
 CSS2では、下線、上線、取り消し線のみが定義されていました。CSS3ではそれに加えて、テキストの色、スタイル、圏点、テキストの影の仕様などが追加されました。

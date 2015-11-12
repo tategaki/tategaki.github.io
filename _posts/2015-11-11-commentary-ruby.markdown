@@ -3,7 +3,7 @@ layout: post
 img: nil
 category: Commentaries
 title: ルビの解説とマークアップ方法
-description: ルビの解説とマークアップ方法
+description: ルビの種類とマークアップについて解説します
 ---
 
 ルビとは
@@ -11,7 +11,7 @@ description: ルビの解説とマークアップ方法
 
 ルビは文字の傍に配置される、読みや説明などの役割を果たす小さな文字のことです。ルビを付けられる側の文字を親文字（base text）といいます。
 
-![ルビの表示例：横書き]({{ site.baseurl }}/images/tategaki/ruby-1.png)
+				
 
 ![ルビの表示例：縦書き]({{ site.baseurl }}/images/tategaki/ruby-1-v.png)
 
