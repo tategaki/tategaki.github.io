@@ -1,15 +1,15 @@
 <header id="header">
   <h1 class="site-title text-center">
-  	<a href="/tategaki">
-  	  <img id="logo-type-img" src="/images/tategaki/tategaki_logo.png" alt="縦書きWeb普及委員会ロゴ">
+  	<a href="{{ site.baseurl }}">
+  	  <img id="logo-type-img" src="{{ site.baseurl }}/images/tategaki/tategaki_logo.png" alt="縦書きWeb普及委員会ロゴ">
     </a>
-  	<a href="/">{{ site.title }}</a>
+  	<a href="{{ site.baseurl }}/">{{ site.title }}</a>
   </h1>
   <nav class="navbar navbar-inverse">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -17,14 +17,15 @@
         </button>
       </div>
   
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse text-center" id="collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/">縦書きWebとは</a></li>
-          <li><a href="/">委員会について</a></li>
-          <li><a href="/awards/">縦書きWebデザインアワード</a></li>
+          <li><a href="{{ site.baseurl }}/#what_is">縦書きWebとは</a></li>
+          <li><a href="{{ site.baseurl }}/#commentaries">技術解説</a></li>
+          <li><a href="{{ site.baseurl }}/#about">委員会について</a></li>
+          <li><a href="{{ site.baseurl }}/awards/">縦書きWebデザインアワード</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 </header>
+

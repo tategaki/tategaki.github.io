@@ -3,13 +3,10 @@
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="/awards">
+        <a class="navbar-brand" href="{{ site.baseurl}}/awards">
           
-          <img src="/images/awards/logo.png" alt="縦書きWebデザインアワード" />
+          <img src="{{ site.baseurl}}/images/awards/logo.png" alt="縦書きWebデザインアワードロゴ" />
           <span class="brand-text">縦書きWeb<br/>デザイン<br />アワード</a>
-        </a>
-        <a class="navbar-text" href="/awards">
-
         </a>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -19,14 +16,14 @@
         </button>
       </div>
   
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse text-center" id="collapse-1">
+      <div class="collapse navbar-collapse text-right" id="collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/awards/#application">応募要項</a></li>
-          <li><a href="/awards/#judges">審査員</a></li>
-          <li><a href="/awards/#sponsers">協賛</a></li>
-          <li><a href="/awards/#seminors">セミナー情報</a></li>
-          <li><a href="/awards/#faq">FAQ</a></li>
+          <li><a href="{{ site.baseurl}}/awards#application">応募要項</a></li>
+          <li><a href="{{ site.baseurl}}/awards#judges">審査員</a></li>
+          <li><a href="{{ site.baseurl}}/awards#sponsors">協賛</a></li>
+          <li><a href="{{ site.baseurl}}/awards#seminars">セミナー情報</a></li>
+          <li><a href="{{ site.baseurl}}/awards/faq/">FAQ</a></li>
+          <li><a href="{{ site.baseurl}}/">主催者</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

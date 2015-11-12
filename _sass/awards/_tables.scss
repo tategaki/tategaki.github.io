@@ -17,11 +17,29 @@
     font-weight: normal;
     vertical-align: center;
   }
+  th, td {
+    p, dt, dd {
+      line-height: 1.6;
+    }
+    p {
+      margin-bottom: $spacer;
+    }
+    dl {
+      margin-top: $spacer;
+      margin-left: 1em;
+    }
+    dd {
+      padding-left: 1em;
+    }
+  }
 }
 
 .application-table {
   > thead, > tbody, > tfoot {
     > tr{
+      > td {
+        text-align: justify;
+      }
     	> th, > td {
     	  border: 10px solid #f8f8f8;
       }
@@ -29,14 +47,18 @@
   }
 }
 
-.event-table {
+.table.event-table {
   > thead, > tbody, > tfoot {
-    > tr{
+    > tr {
     	> th, > td {
     	  border: 10px solid $body-bg;
       }
     } 
   }
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    line-height: 1.6;
 }
 
 // Cell color

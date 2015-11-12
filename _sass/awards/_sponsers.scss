@@ -18,10 +18,23 @@
 .sponser-img-caption {
   padding-left: 1.25em;
   line-height: 28px;
+  font-size: .9em;
   font-family: $font-family-sans-serif;
-  background-image: url('/images/awards/green_right.png');
   background-repeat: no-repeat;
   background-position: left center;
+  background-image: url('../images/awards/triangle_yellow.png');
+}
+
+.sponser-list {
+  li:nth-child(3n+1) .sponser-img-caption {
+    background-image: url('../images/awards/triangle_green.png');
+  }
+  li:nth-child(3n+2) .sponser-img-caption {
+    background-image: url('../images/awards/triangle_pink.png');
+  }
+  li:nth-child(3n+0) .sponser-img-caption {
+    background-image: url('../images/awards/triangle_yellow.png');
+  }
 }
 
 .sponser-list {

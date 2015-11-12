@@ -4,10 +4,12 @@ $color-cell-third:  #dfffd4;
 
 $text-color: #646464;
 
+$link-hover-decoration: none;
 $link-color: $text-color;
 $link-hover-color: #ff7ea5;
 
 $font-family-serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+$font-family-sans-serif: YuGothic, '游ゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
 $font-family-base: $font-family-serif !default;
 
 $color-accent: #ffa4c0;
@@ -24,3 +26,11 @@ $navbar-default-bg: #fff;
 $navbar-inverse-bg: #444444;
 $navbar-margin-bottom: 0;
 $nav-link-padding: 20px 15px;
+
+$font-family-top: 'CometStd-B', $font-family-sans-serif;
+$font-family-heading: 'ModeMinAStd-B', $font-family-serif;
+$font-family-ud-sans-serif: 'IwaUDGoHonPro-Th', $font-family-sans-serif;
+
+$font-family-base: $font-family-ud-sans-serif;
+
+$font-family-sans-serif: $font-family-ud-sans-serif;

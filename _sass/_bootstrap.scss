@@ -73,6 +73,9 @@
 // Top
 @import "./top";
 
+// Top
+@import "./notice";
+
 // Tanzaku
 @import "./tanzaku";
 
@@ -87,3 +90,7 @@
 
 // Posts
 @import "./posts";
+
+#what_is {
+  padding-top: 0;
+}

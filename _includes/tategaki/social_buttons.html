@@ -1,7 +1,7 @@
 <div class="text-center social-button-container">
   <div class="inline-button">
-    <button class="btn btn-twitter"><i class="fa fa-twitter"></i> | Twitter</button>
-    <button class="btn btn-facebook"><i class="fa fa-facebook"></i> | Facebook</button>
-    <button class="btn btn-google-plus"><i class="fa fa-google-plus"></i> | Google Plus</button>
+    <a class="btn btn-twitter" href="https://twitter.com/share?text={{ site.title | uri_escape }}&amp;url={{ site.url}}{{ site.baseurl }}{{ page.path }}"><i class="fa fa-twitter"></i> | Twitter</a>
+    <a class="btn btn-facebook" href="http://www.facebook.com/share.php?u={{ site.url}}{{ site.baseurl}}{{ page.path }}"><i class="fa fa-facebook"></i> | Facebook</a>
+    <a class="btn btn-google-plus" href="https://plus.google.com/share?url={{ site.domain_name }}{{ site.baseurl}}{{ page.path }}"><i class="fa fa-google-plus"></i> | Google Plus</a>
   </div>
 </div>
