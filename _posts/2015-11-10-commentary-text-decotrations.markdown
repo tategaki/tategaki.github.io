@@ -33,7 +33,7 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 <span class="linethrough">取り消し線をひく</span>
 ```
 
-![text-decorationを利用した装飾線の表示例]({{ site.baseurl}}examples/text-decoration/line-basic.png)
+![text-decorationを利用した装飾線の表示例]({{ site.baseurl}}/examples/text-decoration/line-basic.png)
 
 <small>※ 非推奨ですが、文字を点滅させるblinkも線種のひとつとして仕様に入っており、ブラウザは点滅の実装をしなくても良いとされています。</small>
 
@@ -51,7 +51,7 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 <span class="underline_linethrough">下線と取り消し線を同時にひく</span>
 ```
 
-![複数指定した装飾線の表示例]({{ site.baseurl}}examples/text-decoration/line-multiple.png)
+![複数指定した装飾線の表示例]({{ site.baseurl}}/examples/text-decoration/line-multiple.png)
 
 ### 線の色とスタイル
 
@@ -71,7 +71,7 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 <span class="underline_wavy_red">赤い波線</span>
 ```
 
-![赤い波線の表示例]({{ site.baseurl}}examples/text-decoration/line-style.png)
+![赤い波線の表示例]({{ site.baseurl}}/examples/text-decoration/line-style.png)
 
 なお、線種・線の色・線のスタイルは、それぞれ独立したプロパティで指定することもできます。
 これも主要ブラウザではFirefoxのみで実装されています。
@@ -90,7 +90,7 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 <span class="my_underline my_red my_wavy">赤い波線</span>
 ```
 
-![線の種類、色、スタイルを独立したプロパティで指定した場合の表示例]({{ site.baseurl}}examples/text-decoration/line-mystyle.png)
+![線の種類、色、スタイルを独立したプロパティで指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/line-mystyle.png)
 
 ### 縦書きとの組み合せ
 
@@ -99,11 +99,11 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 現状では、ブラウザ実装はまだ進められていないようで、横書き用にtext-decoration: underlineまたはoverlineを指定しておくと、縦書き時に左右どちらかに線が引かれるようです。
 underline・overlineの線が左右どちらに表示されるかは、ブラウザによってバラつきがあり、仕様に従った実装が待たれるところです。
 
-![Google Chromeの場合]({{ site.baseurl}}examples/text-decoration/line-vertical-chrome.png)
+![Google Chromeの場合]({{ site.baseurl}}/examples/text-decoration/line-vertical-chrome.png)
 
-![FireFoxの場合]({{ site.baseurl}}examples/text-decoration/line-vertical-firefox.png)
+![FireFoxの場合]({{ site.baseurl}}/examples/text-decoration/line-vertical-firefox.png)
 
-![Internet Explorerの場合]({{ site.baseurl}}examples/text-decoration/line-vertical-ie.png)
+![Internet Explorerの場合]({{ site.baseurl}}/examples/text-decoration/line-vertical-ie.png)
 
 圏点
 ----
@@ -133,7 +133,7 @@ text-emphasisプロパティで、文字に圏点を付け、強調すること�
 <span class="sesame_open_red">赤いゴマを振る</span>
 ```
 
-![普通の圏点と赤いゴマ点の表示例]({{ site.baseurl}}examples/text-decoration/text-emphasis-basic.png)
+![普通の圏点と赤いゴマ点の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-basic.png)
 
 ### 圏点のスタイル
 
@@ -164,7 +164,7 @@ text-emphasis-styleプロパティで、圏点のスタイルと塗りつぶし�
 <div class="sesame">ゴマ</div>
 ```
 
-![さまざまな圏点のスタイルの表示例]({{ site.baseurl}}examples/text-decoration/text-emphasis-style.png)
+![さまざまな圏点のスタイルの表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-style.png)
 
 また、任意の文字を指定できます。
 その際は、単一の文字を指定します。複数の文字を指定しても、仕様ではブラウザが無視して良いとされています。
@@ -179,7 +179,7 @@ text-emphasis-styleプロパティで、圏点のスタイルと塗りつぶし�
 <span class="money">おかね</span>
 ```
 
-![圏点に$を指定した場合の表示例]({{ site.baseurl}}examples/text-decoration/text-emphasis-money.png)
+![圏点に$を指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-money.png)
 
 ### 白抜き指定
 
@@ -204,7 +204,7 @@ text-emphasis-style: open dot;のようにopenを指定すると、圏点の各�
 <span class="sesame">ゴマ</span>
 ```
 
-![圏点を白抜きにした場合の表示例]({{ site.baseurl}}examples/text-decoration/text-emphasis-style-open.png)
+![圏点を白抜きにした場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-style-open.png)
 
 ### 圏点の色
 
@@ -222,7 +222,7 @@ text-emphasis-colorで圏点の色を指定可能です。
 <span class="filled red">赤い圏点</span>
 ```
 
-![圏点に色を指定した場合の表示例]({{ site.baseurl}}examples/text-decoration/text-emphasis-color.png)
+![圏点に色を指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-color.png)
 
 
 ### 圏点のスタイルをまとめて指定
@@ -239,7 +239,7 @@ text-emphasis-colorで圏点の色を指定可能です。
 <span class="open_sesame_red">赤いゴマ</span>
 ```
 
-![圏点の塗りと種類と色をまとめて指定した場合の表示例]({{ site.baseurl}}examples/text-decoration/text-emphasis-color2.png)
+![圏点の塗りと種類と色をまとめて指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-color2.png)
 
 ### 縦書きとの組み合せ
 
@@ -257,7 +257,7 @@ Chromeでは、現状はoverを指定しておくと、横書き時は上に、�
 <span class="filled">普通の圏点を振る</span>
 ```
 
-![縦書きと圏点の表示位置]({{ site.baseurl}}examples/text-decoration/text-emphasis-vertical.png)
+![縦書きと圏点の表示位置]({{ site.baseurl}}/examples/text-decoration/text-emphasis-vertical.png)
 
 影
 ----
@@ -280,7 +280,7 @@ text-shadowプロパティを指定すると、文字に影をつけることが
 <span class="shadow">文字に影をつける</span>
 ```
 
-![文字に影をつけた表示例]({{ site.baseurl}}examples/text-decoration/shadow.png)
+![文字に影をつけた表示例]({{ site.baseurl}}/examples/text-decoration/shadow.png)
 
 
 ### 複数の影
@@ -299,4 +299,4 @@ text-shadowプロパティを指定すると、文字に影をつけることが
 <span class="shadows">複数の影をつける</span>
 ```
 
-![文字に複数の影をつけた表示例]({{ site.baseurl}}examples/text-decoration/shadows.png)
+![文字に複数の影をつけた表示例]({{ site.baseurl}}/examples/text-decoration/shadows.png)

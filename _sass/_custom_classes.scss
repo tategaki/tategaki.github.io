@@ -18,36 +18,6 @@
   @include prop-set-prefix(text-combine-horizontal, all);
 }
 
-// Notice
-// -----------------
-#notice {
-  //background: #e2e2e2;
-  background: lighten($gray-lighter, 2%);
-}
-.notice-list {
-  margin: 0 1em;
-  border-radius: 3px;
-  padding: 1em;
-  background-color: #fff;
-}
-.notice-list-item {
-  margin-bottom: 5px;
-  a {
-  	color: inherit;
-    &:before {
-    	width: .8em;
-    	height: .8em;
-    	margin-right: .5em;
-    	display: inline-block;
-    	background-image: url('../images/tategaki/right_orange.png');
-    	background-repeat: no-repeat;
-    	background-position: center bottom;
-    	background-size: contain;
-    	content: "";
-    }
-  }
-}
-
 
 @media (max-width: 500px) {
   .f-row-odd {
@@ -91,11 +61,13 @@
   }
 }
 .social-button-container {
-  margin-top: $spacer-lg;
+  //margin-top: $spacer-lg;
   padding-top: $spacer;
   //background: $navbar-inverse-bg;
   
-  background-color: darken($gray-lighter,5%);
+  //background-color: darken($gray-lighter,5%);
+  //background-color: lighten($gray-lighter, 2%);
+  background-color:$gray-lighter;
 }
 
 .creator-list {
@@ -116,7 +88,7 @@
 #note {
   //margin-top: $spacer-lg;
   padding: $spacer-md 0;
-  background: $gray-lighter;
+  background: lighten($gray-lighter, 2%);
   color: #333;
   a {
     color: inherit;
