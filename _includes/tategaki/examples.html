@@ -19,9 +19,10 @@
             <p>{{ex_item.description}}</p>
             <ul class="creator-list">
               <li>制作</li>
-            {% for creator in ex_item.creators %}
-              <li>{{creator}}</li>
-            {% endfor %}
+              {% for creator in ex_item.creators %}
+                <li>{{creator}}</li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>
