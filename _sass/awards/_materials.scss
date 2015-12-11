@@ -1,0 +1,42 @@
+#materials {
+  figure {
+  	max-width: 90%;
+  	margin-right: auto;
+  	margin-left: auto;
+  }
+  img {
+  	max-width: 100%;
+  }
+  .material-example {
+  	line-height: 1.8;
+  	h1 {
+  	  font-weight: bold;
+  	  margin-bottom: $spacer;
+  	  border-bottom: 1px solid lighten($text-color, 40);
+  	  padding-bottom: .25em;
+  	}
+  	h2, h3, h4 {
+  	  margin-top: $spacer;
+  	}
+  	figure {
+  	  p {
+  	  	margin-bottom: 0.25em;
+  	  }
+  	  img {
+  	  	max-height: 400px;
+  	  }
+  	  figcaption {
+  	  	font-size: 0.8em;
+  	  }
+  	}
+  }
+  a {
+  	text-decoration: underline;
+  }
+}
+    dt {
+      //font-weight: normal;
+    }
+  	dd {
+  	  padding-left: 1em;
+  	}

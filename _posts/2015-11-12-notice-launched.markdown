@@ -2,7 +2,7 @@
 layout: notice
 img: nil
 category: notice
-title: 縦書きWeb普及委員会のサイトを公開しました。
+title: 縦書きWeb普及委員会のサイトを公開しました
 description: |
 ---
 
