@@ -79,6 +79,9 @@
 // Social Buttons
 @import "./social-buttons";
 
+// Social Buttons
+@import "./awards/purpose";
+
 // Notice
 @import "./awards/notice";
 
@@ -91,6 +94,10 @@
 // FAQ
 @import "./awards/faq";
 
+// Materials
+@import "./awards/materials";
+
+
 .brand-logo {
   height: 1.3em;
 }
@@ -102,4 +109,30 @@
 #sponsors {
   //background-color: #F6F6F7;
   background-color: #f8f8f8;
+}
+
+.foot-nav.list-inline {
+  > li {
+  	padding-left: 0px;
+  	padding-right: 0px; 
+    &:after {
+      display: inline-block;
+      padding-left: 8px;
+      padding-right: 8px;
+      content: "|";
+    }
+  }
+  > li:last-child {
+  	&:after {
+  	  display: none;
+  	  padding-left: 0;
+  	  padding-right: 0;
+  	  content: "";
+  	}
+  }
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

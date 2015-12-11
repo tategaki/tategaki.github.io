@@ -1,0 +1,19 @@
+#purpose {
+  .section-body {
+  	margin: auto;
+  	p {
+  	  font-size: 1.1em;
+  	  line-height: 1.8;
+  	}
+  }	
+}
+
+@media (min-width: $screen-xs-max) {
+  #purpose {
+    .section-body {
+    	p {
+    	  font-size: 1.4em;
+    	}
+    }	
+  }
+}
