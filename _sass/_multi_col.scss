@@ -4,6 +4,7 @@
 $column-size: 2 !default;
 $column-width: 18em !default;
 $column-gap: 3em !default;
+//$column-width: 216px;
 
 .m-col-container {
   @extend .container;
@@ -34,6 +35,7 @@ $column-gap: 3em !default;
     @include wm-vrl;
     @include prop-set-prefix(column-size, $column-size);
     @include prop-set-prefix(column-width, $column-width);
+    -moz-column-width: 246px;
     @include prop-set-prefix(column-gap, $column-gap);
     max-width: 600px;
     min-height: ($column-width) * $column-size;

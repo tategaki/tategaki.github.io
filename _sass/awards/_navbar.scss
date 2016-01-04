@@ -60,7 +60,8 @@
     }
   }
 }
-@media (max-width: $screen-sm-max) {
+//@media (max-width: $screen-sm-max) {
+@media (max-width: 1200px) {
     .navbar-header {
         float: none;
     }

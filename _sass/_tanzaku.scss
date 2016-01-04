@@ -44,8 +44,8 @@
     justify-content: center;
 
     .tanzaku-item-block {
-      padding: 0 2em;
-      flex-basis: 70px;
+      padding: 1em 2em;
+      flex-basis: 100px;
 
       .tanzaku-item-heading {
         border: none;
@@ -68,11 +68,11 @@
     @include wm-vrl;
 
     .tanzaku-item {
-      flex-basis: 100px;
+      flex-basis: 160px;
 
       .tanzaku-item-block {
         padding: 2rem 0;
-        flex-basis: 70px;
+        flex-basis: 100px;
 
         .tanzaku-item-heading {
           border: none;
