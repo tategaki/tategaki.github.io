@@ -8,7 +8,7 @@
       <p class="section-subheading">Information</p>
     </header>
   	    <ol class="list-unstyled notice-list">
-  	    	{% for item in page.notice reversed limit:5 %}
+  	    	{% for item in page.notice limit:5 %}
   	    	  <li class="notice-list-item">
   	    		  <span class="date">{{ item.date }}</span> {{ item.title }}
   	    	  </li>
