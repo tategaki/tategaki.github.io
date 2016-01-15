@@ -118,6 +118,20 @@ $gd: 1.6rem;
       content: '\00a0';
     }
   }
+    figure {
+      margin-bottom: $spacer * 2;
+      p {
+        margin-bottom: 0.25em;
+      }
+      img {
+        max-width: 100%;
+        max-height: 400px;
+      }
+      figcaption {
+        text-align: center;
+        font-size: 0.8em;
+      }
+    }
 }
 
 

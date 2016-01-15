@@ -1,7 +1,7 @@
 ---
 layout: post
 img: nil
-category: Commentaries
+category: commentaries
 title: ルビの解説とマークアップ方法
 description: ルビの種類とマークアップについて解説します
 ---

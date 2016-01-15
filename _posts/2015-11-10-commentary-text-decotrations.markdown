@@ -1,7 +1,7 @@
 ---
 layout: post
 img: nil
-category: Commentaries
+category: commentaries
 title: CSS Text Decorationの仕様解説
 description: 装飾線、圏点、影などの装飾を扱います
 ---

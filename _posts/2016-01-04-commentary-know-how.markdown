@@ -1,7 +1,7 @@
 ---
 layout: post
 img: nil
-category: Commentaries
+category: commentaries
 title: 縦書きレイアウト作成ノウハウ
 description: 実際に縦書きレイアウトを作成する際のノウハウを解説します
 ---
