@@ -114,6 +114,10 @@ address {
   background-color: #f8f8f8;
 }
 
+td > p:last-child {
+  margin-bottom: 0;
+}
+
 .foot-nav.list-inline {
   > li {
   	padding-left: 0px;
