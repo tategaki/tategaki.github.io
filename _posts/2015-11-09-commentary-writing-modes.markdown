@@ -1,7 +1,7 @@
 ---
 layout: post
 img: nil
-category: Commentaries
+category: commentaries
 title: CSS3 Writing Modesの仕様解説
 description: 縦書き、縦中横などの書字方向を扱います
 ---
@@ -9,7 +9,7 @@ description: 縦書き、縦中横などの書字方向を扱います
 Writing Modes
 -------------
 
-CSS2では、directionやunicode-bidiプロパティが定義され、横書きの複雑なレイアウトを行うアラビア語などの双方向言語(BIDI)が扱えるようになっていました。
+CSS2では、`direction`や`unicode-bidi`プロパティが定義され、横書きの複雑なレイアウトを行うアラビア語などの双方向言語(BIDI)が扱えるようになっていました。
 
 CSS3では、テキストの進行方向に関する仕様は「Writing Modesモジュール」にまとめられ、BIDIに加えて縦書きへの対応などが追加されています。
 
@@ -30,7 +30,7 @@ Writing Modesモジュールでは、行の進行方向、文字の進行方向�
 
 CSS3での日本語の縦書き対応について注目すべき点は、既存の横書きのHTML文書に、CSS指定を1つ加えるだけで縦書きレイアウトとなるように仕様が考えられていることです。
 
-具体的には、bodyに対してwriting-mode: vertical-rlを指定するだけで、右上起点の縦書きレイアウトとなります。
+具体的には、`body`に対して`writing-mode: vertical-rl`を指定するだけで、右上起点の縦書きレイアウトとなります。
 
 ```css
 body {
@@ -48,7 +48,7 @@ body {
 }
 ```
 
-<small>※ Internet Exploter 向けには-ms-writing-mode: tb-rlを使用します。歴史的に、IEは早期にこの値で縦書きに対応していたため、値が異なるものになっています。</small>
+<small>※ Internet Exploter 向けには`-ms-writing-mode: tb-rl`を使用します。歴史的に、IEは早期にこの値で縦書きに対応していたため、値が異なるものになっています。</small>
 
 ![Chrome 46でwriting-modeを指定しない場合の表示例]({{ site.baseurl}}/examples/writing-modes/writing-mode--horizontal-tb.png)
 
@@ -56,7 +56,7 @@ body {
 
 <p class="caption">同一のHTMLから得られる2つの描画結果</p>
 
-上の2つの図は、基本的に同一のHTMLから作成されたものですが、bodyにwriting-mode: vertical-rlの指定があるかどうかという点が異なっています。
+上の2つの図は、基本的に同一のHTMLから作成されたものですが、`body`に`writing-mode: vertical-rl`の指定があるかどうかという点が異なっています。
 下記の点に注目してください。
 
 - ブロックの進行方向
@@ -67,12 +67,12 @@ body {
 ### ブロックの進行方向
 
 横書きでは、<h1>、<table>、<li>などのブロックは、上から下に積まれるように進みます。
-writing-mode: vertical-rlを指定すると、右から左に積まれるようになり、縦書きレイアウトとして自然なブロック進行となります。
+`writing-mode: vertical-rl`を指定すると、右から左に積まれるようになり、縦書きレイアウトとして自然なブロック進行となります。
 また、表中の「にする」のように自然改行が発生している場合に行が積まれる方向も、これに従います。
 
 ### テーブルの行と列
 
-writing-modeを指定すると、HTMLのほとんどの要素が回転します。
+`writing-mode`を指定すると、HTMLのほとんどの要素が回転します。
 テーブルは、行と列の配置が入れ替わります。
 
 テーブルの他にも、縦横で位置関係が変換される要素があり、例えば、ルビの位置も縦書きでは文字の横に付くようになります
@@ -80,7 +80,7 @@ writing-modeを指定すると、HTMLのほとんどの要素が回転します�
 例として、「↑Chrome 46で…」の箇所には4字のインデントを指定してあります。横書きでは右に、縦書きでは下に食い込んでいます。
 
 一方、画像などの埋め込み要素のように、回転の対象外となるものもあります。
-写真などがwriting-modeの変更によって天地の向きを変えると困るため、画像は回転しない仕様となっています。
+写真などが`writing-mode`の変更によって天地の向きを変えると困るため、画像は回転しない仕様となっています。
 
 
 ### 行の進行方向
@@ -88,7 +88,7 @@ writing-modeを指定すると、HTMLのほとんどの要素が回転します�
 横書きでは、左から右に進行します。
 縦書きでは、上から下に進行します。
 行の進行方向は、アラビア語などのBIDI要素に関連する場合に必要な要素で、日本語の縦書きを扱う場合にはあまり意識することはありません。
-日本語の旧式の横書きのように、右から左へ進む横書きを実現するには、direction: rtlを指定し、さらにunicode-bidi: bidi-overrideを指定します。
+日本語の旧式の横書きのように、右から左へ進む横書きを実現するには、`direction: rtl`を指定し、さらに`unicode-bidi: bidi-override`を指定します。
 
 例：
 
@@ -108,11 +108,11 @@ writing-modeを指定すると、HTMLのほとんどの要素が回転します�
 
 ### 文字の向き
 
-文字の向きは、text-orientationプロパティーで指定します。
-デフォルトはmixedで、英字は横倒し、日本語は正立、記号類はそれぞれ適切な向き、というように自動で配置されます。
-向きを指定したい場合は、uprightまたはsidewaysの指定が可能です。
-uprightを指定すると、英字や数字が、日本語のように正立させて積まれます。
-sidewaysを指定すると、mixedで自動で正立になるような記号を、欧文と一緒に横倒しにして表示します。
+文字の向きは、`text-orientation`プロパティで指定します。
+デフォルトは`mixed`で、英字は横倒し、日本語は正立、記号類はそれぞれ適切な向き、というように自動で配置されます。
+向きを指定したい場合は、`upright`または`sideways`の指定が可能です。
+`upright`を指定すると、英字や数字が、日本語のように正立させて積まれます。
+`sideways`を指定すると、`mixed`で自動で正立になるような記号を、欧文と一緒に横倒しにして表示します。
 
 例
 
@@ -140,7 +140,7 @@ sidewaysを指定すると、mixedで自動で正立になるような記号を�
 <span class="sideways">sideways © 2015</span>
 ```
 
-mixedのときに各文字が置かれる方向は、Unicodeの付属文書「UTR#50」(<http://unicode.org/reports/tr50/>)を参考に決められています。
+`mixed`のときに各文字が置かれる方向は、Unicodeの付属文書「UTR#50」(<http://unicode.org/reports/tr50/>)を参考に決められています。
 UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tuの記号が振られている文字は原則的に正立(縦書きグリフがあれば使用する)という2分類になっています。
 
 例
@@ -177,12 +177,11 @@ UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tu�
 }
 ```
 
-
 縦中横の指定は、横書きのレイアウト時には無視されます。
 上の図を見ると、横書きの図では数字部分が違和感ないレイアウトとなっています
 
 縦中横を文章に対して一括指定できる仕様があります。
-広い範囲にtext-combine-upright: digit 2のような指定をしておくと、登場する数字を縦中横に組みます。
+広い範囲に`text-combine-upright: digit 2`のような指定をしておくと、登場する数字を縦中横に組みます。
 2桁〜4桁の数字を指定することができます。
 実装は現状ではMicrosoftのInternet Explorer 11およびEdgeで、以下のようにベンダープレフィックス付きで使用します。
 
@@ -204,13 +203,35 @@ UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tu�
 
 ### 用語の再定義
 
-left、right、height、widthは、物理方向を指します。
-writing-modeを切り替えても、縦横が入れ替わらず、常に画面に向かってのサイズを示します
-writing-modeの変更に応じて指す方向を変えたい場合には、下記のような論理方向を指すプロパティーを使用します。
+`left`、`right`、`height`、`width`は、物理方向を指します。
+`writing-mode`を切り替えても、縦横が入れ替わらず、常に画面に向かってのサイズを示します。
+`writing-mode`の変更に応じて指す方向を変えたい場合には、下記のような論理方向を指すプロパティを使用します。
 
-- inline-sizeまたはlogical-width：文字列の長さの方向を指す。つまり縦書きでは縦方向。
-- block-sizeまたはlogical-height：行の幅の方向を指す。つまり縦書きでは横方向。
+<dl>
+  <dt>inline-sizeまたはlogical-width</dt>
+  <dd><p>文字列の長さの方向を指す。つまり縦書きでは縦方向。</p></dd>
+  <dt>block-sizeまたはlogical-height</dt>
+  <dd><p>行の幅の方向を指す。つまり縦書きでは横方向。</p></dd>
+</dl>
 
-なお、line-heightのように、"height"が含まれているものの、縦書きのときは行の横方向の幅を指すように縦横変換されるプロパティーもあります。
+なお、`line-height`のように、`height`が含まれているものの、縦書きのときは行の横方向の幅を指すように縦横変換されるプロパティもあります。
 
-適切に論理方向を指すプロパティーでサイズ指定してあるHTML文書は、レイアウトを損うことなく、writing-modeの指定の変更だけで縦書き・横書きどちらでも対応します。
+適切に論理方向を指すプロパティでサイズ指定してあるHTML文書は、レイアウトを損うことなく、`writing-mode`の指定の変更だけで縦書き・横書きどちらでも対応します。
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <b>補足</b> 縦書きでは方向の指定に注意が必要
+  </div>
+  <div class="panel-body">
+    <p><code>writing-mode</code>プロパティの縦書きは、従来のブロック要素・インライン要素の <code>top</code> 、<code>left</code>、<code>bottom</code>、<code>right</code>の関係を90度左に回転させて適用し、全角文字のみ再度90度右に回転させて表示することによって実現します<small>（図1）</small>。</p>
+
+    <figure>
+      <img src="{{ site.baseurl}}/images/tategaki/writing-mode-and-direction.png" alt="" />
+      <figcaption>図1</figcaption>
+    </figure>
+
+    <p>つまり、従来の<code>left</code>から<code>right</code>に文章を出力する関係は変わらず、HTML文書に手を加えずに縦書きを実現できるので、CSSを切り替えることにより同じ文書を横書きにも縦書きにもすることができるのです。</p>
+    
+    <p>よって<code>writing-mode</code>を適用したブロックの中でデザインをする際はこのことに注意する必要があります。例えば縦書きの文を上端で揃える際は、コードとしては左端に揃えることになるので、<code>text-align: left</code>を指定することになります。他にも<code>padding</code>や<code>margin</code>などの設定でもこの点に注意することが必要です。</p>
+  </div>
+</div>
