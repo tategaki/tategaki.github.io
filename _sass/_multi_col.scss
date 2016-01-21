@@ -39,7 +39,8 @@ $column-gap: 3em !default;
     @include prop-set-prefix(column-gap, $column-gap);
     max-width: 600px;
     min-height: ($column-width) * $column-size;
-    max-height: ($column-width) * $column-size + ($column-gap *  $column-size);
+    //max-height: ($column-width) * $column-size + ($column-gap *  $column-size);
+    max-height: 50em;
     margin: 0 auto;
   }
 }
