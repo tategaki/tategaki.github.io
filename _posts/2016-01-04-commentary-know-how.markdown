@@ -35,7 +35,7 @@ writing-mode を指定しない場合や、値を「horizontal-tb」と指定し
 
 <b>記述例: HTML</b>
 
-```html
+~~~
 <!doctype html>
 <html lang="ja">
 <head>
@@ -48,18 +48,20 @@ writing-mode を指定しない場合や、値を「horizontal-tb」と指定し
 <p>縦書きレイアウトのWebコンテンツ実践セミナーです。</p>
 </body>
 </html>
-```
+~~~
+{: .language-html}
 
 <b>記述例: CSS</b>
 
-```css
+~~~
 body{
   -webkit-writing-mode: vertical-rl; /* 実装済 */
   -moz-writing-mode: vertical-rl; /* 未実装 */
   -ms-writing-mode: tb-rl; /* 実装済 */
   writing-mode: vertical-rl;
 }
-```
+~~~
+{: .language-css}
 
 ### 1－2．text-orientation
 
@@ -71,7 +73,7 @@ text-orientationは、縦書きの中の文字を回転させます。例えば�
 
 前述のCSSを以下のように書き換えると、縦書きの中で表示されているアルファベットの文字が縦に回転した状態で表示されます。
 
-```css
+~~~
 body{
   -webkit-writing-mode: vertical-rl; /* 実装済 */
   -moz-writing-mode: vertical-rl; /* 未実装 */
@@ -83,7 +85,8 @@ body{
   -ms-text-orientation: upright; /* 未実装 */
   text-orientation: upright;
 }
-```
+~~~
+{: .language-css}
 
 ### 1－3．text-combine
 
@@ -100,7 +103,7 @@ text-combine を利用すると、１文字分のスペースに複数の文字�
 
 <b>HTML</b>
 
-```html
+~~~
 <!doctype html>
 <html lang="ja">
 <head>
@@ -114,11 +117,12 @@ text-combine を利用すると、１文字分のスペースに複数の文字�
 <p>6月<span class="combine">19</span>日のお知らせです。</p>
 </body>
 </html>
-```
+~~~
+{: .language-html}
 
 <b>CSS</b>
 
-```css
+~~~
 body{
   -webkit-writing-mode: vertical-rl; /* 実装済 */
   -moz-writing-mode: vertical-rl; /* 未実装 */
@@ -137,7 +141,8 @@ body{
   -ms-text-combine-horizontal:all; /* 実装済 */
   text-combine-upright: all;
 }
-```
+~~~
+{: .language-css}
 
 ## 2．ルビの指定
 
@@ -154,7 +159,7 @@ body{
 
 <b>記述例: HTML</b>
 
-```html
+~~~
 <!doctype html>
 <html lang="ja">
 <head>
@@ -168,7 +173,8 @@ body{
 <p><ruby>日本語<rt>にほんご</rt></ruby>の<ruby>作文<rt>さくぶん</rt></ruby>です。</p>
 </body>
 </html>
-```
+~~~
+{: .language-html}
 
 ### 2－2．ruby-position
 
@@ -180,7 +186,7 @@ ruby-position プロパティを利用すると、ルビの位置を指定する
 
 横書きの場合、over は上側に、under は下側にルビが表示されます。また、縦書きの場合はover が右側、under が左側に表示されます。記述例を以下のように書き換えることでルビの表示位置が変わります。
 
-```css
+~~~
 body{
   -webkit-writing-mode: vertical-rl; /* 実装済 */
   -moz-writing-mode: vertical-rl; /* 未実装 */
@@ -206,7 +212,8 @@ ruby{
   -ms-ruby-position: over; /* 実装済 */
   ruby-position: over; /* 実装済 */
 }
-```
+~~~
+{: .language-css}
 
 ## 3．縦書きの装飾
 
@@ -226,7 +233,7 @@ ruby{
 
 <b>記述例: HTML</b>
 
-```html
+~~~
 <!doctype html>
 <html lang="ja">
 <head>
@@ -241,11 +248,12 @@ ruby{
 <p><span class="underline"> 重要な箇所</span> は線を引きます。</p>
 </body>
 </html>
-```
+~~~
+{: .language-html}
 
 <b>記述例: CSS</b>
 
-```css
+~~~
 body{
   -webkit-writing-mode: vertical-rl; /* 実装済 */
   -moz-writing-mode: vertical-rl; /* 未実装 */
@@ -279,7 +287,8 @@ ruby{
   -ms-text-underline-position: right; /* 実装済 */
   text-underline-position: right;
 }
-```
+~~~
+{: .language-css}
 
 ### 3－2．圏点の表示
 
@@ -310,7 +319,7 @@ text-emphasis-style の値は以下の通りです。
 
 <b>記述例: HTML</b>
 
-```html
+~~~
 <!doctype html>
 <html lang="ja">
 <head>
@@ -326,11 +335,12 @@ text-emphasis-style の値は以下の通りです。
 <p><span class="mark">重要な箇所</span>に圏点をつけます。</p>
 </body>
 </html>
-```
+~~~
+{: .language-html}
 
 <b>記述例: CSS</b>
 
-```css
+~~~
 body{
   -webkit-writing-mode: vertical-rl; /* 実装済 */
   -moz-writing-mode: vertical-rl; /* 未実装 */
@@ -376,5 +386,6 @@ ruby{
   -ms-text-emphasis-color: #ff0000; /* 未実装 */
   text-emphasis-color: #ff0000;
 }
-```
+~~~
+{: .language-css}
 

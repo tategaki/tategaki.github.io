@@ -32,21 +32,23 @@ CSS3での日本語の縦書き対応について注目すべき点は、既存�
 
 具体的には、`body`に対して`writing-mode: vertical-rl`を指定するだけで、右上起点の縦書きレイアウトとなります。
 
-```css
+~~~
 body {
   writing-mode: vertical-rl;
 }
-```
+~~~
+{: .language-css}
 
 実際にはベンダープレフィックスを付けます。
 
-```css
+~~~
 body {
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
 }
-```
+~~~
+{: .language-css}
 
 <small>※ Internet Exploter 向けには`-ms-writing-mode: tb-rl`を使用します。歴史的に、IEは早期にこの値で縦書きに対応していたため、値が異なるものになっています。</small>
 
@@ -92,16 +94,18 @@ body {
 
 例：
 
-```css
+~~~
 .ja_rtl {
   direction: rtl;
   unicode-bidi: bidi-override;
 }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <p class="ja_rtl">東京駅ニテ列車ヲ待ツ</p>
-```
+~~~
+{: .language-html}
 
 ![日本語を右から左へ横書きで表示した例]({{ site.baseurl}}/examples/writing-modes/tokyo-station-rtl.png)
 
@@ -116,29 +120,35 @@ body {
 
 例
 
-```css
+~~~
 .mixed { text-orientation: mixed; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="mixed">12月:師走(=December)</span>
-```
+~~~
+{: .language-html}
 
-```css
+~~~
 .upright { text-orientation: upright; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="upright">UPRIGHT©2015</span>
-```
+~~~
+{: .language-html}
 
-```css
+~~~
 .sideways { text-orientation: sideways-right; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="sideways">sideways © 2015</span>
-```
+~~~
+{: .language-html}
 
 `mixed`のときに各文字が置かれる方向は、Unicodeの付属文書「UTR#50」(<http://unicode.org/reports/tr50/>)を参考に決められています。
 UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tuの記号が振られている文字は原則的に正立(縦書きグリフがあれば使用する)という2分類になっています。
@@ -158,24 +168,27 @@ UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tu�
 
 例
 
-```css
+~~~
 .tcy { text-combine-upright: all; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="tcy">12</span>月
-```
+~~~
+{: .language-html}
 
 実際には、ベンダープレフィックスを付けます。
 なお、仕様が頻繁に変更されるため、ブラウザごとに不統一があります。
 
-```css
+~~~
 .tcy {
   -webkit-text-combine: horizontal;
   -ms-text-combine-horizontal: all;
   text-combine-upright: all;
 }
-```
+~~~
+{: .language-css}
 
 縦中横の指定は、横書きのレイアウト時には無視されます。
 上の図を見ると、横書きの図では数字部分が違和感ないレイアウトとなっています
@@ -187,16 +200,18 @@ UTR#50でRの記号が振られている文字は横倒しとし、U・Tr・Tu�
 
 例
 
-```css
+~~~
 .tcy_2 {
   -ms-text-combine-horizontal: digits 2;
   text-combine-upright: digits 2;
 }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <p class="tcy_2">「8月、10月、12月」</p>
-```
+~~~
+{: .language-html}
 
 ![Internet Explorer 11による自動縦中横の表示例]({{ site.baseurl}}/examples/writing-modes/writing-mode--horizontal-tb-ie.png)
 

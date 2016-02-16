@@ -21,17 +21,19 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 
 例
 
-```css
+~~~
 .underline   { text-decoration: underline; }
 .overline    { text-decoration: overline; }
 .linethrough { text-decoration: line-through; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="underline">下に線をひく</span>
 <span class="overline">上に線をひく</span>
 <span class="linethrough">取り消し線をひく</span>
-```
+~~~
+{: .language-html}
 
 ![text-decorationを利用した装飾線の表示例]({{ site.baseurl}}/examples/text-decoration/line-basic.png)
 
@@ -43,13 +45,15 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 
 例
 
-```css
+~~~
 .underline_linethrough { text-decoration: underline line-through; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="underline_linethrough">下線と取り消し線を同時にひく</span>
-```
+~~~
+{: .language-html}
 
 ![複数指定した装飾線の表示例]({{ site.baseurl}}/examples/text-decoration/line-multiple.png)
 
@@ -61,15 +65,17 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 
 例
 
-```css
+~~~
 .underline_wavy     { text-decoration: underline wavy; }
 .underline_wavy_red { text-decoration: underline wavy red; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="underline_wavy">波線</span>
 <span class="underline_wavy_red">赤い波線</span>
-```
+~~~
+{: .language-html}
 
 ![赤い波線の表示例]({{ site.baseurl}}/examples/text-decoration/line-style.png)
 
@@ -78,17 +84,19 @@ CSS2では、下線、上線、取り消し線のみが定義されていまし�
 
 例
 
-```css
+~~~
 .my_underline { text-decoration-line:  underline; }
 .my_red       { text-decoration-color: red; }
 .my_wavy      { text-decoration-style: wavy; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="my_underline">下線</span>
 <span class="my_underline my_red">赤い下線</span>
 <span class="my_underline my_red my_wavy">赤い波線</span>
-```
+~~~
+{: .language-html}
 
 ![線の種類、色、スタイルを独立したプロパティで指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/line-mystyle.png)
 
@@ -117,7 +125,7 @@ text-emphasisプロパティで、文字に圏点を付け、強調すること�
 
 例
 
-```css
+~~~
 .filled {
   -webkit-text-emphasis: filled;
   text-emphasis: filled;
@@ -126,12 +134,14 @@ text-emphasisプロパティで、文字に圏点を付け、強調すること�
   -webkit-text-emphasis: sesame open red;
   text-emphasis: sesame open red;
 }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="filled">普通の圏点を振る</span>
 <span class="sesame_open_red">赤いゴマを振る</span>
-```
+~~~
+{: .language-html}
 
 ![普通の圏点と赤いゴマ点の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-basic.png)
 
@@ -148,21 +158,23 @@ text-emphasis-styleプロパティで、圏点のスタイルと塗りつぶし�
 
 例
 
-```css
+~~~
 .dot           { text-emphasis-style: dot; }
 .circle        { text-emphasis-style: circle; }
 .double-circle { text-emphasis-style: double-circle; }
 .triangle      { text-emphasis-style: triangle; }
 .sesame        { text-emphasis-style: sesame; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <div class="dot">ドット</div>
 <div class="circle">丸</div>
 <div class="double-circle">二重丸</div>
 <div class="triangle">三角</div>
 <div class="sesame">ゴマ</div>
-```
+~~~
+{: .language-html}
 
 ![さまざまな圏点のスタイルの表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-style.png)
 
@@ -171,13 +183,15 @@ text-emphasis-styleプロパティで、圏点のスタイルと塗りつぶし�
 
 例
 
-```css
+~~~
 .money { text-emphasis-style: '$'; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="money">おかね</span>
-```
+~~~
+{: .language-html}
 
 ![圏点に$を指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-money.png)
 
@@ -188,21 +202,23 @@ text-emphasis-style: open dot;のようにopenを指定すると、圏点の各�
 
 例
 
-```css
+~~~
 .dot           { text-emphasis-style: open dot; }
 .circle        { text-emphasis-style: open circle; }
 .double-circle { text-emphasis-style: open double-circle; }
 .triangle      { text-emphasis-style: open triangle; }
 .sesame        { text-emphasis-style: open sesame; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="dot">ドット</span>
 <span class="circle">丸</span>
 <span class="double-circle">二重丸</span>
 <span class="triangle">三角</span>
 <span class="sesame">ゴマ</span>
-```
+~~~
+{: .language-html}
 
 ![圏点を白抜きにした場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-style-open.png)
 
@@ -212,15 +228,17 @@ text-emphasis-colorで圏点の色を指定可能です。
 
 例
 
-```css
+~~~
 .filled { text-emphasis: filled; }
 .red { text-emphasis-color: red; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="filled">普通の圏点</span>
 <span class="filled red">赤い圏点</span>
-```
+~~~
+{: .language-html}
 
 ![圏点に色を指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-color.png)
 
@@ -231,13 +249,15 @@ text-emphasis-colorで圏点の色を指定可能です。
 
 例
 
-```css
+~~~
 .open_sesame_red { text-emphasis: open sesame red; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="open_sesame_red">赤いゴマ</span>
-```
+~~~
+{: .language-html}
 
 ![圏点の塗りと種類と色をまとめて指定した場合の表示例]({{ site.baseurl}}/examples/text-decoration/text-emphasis-color2.png)
 
@@ -249,13 +269,15 @@ Chromeでは、現状はoverを指定しておくと、横書き時は上に、�
 
 例
 
-```css
+~~~
 .filled { text-emphasis: filled; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="filled">普通の圏点を振る</span>
-```
+~~~
+{: .language-html}
 
 ![縦書きと圏点の表示位置]({{ site.baseurl}}/examples/text-decoration/text-emphasis-vertical.png)
 
@@ -272,13 +294,15 @@ text-shadowプロパティを指定すると、文字に影をつけることが
 
 例
 
-```css
+~~~
 .shadow  { text-shadow: 2px 2px 4px red; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="shadow">文字に影をつける</span>
-```
+~~~
+{: .language-html}
 
 ![文字に影をつけた表示例]({{ site.baseurl}}/examples/text-decoration/shadow.png)
 
@@ -290,13 +314,15 @@ text-shadowプロパティを指定すると、文字に影をつけることが
 
 例
 
-```css
+~~~
 .shadows { text-shadow: 2px 2px 4px red,
                         4px 4px 8px blue; }
-```
+~~~
+{: .language-css}
 
-```html
+~~~
 <span class="shadows">複数の影をつける</span>
-```
+~~~
+{: .language-html}
 
 ![文字に複数の影をつけた表示例]({{ site.baseurl}}/examples/text-decoration/shadows.png)

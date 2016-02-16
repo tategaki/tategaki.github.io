@@ -10,5 +10,8 @@ github_username:  nil
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge

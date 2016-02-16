@@ -104,20 +104,7 @@ $gd: 1.6rem;
     border-radius: 3px;
  
   }
-  code {
-    color: $gray-dark;
-    padding: .2em 0;
-    margin: 0;
-    font-size: 85%;
-    background-color: rgba(0,0,0,0.04);
-    border-radius: 3px;
 
-    &:before,
-    &:after {
-      letter-spacing: -0.2em;
-      content: '\00a0';
-    }
-  }
     figure {
       margin-bottom: $spacer * 2;
       p {
