@@ -1,0 +1,99 @@
+.general-comment {
+  @include wm-vrl;
+  @include prop-set-prefix(column-width, 18em);
+  margin-bottom: $spacer*4;
+  font-family: $font-family-serif;
+  line-height: 1.7;
+  .byline {
+  	font-family: $font-family-sans-serif;
+  	margin-right: 1.7em;
+  }
+}
+
+.result-abstract {
+  margin: 0 auto $spacer*2;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.result-item {
+  margin: 1em auto;
+  width: 280px;
+  .label {
+  	padding: .3em .6em;
+  }
+  .prize {
+  	margin-left: 1em;
+  	margin-right: 1em;
+    margin-bottom: $spacer;
+  	border-top: 1px solid $gray;
+  	border-bottom: 1px solid $gray;
+  	padding-top: .25em;
+  	padding-bottom: .25em;
+  	text-align: center;
+  	font-family: $font-family-serif;
+  	font-weight: bold;
+  	font-size: 1.3em;
+  }
+}
+
+.result-item-img-container {
+  width: 270px;
+  height: 270px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: $spacer*2;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  &:hover {
+    outline: 4px solid $gray;
+  }
+}
+.result-item-info {
+  @include wm-vrl;
+  width: 80px;
+  height: 13em;
+  margin-top: $spacer;
+  margin-bottom: $spacer*2;
+  margin-right: auto;
+  margin-left: auto;
+  	.name {
+      padding-right: .5em;
+      padding-left: .5em;
+  	  font-family: $font-family-serif;
+  	  font-weight: bold;
+  	  font-size: 1.4em;
+  	}
+  	.author {
+  	  text-align: right;
+  	  padding-bottom: 1em;
+  	}
+}
+.comment {
+  @include wm-vrl;
+  margin-right: 18px;
+  width: 260px;
+  height: 16em;
+  text-align: justify;
+  p {
+    font-size: 1.1em;
+  	line-height: 1.6;
+  }
+  .label {
+  	padding: .6em .3em;
+  }
+}
+
+// スマホ以外
+@media (min-width: $screen-xs-max) {
+  .general-comment {
+  	max-width: 750px;
+  	font-size: 1.35em;
+  }
+  .result-abstract {
+  	font-size: 1.2em;
+  	max-width: 750px;
+  }
+}
