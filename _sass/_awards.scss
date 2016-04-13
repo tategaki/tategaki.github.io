@@ -73,6 +73,9 @@
 // Top
 @import "awards/top";
 
+// Result
+@import "awards/result";
+
 // Sponsers
 @import "./awards/sponsers";
 
@@ -142,4 +145,8 @@ td > p:last-child {
       text-decoration: underline;
     }
   }
+}
+
+.label {
+  padding: .6em .3em;
 }

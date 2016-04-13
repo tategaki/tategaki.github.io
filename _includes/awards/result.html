@@ -1,0 +1,76 @@
+<section id="result" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-heading">結果発表</h2>
+      <p class="section-subheading">result</p>
+    </header>
+    <div class="result-abstract container">
+      <p>2016年3月12日、秋葉原UDXカンファレンスルームにて最終審査会が行われました。事前選考により選ばれた、自由部門7作品、課題部門3作品、高校生以下の部1作品の各候補者にプレゼンしていただき、最終選考を実施した結果、以下の通り受賞作品を決定いたしました。</p>
+    </div>
+    <div class="container general-comment">
+      <h3>総評</h3>
+      <p>　最終審査会における皆さまのプレゼンを通して、作品を制作される中で、制作者の皆さまが思われたことや気付かれたこと、それぞれの作品に対する思いを聞かさせていただき、多くのことを学ばせていただきました。作品の審査においても、技術者という視点での評価と、デザインという視点での評価があり、これもまた、多種多様な視点で作品を評価させていただき、縦書きを用いたＷｅｂコンテンツの可能性を確信することができました。一方、技術的に面白い！という作品であってもデザイン的にはまだまだ考える余地があるなど、作品に対する制作者の思いも様々だったように、審査する側も、様々な視点で作品を評価することになり、その結果、全ての審査員が、これが１番！　という合意には至りませんでした。</p>
+　    <p>「Ｗｅｂ上での縦書き」をテーマにしたコンテストは、初めての試みだったと思います。その中で、テーマや評価の指標の提示の仕方、また、実際の審査においても多くの課題が残りました。しかし、審査員全員がどのような視点に立っても、これはすごい！　と合意できる作品がなかったというのも事実です。このような背景をもとに、今後の縦書きＷｅｂデザインの発展への期待も込めて、今回はあえて優劣をつけなかった次第です。</p>
+      <p>　今回のアワードでは、まだまだ武骨だけれども、きらりと光る原石のような作品に出会うことができました。今回見つかった縦書きを表現する際の様々な課題、縦書きＷｅｂコンテンツの今後の可能性は、これからのＷ３Ｃでの標準化作業にとっても多くの知見をもたらしてくれたと考えています。今回のアワードが、縦書きって意外と使えるよね、私ならこうデザインする、まだまだ技術的な課題がある、といった議論を喚起し、縦書きも含めた多種多様なデザインが、Ｗｅｂに溢れるような将来が来ることを期待しています。</p>
+      <p>　作品を応募して下さった多くの皆さま、最終審査会に参加して下さった入選者の皆さまに、この場を借りて感謝申し上げます。</p>
+      <p class="byline text-right">縦書きＷｅｂデザインアワード<br>審査委員長　中村　修</p>
+    </div>
+    <div class="flex">
+    {% for item in page.result %}
+    <div class="result-item">
+      <p class="prize"><i class="fa fa-trophy"></i> {{item.prize}}</p>
+      <a href="{{item.url}}">
+        <div class="result-item-img-container" style="background-image:url('{{ site.baseurl }}/images/awards/{{item.img}}')">
+        </div>
+      </a>
+      <div class="result-item-info">
+        <div class="name">{{item.name}}</div>
+        <div class="author">{{item.author}}</div>
+      </div>
+      <div class="comment">
+        <p><span class="label label-default">寸評</span></p>
+        <p>{{item.description}}</p>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+
+<!--
+    <div class="flex">
+    {% for item in page.result %}
+      {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+      <div class="f-row-md f-row-{{thecycle}}">
+        <div class="item-block">
+          <div class="item-heading">
+            <span class="label label-{{item.color}} prize text-left"><i class="fa fa-trophy"></i> {{item.prize}}</span>
+            <span class="name">{{item.name}}</span>
+            <span class="author">{{item.author}}</span>
+          </div>
+          <a href="{{item.url}}">
+          <div class="item-img-container" style="background-image:url('{{ site.baseurl }}/images/awards/{{item.img}}')">
+          </div>
+          </a>
+          <div class="item-body">
+            <p><b class="label label-default">寸評</b></p>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+-->
+      <!--
+      <div class="f-row f-row-{{thecycle}}">
+        <div class="item-block">
+          <div class="item-img-container" style="background-image:url('{{ site.baseurl }}/images/awards/{{item.img}}')">
+          </div>
+          <div class="item-heading">{{item.name}}</div>
+          <div class="item-body">
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+      -->
+    </div>
+  </div>
+</section>

@@ -32,7 +32,6 @@ $column-gap: 3em !default;
 @media (min-width: $screen-xs-max) {
   .m-col-container {
     @include wm-vrl;
-    @include wm-vrl;
     @include prop-set-prefix(column-size, $column-size);
     @include prop-set-prefix(column-width, $column-width);
     -moz-column-width: 246px;
