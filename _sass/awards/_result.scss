@@ -1,6 +1,9 @@
 .general-comment {
   @include wm-vrl;
   @include prop-set-prefix(column-width, 18em);
+  max-width: 340px;
+
+  height: 1500px;
   margin-bottom: $spacer*4;
   font-family: $font-family-serif;
   line-height: 1.7;
@@ -87,10 +90,33 @@
 }
 
 // スマホ以外
+@media (min-width: 480px) {
+  .general-comment {
+    width: 400px;
+  }
+}
+
+// スマホ以外
+@media (min-width: 600px) {
+  .general-comment {
+    width: 600px;
+    max-width: 580px;
+    font-size: 1.35em;
+    height: 1212px;
+  }
+  .result-abstract {
+    font-size: 1.2em;
+    max-width: 750px;
+  }
+}
+
+// スマホ以外
 @media (min-width: $screen-xs-max) {
   .general-comment {
+    width: 600px;
   	max-width: 750px;
   	font-size: 1.35em;
+    height: 1212px;
   }
   .result-abstract {
   	font-size: 1.2em;
