@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "kozei";
+  src: url("Kozei-safari.otf") format('opentype');
+  /*src: url("Kozei-safari.woff") format('woff');*/
+}
+
+.vrl {
+	font-family: "kozei";
+	direction: rtl;
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	-moz-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	-webkit-text-orientation: upright;
+	-moz-text-orientation: upright;
+	-ms-text-orientation: upright;
+	text-orientation: upright;
+	/* El Capitan 設定 */
+	font-feature-settings: "vert", "liga", "calt";
+	/* 
+	Yosemite 設定
+	liga 無効にできない 
+	calt 無効にできない
+	pwid 未サポート
+	palt 未サポート
+	vertを有効にすると、vert字形に紐づけられたliga, caltも機能する
+	*/
+	-webkit-font-feature-settings: "vert";
+
+}
