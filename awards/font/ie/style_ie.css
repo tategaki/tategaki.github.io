@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "kozei";
+  src: url("Kozei-safari.woff") format('woff');
+  /*src: url("Kozei-web.woff") format('woff');*/
+}
+.vrl {
+	font-family: "kozei";
+	width: 80%;
+	vertical-align: bottom!important;
+	direction: rtl;
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	-moz-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	-webkit-text-orientation: upright;
+	-moz-text-orientation: upright;
+	-ms-text-orientation: upright;
+	text-orientation: upright; 
+	font-feature-settings: "vert", "liga", "kern", "calt";
+}
