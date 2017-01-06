@@ -93,7 +93,7 @@ z-index: 999;
 position: absolute;
 left: 0;
 top: 0;
-background: url(../../img/bg_circle_sp.png) no-repeat left top;
+background: url(../../img/bg_circle_sp.svg) no-repeat left top;
 background-size: 98px 98px;
 width: 98px;
 height: 98px;
@@ -195,7 +195,7 @@ width: 156px;
 height: 156px;
 }
 #pageTop .link .bg {
-background: url(../../img/bg_circle.png) no-repeat left top;
+background: url(../../img/bg_circle.svg) no-repeat left top;
 background-size: 156px 156px;
 width: 156px;
 height: 156px;
