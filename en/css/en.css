@@ -356,6 +356,7 @@ text-align: right;
 #SCT3 h5,
 #SCT2 h5,
 #SCT1 h5 {
+font-family: 'FOT-筑紫ゴシック Pro H','TsukuGoPro-H',sans-serif;
 text-align: left;
 font-size: 22px;
 padding-top: 30px;
@@ -364,6 +365,7 @@ padding-bottom: 10px;
 #SCT3 p,
 #SCT2 p,
 #SCT1 p {
+font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
 text-align: left;
 font-size: 16px;
 }
