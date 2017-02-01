@@ -211,7 +211,7 @@ height: 305px; /*修正*/
 #SCT3 .shead h4,
 #SCT2 .shead h4,
 #SCT1 .shead h4 {
-padding: 143px 0 0 0; /*修正*/
+padding: 113px 0 0 0; /*修正*/
 height: 105px;
 }
 #SCT3 .block,
@@ -282,7 +282,7 @@ height: 330px; /*修正*/
 #SCT3 .shead h4,
 #SCT2 .shead h4,
 #SCT1 .shead h4 {
-padding: 150px 0 0 0; /*修正*/
+padding: 120px 0 0 0; /*修正*/
 height: 130px;
 }
 #SCT3 .list,
@@ -378,6 +378,7 @@ padding: 10px;
 #SCT3 ul,
 #SCT2 ul,
 #SCT1 ul {
+font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
 text-align: left;
 list-style-type: disc;
 margin-left: 20px;
@@ -386,6 +387,7 @@ padding: 10px;
 #SCT3 ol,
 #SCT2 ol,
 #SCT1 ol {
+font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
 text-align: left;
 list-style-type: decimal;
 margin-left: 20px;
@@ -394,13 +396,110 @@ padding: 10px;
 #SCT3 li,
 #SCT2 li,
 #SCT1 li {
+font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
 text-align: left;
 font-size: 16px;
+}
+#SCT3 figcaption,
+#SCT2 figcaption,
+#SCT1 figcaption {
+font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
 }
 /* ここまで追加 */
 }
 
-/*
+#SCT2 {
+padding: 10 20px 166px 20px;
+}
+#SCT2 .shead {
+position: relative;
+height: 197px;
+}
+#SCT2 .shead h3 {
+height: 153px;
+}
+#SCT2 .shead h4 {
+padding: 67px 0 0 0;
+height: 153px;
+}
+#SCT2 .list dl {
+background: #f0f0eb url(../img/icn_open_sp.png) no-repeat right top;
+background-size: 29px 29px;
+margin-bottom: 2px;
+padding: 9px 20px 7px 20px;
+text-align: left;
+/* cursor: pointer; */
+}
+#SCT2 .list dl.active {
+background: #f7f7f5 url(../img/icn_close_sp.png) no-repeat right top;
+background-size: 29px 29px;
+}
+#SCT2 .list dt {
+margin-bottom: 2px;
+padding-right: 10px;
+font-family: 'FOT-筑紫B丸ゴシック Std B','TsukuBRdGothicStd-B',sans-serif;
+font-size: 15px;
+line-height:1.7;
+}
+#SCT2 .list dd {
+padding-bottom: 3px;
+font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
+font-size: 12px;
+line-height:1.75;
+display: none;
+}
+@media (min-width: 768px) {
+#SCT2 {
+padding: 0 0 88px 0;
+}
+#SCT2 .shead {
+position: relative;
+height: 272px;
+}
+#SCT2 .shead h3 {
+height: 190px;
+}
+#SCT2 .shead h4 {
+padding: 70px 0 0 0;
+height: 190px;
+}
+#SCT2 .list {
+margin: 0 auto;
+width: 900px;
+}
+#SCT2 .list dl {
+-webkit-transition: opacity 0.3s ease;
+-moz-transition: opacity 0.3s ease;
+-o-transition: opacity 0.3s ease;
+transition: opacity 0.3s ease;
+background: #f0f0eb url(../img/icn_open.png) no-repeat right top;
+margin-bottom: 2px;
+padding: 14px 25px 13px 25px;
+}
+#SCT2 .list dl:hover {
+filter:alpha(opacity=60);
+-moz-opacity: 0.6;
+opacity: 0.6;
+}
+#SCT2 .list dl.active {
+background: #f7f7f5 url(../img/icn_close.png) no-repeat right top;
+}
+#SCT2 .list dt {
+margin-bottom: 2px;
+padding-right: 0;
+font-family: 'FOT-筑紫B丸ゴシック Std B','TsukuBRdGothicStd-B',sans-serif;
+font-size: 20px;
+line-height:1.5;
+}
+#SCT2 .list dd {
+padding-bottom: 0;
+font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
+font-size: 16px;
+line-height:1.9;
+display: none;
+}
+}
+
 #SCT3 {
 padding: 10 20px 166px 20px;
 }
@@ -453,7 +552,7 @@ height: 272px;
 height: 190px;
 }
 #SCT3 .shead h4 {
-padding: 80px 0 0 0;
+padding: 70px 0 0 0;
 height: 190px;
 }
 #SCT3 .list {
@@ -492,7 +591,6 @@ line-height:1.9;
 display: none;
 }
 }
-*/
 
 /* PAGEBODY */
 #pageBottom {}
