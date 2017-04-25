@@ -673,21 +673,87 @@ display: none;
 }
 }
 
+@media (max-width: 767px) {
 #SCT4 {
 position: relative;
-height: 3510px;
+height: 1032px;
 }
 #SCT4 .head {
-height: 515px;
+height: 378px;
 }
 #SCT4 .head h2 {
 height: 240px;
 }
 #SCT4 .head h3 {
-padding: 102px 0;
+padding: 102px 0 0 0;
 height: 240px;
 }
-#SCT4 .p1 {
+#SCT4 .view {
+overflow-x: auto;
+overflow-y: hidden;
+-webkit-overflow-scrolling: touch;
+}
+#SCT4 .view div.cnt {
+width: 1140px;
+}
+#SCT4 .div1 {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+box-sizing: border-box;
+margin-left: 205px;
+padding: 0 20px 0 20px;
+height: 250px;
+font-family: 'FOT-筑紫B丸ゴシック Std B','TsukuBRdGothicStd-B',sans-serif;
+font-size: 14px;
+line-height: 1.8;
+text-align: justify;
+text-justify: inter-ideograph;
+}
+#SCT4 .div2 {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+box-sizing: border-box;
+padding: 0 20px 0 20px;
+height: 250px;
+font-family: 'FOT-筑紫B丸ゴシック Std B','TsukuBRdGothicStd-B',sans-serif;
+font-size: 14px;
+line-height: 1.8;
+text-align: justify;
+text-justify: inter-ideograph;
+color: #b5b29d;
+-webkit-hyphens:manual;
+-moz-hyphens:manual;
+hyphens:manual;
+}
+#SCT4 .cnt p {
+margin: 0 0 0 20px;
+}
+#SCT4 .cnt p:last-child {
+margin: 0;
+}
+}
+@media (min-width: 768px) {
+#SCT4 {
+position: relative;
+height: 3200px;
+}
+#SCT4 .head {
+height: 515px;
+}
+#SCT4 .head h2 {
+height: 390px;
+}
+#SCT4 .head h3 {
+padding: 165px 0 0 0;
+height: 390px;
+}
+#SCT4 .div1 {
 position: relative;
 -webkit-writing-mode: vertical-rl;
 -moz-writing-mode: vertical-rl;
@@ -695,63 +761,45 @@ position: relative;
 -ms-writing-mode: vertical-rl;
 writing-mode: vertical-rl;
 box-sizing: border-box;
-height: 250px;
+height: 403px;
 font-family: 'FOT-筑紫B丸ゴシック Std B','TsukuBRdGothicStd-B',sans-serif;
-font-size: 18px;
+font-size: 24px;
 line-height: 1.95;
 text-align: justify;
 text-justify: inter-ideograph;
--moz-transform: rotate(-45deg) translate(-900px,-500px);
--webkit-transform: rotate(-45deg) translate(-900px,-500px);
--o-transform: rotate(-45deg) translate(-900px,-500px);
--ms-transform: rotate(-45deg) translate(-900px,-500px);
-transform: rotate(-45deg) translate(-900px,-500px);
+-moz-transform: rotate(-45deg) translate(-1072px,-441px);
+-webkit-transform: rotate(-45deg) translate(-1072px,-441px);
+-o-transform: rotate(-45deg)translate(-1072px,-441px);
+-ms-transform: rotate(-45deg) translate(-1072px,-441px);
+transform: rotate(-45deg) translate(-1072px,-441px);
 }
-#SCT4 .p2 {
+#SCT4 .div2 {
 position: relative;
-width: 250px;
+width: 430px;
 font-family: 'FOT-筑紫B丸ゴシック Std B','TsukuBRdGothicStd-B',sans-serif;
-font-size: 17px;
+font-size: 23px;
 line-height: 1.75;
 text-align: justify;
 text-justify: inter-ideograph;
 color: #b5b29d;
--moz-transform: rotate(45deg) translate(-360px,1200px);
--webkit-transform: rotate(45deg) translate(-360px,1200px);
--o-transform: rotate(45deg) translate(-360px,1200px);
--ms-transform: rotate(45deg) translate(-360px,1200px);
-transform: rotate(45deg) translate(-360px,1200px);
+-moz-transform: rotate(45deg) translate(-280px,-535px);
+-webkit-transform: rotate(45deg) translate(-280px,-535px);
+-o-transform: rotate(45deg) translate(-280px,-535px);
+-ms-transform: rotate(45deg) translate(-280px,-535px);
+transform: rotate(45deg) translate(-280px,-535px);
+-webkit-hyphens:manual;
+-moz-hyphens:manual;
+hyphens:manual;
 }
-@media (min-width: 768px) {
-#SCT4 {
-height: 2700px;
+#SCT4 .cnt .div1 p {
+margin: 0 0 0 30px;
 }
-#SCT4 .head h2 {
-height: 390px;
+#SCT4 .cnt .div2 p {
+margin: 0 0 30px 0;
 }
-#SCT4 .head h3 {
-padding: 155px 0;
-height: 390px;
-}
-#SCT4 .p1 {
-height: 403px;
-font-size: 24px;
-line-height: 1.95;
--moz-transform: rotate(-45deg) translate(-980px,-416px);
--webkit-transform: rotate(-45deg) translate(-980px,-416px);
--o-transform: rotate(-45deg)translate(-980px,-416px);
--ms-transform: rotate(-45deg) translate(-980px,-416px);
-transform: rotate(-45deg) translate(-980px,-416px);
-}
-#SCT4 .p2 {
-width: 430px;
-font-size: 23px;
-line-height: 1.75;
--moz-transform: rotate(45deg) translate(-340px,-0);
--webkit-transform: rotate(45deg) translate(-340px,-480px);
--o-transform: rotate(45deg) translate(-340px,-480px);
--ms-transform: rotate(45deg) translate(-340px,-480px);
-transform: rotate(45deg) translate(-230px,-545px);
+#SCT4 .cnt .div1 p:last-child,
+#SCT4 .cnt .div2 p:last-child {
+margin: 0;
 }
 }
 
