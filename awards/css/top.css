@@ -462,7 +462,7 @@ column-width: 15em;
 -ms-column-width: 15em;
 margin: 0 auto;
 width: 315px;
-height: 900px;
+height: 800px;
 }
 #SCT3 #S3_BLK2 .pack {
 -webkit-column-count: 2;
@@ -667,7 +667,7 @@ margin-left: 110px;
 width: 24px;
 height: 330px;
 font-family: 'FOT-筑紫ゴシック Pro H','TsukuGoPro-H',sans-serif;
-font-size: 23px;
+font-size: 22px;
 line-height: 1.1;
 text-align: left;
 }
