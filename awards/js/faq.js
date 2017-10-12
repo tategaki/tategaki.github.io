@@ -1,14 +1,6 @@
 var anchors = function(tag) {
 	tag.click(function(){
-		var space = 0;
-		if($(this).closest('nav').length > 0) {
-			if(windowWidth > 767) {
-				var space = -150;
-			} else {
-				var space = -75;
-			}
-		}
-		$('html,body').animate({ scrollTop: $($(this).attr("href")).offset().top + space }, 'slow','swing');
+		$('html,body').animate({ scrollTop: $($(this).attr("href")).offset().top }, 'slow','swing');
 		return false;
 	});
 }
@@ -31,21 +23,36 @@ var hover = function(tag) {
 		}
     });
 }
+var menuShow = function() {
+	$('#VISUAL,#SCT1').prepend('<div class="movie"><span></span></div>');
+	$('nav').prepend('<p class="btn"><a class="menu-trigger" href="#"><span></span><span></span><i>MENU</i></a></p>');
+	$('nav .btn a').click(function(){
+		$(this).toggleClass('active');
+		if ($(this).hasClass('active')){
+			$('i',this).html('CLOSE');
+			$('nav .menu').fadeIn();
+		} else {
+			$('i',this).html('MENU');
+			$('nav .menu').fadeOut();
+		}
+	});
+	$('nav .menu li a').click(function(){
+		$('nav .menu').fadeOut();
+		$('nav .btn a').removeClass('active');
+	});
+}
 var windowWidth,windowHeight;
-$(function() {
+$(function(){
 	windowWidth = (!(window.innerWidth)) ? document.documentElement.clientWidth : window.innerWidth;
 	windowHeight = (!(window.innerHeight)) ? document.documentElement.clientHeight : window.innerHeight;
-	$('nav').prepend('<p class="btn"></p>');
-	$('nav .menu').prepend('<p class="close"></p>');
-	$('nav .btn').click(function(){
-		$('nav .btn').fadeOut();
-		$('nav .menu').fadeIn();
+	$(window).on("resize",function(){
+		windowWidth = (!(window.innerWidth)) ? document.documentElement.clientWidth : window.innerWidth;
+		windowHeight = (!(window.innerHeight)) ? document.documentElement.clientHeight : window.innerHeight;
 	});
-	$('nav .close').click(function(){
-		$('nav .menu').fadeOut();
-		$('nav .btn').fadeIn();
-	});
-	anchors($('a[href*=#]:not(".noAnchor")'));
+	if(location.hash){
+		$('html,body').animate({ scrollTop: $(location.hash).offset().top }, 'slow','swing');
+	}
+	anchors($('a[href*="#"]:not(".noAnchor")'));
 	hover($('.list .block'));
 	$('#SCT3 dl').click(function(){
 		if(!(ddLink)) {
@@ -67,29 +74,6 @@ $(function() {
 			ddLink = false;
 		}
 	);
-	var menuShow;
-	$(window).on('load',function(){
-		if(windowWidth > 767) {
-			menuShow = true;
-		} else {
-			menuShow = false;
-		}
-	});
-	$(window).on('resize',function(){
-		windowWidth = (!(window.innerWidth)) ? document.documentElement.clientWidth : window.innerWidth;
-		windowHeight = (!(window.innerHeight)) ? document.documentElement.clientHeight : window.innerHeight;
-		if(windowWidth > 767) {
-			if(!(menuShow)) {
-				$('nav .menu').show();
-				$('nav .btn').hide();
-				menuShow = true;
-			}
-		} else {
-			if(menuShow) {
-				$('nav .menu').hide();
-				$('nav .btn').show();
-				menuShow = false;
-			}
-		}
-	});
+	menuShow();
 });
+var windowWidth,windowHeight;

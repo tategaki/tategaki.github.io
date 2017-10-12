@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="縦書きWeb普及委員会は、日本の文化である縦書きを利用したWebコンテンツの普及促進に取り組んでいます。">
+<meta name="keywords" content="" />
+
+<title>ＣＳＳ Ｔｅｘｔの仕様解説│縦書きWeb普及委員会</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<!-- OGP -->
+<meta property="og:title" content="縦書きWeb普及委員会" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://tategaki.github.io" />
+<meta property="og:image" content="http://tategaki.github.io/images/tategaki/ogp_1200_iinkai.png" />
+<meta property="og:site_name" content="縦書きWeb普及委員会" />
+<meta property="og:description" content="縦書きWeb普及委員会は、日本の文化である縦書きを利用したWebコンテンツの普及促進に取り組んでいます。" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://tategaki.github.io/images/tategaki/iinkai_120_icon.png">
+
+<link href="/images/tategaki/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+<link rel="stylesheet" type="text/css" href="common/css/base.css" media="screen, projection, print" />
+<link rel="stylesheet" type="text/css" href="common/css/frame.css" media="screen, projection, print" />
+<link rel="stylesheet" type="text/css" href="css/explan.css" media="screen, projection, print" />
+<script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?u~KAt6a6kmU%3D&delay=2&timeout=60&aa=1&ab=1&ab=1" charset="utf-8"></script>
+<!-- <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?dcA13TVgii4%3D&amp;aa=1" charset="utf-8"></script> -->
+<script type="text/javascript" src="common/js/jquery.min.js"></script>
+<script src="common/js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+<script type="text/javascript" src="common/js/common.js"></script>
+<script type="text/javascript" src="js/explan.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70024452-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="E5">
+<div id="container">
+<div id="pageTop">
+<header><div id="header">
+<div class="logo"><a href="./"><img src="img/logo.png" alt="" width="45" height="122" /></a></div>
+<nav>
+<div class="menu">
+<div>
+<ul>
+<li><a href="./#SCT2">縦書きとは<span>VERTICAL WRITING</span></a></li>
+<li><a href="./#SCT3">委員会の活動<span>ABOUT</span></a></li>
+<li><a href="./#SCT4">アワードについて<span>AWARD</span></a></li>
+<li><a href="./#SCT5">技術解説<span>TECHNIQUES</span></a></li>
+<li><a href="./#SCT6">縦書きの事例<span>SAMPLES</span></a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div></header>
+<!-- /#header -->
+</div>
+<div id="pageBody">
+<div id="contents">
+
+<h1>ＣＳＳ<br />
+Ｔｅｘｔの<br />
+仕様解説</h1>
+<section><div class="section" id="SCT1">
+<h2>このモジュールの概要</h2>
+<div class="block">
+<p>CSS3 Textモジュールでは、改行、均等割り付けや寄せ、スペースの扱い、文字種変換などを扱います。なおこの記事は W3C Working Draft 22 August 2017 の仕様をもとに解説しています。</p>
+<p>参照URL: <a href="https://drafts.csswg.org/css-text-3/" target="_blank">https://drafts.csswg.org/css-text-3/</a></p>
+</div>
+<div class="block">
+<h3><strong>text-transform</strong> プロパティ</h3>
+<p>文字種変換を行います。<strong>transform</strong>と書いてありますが、斜めにしたり遠近効果を付けることではありません。大文字・小文字の変換や、全角への変換などです。英語以外にも、フランス語のœや、ドイツ語のü、ロシア語なども対応しています。値には次の5種類があります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>none</th>
+<td>文字を記述した通りに表示します。これが初期値になるので、何も指定がなければnoneになります。</td>
+</tr>
+<tr>
+<th>capitalize</th>
+<td>単語の先頭文字を大文字で表示します。先頭の文字というのは文字通りで、このプロパティを指定した箇所のスペースで区切られた単語の一番最初の文字です。</td>
+</tr>
+<tr>
+<th>uppercase</th>
+<td>全ての文字を大文字で表示します</td>
+</tr>
+<tr>
+<th>lowercase</th>
+<td>全ての文字を小文字で表示します。</td>
+</tr>
+<tr>
+<th>full-width</th>
+<td>全ての文字を全角で表示します。全角の形式に対応していない文字は変更されません。<br />
+※ full-widthは現在Firefoxでのみ対応済みです。(2017年9月1日時点)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="code"><p><span class="s2">.trans-none</span> { <strong>text-transform</strong>: <strong>none</strong>;  }<br />
+<span class="s2">.trans-capitalize</span> { <strong>text-transform</strong>: <strong>capitalize</strong>;  }<br />
+<span class="s2">.trans-uppercase</span> { <strong>text-transform</strong>: <strong>uppercase</strong>;  }<br />
+<span class="s2">.trans-lowercase</span> { <strong>text-transform</strong>: <strong>lowercase</strong>;  }<br />
+<span class="s2">.trans-full-width</span> { <strong>text-transform</strong>: <strong>full-width</strong>;  }</p>
+</div>
+<div class="code"><p>&lt;<span class="s4">span</span> <span class="s5">class=&quot;</span><span class="s2">trans-none</span><span class="s5">&quot;</span>&gt;Copa del Rey&lt;/<span class="s4">span</span>&gt;<br />
+&lt;<span class="s4">span</span> <span class="s5">class=&quot;</span><span class="s2">trans-capitalize</span><span class="s5">&quot;</span>&gt;Copa del Rey&lt;/<span class="s4">span</span>&gt;<br />
+&lt;<span class="s4">span</span> <span class="s5">class=&quot;</span><span class="s2">trans-uppercase</span><span class="s5">&quot;</span>&gt;Copa del Rey&lt;/<span class="s4">span</span>&gt;<br />
+&lt;<span class="s4">span</span> <span class="s5">class=&quot;</span><span class="s2">trans-lowercase</span><span class="s5">&quot;</span>&gt;Copa del Rey&lt;/<span class="s4">span</span>&gt;<br />
+&lt;<span class="s4">span</span> <span class="s5">class=&quot;</span><span class="s2">trans-full-width</span><span class="s5">&quot;</span>&gt;Copa del Rey&lt;/<span class="s4">span</span>&gt;</p>
+<p></p>
+</div>
+<div class="image" id="S1_IMG1">
+<div class="div1"><img src="img/e5_sct1_img1.png" alt="" width="383" height="289" /></div>
+</div>
+</div>
+<div class="block">
+<h3><strong>white-space</strong> プロパティ</h3>
+<p>このプロパティは、次の3つのことを制御します。</p>
+<ul>
+<li>元の文章の改行をどう扱うか</li>
+<li>連続する空白の圧縮方法</li>
+<li>テキストの折り返しを許可するか</li>
+</ul>
+<p>空白の圧縮方法は、主に英語のような空白で単語を区切る言語を想定している仕様です。日本語で意識するとしたら、長い英語を引用する箇所や、プログラムのソースコードを引用するなどの箇所でしょう。また、日本語のテキストでは、従来テキスト中に改行が入ると半角スペースが入ってしまっていたのですが、CSS Text Level 3で改善されて、改行を入れて書いても余計な空白が入らなくなりました。値には次の5種類があります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>元の文章の改行</th>
+<th>連続する空白の圧縮</th>
+<th>折り返し</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>normal</th>
+<td>空白に変換されます。</td>
+<td>空白に変換されます。</td>
+<td>空白に変換されます。</td>
+</tr>
+<tr>
+<th>pre</th>
+<td>改行されます。</td>
+<td>圧縮せず表示されます。</td>
+<td>折り返されません。</td>
+</tr>
+<tr>
+<th>nowrap</th>
+<td>空白に変換されます。</td>
+<td>1つに圧縮されます。</td>
+<td>折り返されません。</td>
+</tr>
+<tr>
+<th>pre-wrap</th>
+<td>改行されます。</td>
+<td>圧縮せず表示されます。</td>
+<td>折り返されます。</td>
+</tr>
+<tr>
+<th>pre-line</th>
+<td>改行されます。</td>
+<td>1つに圧縮されます。</td>
+<td>折り返されます。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="code"><p><span class="s2">.space-normal</span> { <strong>white-space</strong>: <strong>normal</strong>; <span class="s4">width</span>: <span class="s5">780px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.space-pre</span> { <strong>white-space</strong>: <strong>pre</strong>; <span class="s4">width</span>: <span class="s5">780px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.space-nowrap</span> { <strong>white-space</strong>: <strong>nowrap</strong>; <span class="s4">width</span>: <span class="s5">780px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.space-pre-wrap</span> { <strong>white-space</strong>: <strong>pre-wrap</strong>; <span class="s4">width</span>: <span class="s5">780px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.space-pre-line</span> { <strong>white-space</strong>: <strong>pre-line</strong>; <span class="s4">width</span>: <span class="s5">780px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }</p>
+</div>
+<div class="code"><p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">space-normal</span><span class="s5">&quot;</span>&gt;<br />
+I   don’t   dream   at   night,<br />
+I   dream   all   day;   I   dream   for   a   living.<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">space-pre</span><span class="s5">&quot;</span>&gt;<br />
+I   don’t   dream   at   night,<br />
+I   dream   all   day;   I   dream   for   a   living.<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">space-nowrap</span><span class="s5">&quot;</span>&gt;<br />
+I   don’t   dream   at   night,<br />
+I   dream   all   day;   I   dream   for   a   living.<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">space-pre-wrap</span><span class="s5">&quot;</span>&gt;<br />
+I   don’t   dream   at   night,<br />
+I   dream   all   day;   I   dream   for   a   living.<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">space-pre-line</span><span class="s5">&quot;</span>&gt;<br />
+I   don’t   dream   at   night,<br />
+I   dream   all   day;   I   dream   for   a   living.<br />
+&lt;/<span class="s4">div</span>&gt;<br />
+</p>
+</div>
+<div class="image" id="S1_IMG2">
+<div class="div1"><img src="img/e5_sct1_img2.png" alt="" width="780" height="488" /></div>
+</div>
+</div>
+<div class="block">
+<h3><strong>word-break</strong> プロパティ</h3>
+<p>このプロパティは、表示範囲に合わせて改行するか、単語の切れ目で改行するかなど、文中の改行の仕方を制御します。似た役割を持つプロパティに、単語の途中での改行方法を指定する <strong>overflow-wrap</strong>（word-wrap） があります。こちらは長い英単語やURLなどが、テーブルのセル内などの狭い領域から溢れてしまうような場合に、途中での改行を許して領域内に収めるために使います。<strong>word-wrap</strong>は<strong>overflow-wrap</strong>の古い名称で、後方互換性のために残されています。<strong>word-break</strong>の値には次の4種類があります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>normal</th>
+<td>一般的な規則で改行します。英文では単語の間、和文・漢文などではどの文字の間でも自動改行されます。</td>
+</tr>
+<tr>
+<th>keep-all</th>
+<td>英文、和文に関わらず、空白のある箇所で自動改行されます。</td>
+</tr>
+<tr>
+<th>break-all</th>
+<td>英文、和文に関わらず空白のある箇所で、英単語などの途中でも自動改行されます。</td>
+</tr>
+<tr>
+<th>break-word</th>
+<td>英文、和文に関わらず必要に応じて単語の途中で改行します。1行の中で空白や単語の区切りが見つかった場合はその箇所で改行がされます。見つからなかった場合は単語の途中でも自動改行されます。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="code">
+<p><span class="s2">.wbreak-normall</span> { <strong>word-break</strong>: <strong>normal</strong>; <span class="s4">width</span>: <span class="s5">250px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.wbreak-keep-all</span> { <strong>word-break</strong>: <strong>keep-all</strong>; <span class="s4">width</span>: <span class="s5">250px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.wbreak-break-all</span> { <strong>word-break</strong>: <strong>break-all</strong>; <span class="s4">width</span>: <span class="s5">250px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.wbreak-break-word</span> { <strong>white-space</strong>: <strong>word-break</strong>; <span class="s4">width</span>: <span class="s5">250px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }</p>
+</div>
+<div class="code"><p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">wbreak-normal</span><span class="s5">&quot;</span>&gt;<br />
+He who runs after two hares will catch neither.<br />
+二兎を追う者は、　一兎をも得ず<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">wbreak-keep-all</span><span class="s5">&quot;</span>&gt;<br />
+He who runs after two hares will catch neither.<br />
+二兎を追う者は、　一兎をも得ず<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">space-pre-wrap</span><span class="s5">&quot;</span>&gt;<br />
+He who runs after two hares will catch neither.<br />
+二兎を追う者は、　一兎をも得ず<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">wbreak-break-word</span><span class="s5">&quot;</span>&gt;<br />
+He who runs after two hares will catch neither.<br />
+二兎を追う者は、　一兎をも得ず<br />
+&lt;/<span class="s4">div</span>&gt;<br />
+</p>
+</div>
+<div class="image" id="S1_IMG3">
+<div class="div1"><img src="img/e5_sct1_img3.png" alt="" width="731" height="488" /></div>
+</div>
+</div>
+<div class="block">
+<h3><strong>line-break</strong>プロパティ</h3>
+<p>このプロパティは、禁則処理の適用のさせ方を制御します。禁則処理とは、文章の読みやすさや綺麗さの点から、行頭または行末が句読点や括弧などにならないようにする処理です。値には次の4種類があります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>auto</th>
+<td>禁則処理の程度が自動的に適用されます。どのように禁則処理の強い弱いを適用するかは、ブラウザに任せられます。制作者側で調整したい場合は、後述のlooseやstrictを使います。</td>
+</tr>
+<tr>
+<th>loose</th>
+<td>最低限の禁則処理だけが適用されます。新聞のような幅の狭いカラムでは、たくさん禁則すると行末が揃わず、見栄えが悪くなるため、このような場合にはlooseを指定しておきましょう。</td>
+</tr>
+<tr>
+<th>normal</th>
+<td>通常の日本語文章の規則通り、「。」や「、」や「()」などが禁則処理されます。<br />
+これが初期値になるので、何も指定がなければnormalになります。</td>
+</tr>
+<tr>
+<th>strict</th>
+<td>通常の禁則処理に加えて、「っ」や「ゃ」などの小文字も禁則処理されます。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="block">
+<h3><strong>text-align-all</strong> プロパティ</h3>
+<p>このプロパティは、文章の最後の行以外の全体に対して、行揃えの位置や、均等割付を指定する際に使用します。値には次の7種類があります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>start</th>
+<td>文章を行頭側に寄せます。通常は左寄せになりますが、アラビア語など右から左に記述する言語では右寄せになります。</td>
+</tr>
+<tr>
+<th>end</th>
+<td>文章を行末側に寄せます。通常は右寄せになりますが、アラビア語など右から左に記述する言語では左寄せになります。</td>
+</tr>
+<tr>
+<th>left</th>
+<td>文章を左側に寄せます。</td>
+</tr>
+<tr>
+<th>right</th>
+<td>文章を右側に寄せます。</td>
+</tr>
+<tr>
+<th>center</th>
+<td>文章を表示領域の中央に揃えます。</td>
+</tr>
+<tr>
+<th>justify</th>
+<td>文章が均等割付され、行頭と行末が揃います。特に英文では単語の区切りで改行が入るため、行末が綺麗に揃わない場合がありますが、<strong>justify</strong>を指定しておくと綺麗に揃えることができます。</td>
+</tr>
+<tr>
+<th>match-parent</th>
+<td><strong>start</strong>と<strong>end</strong>の値が親要素のdirectionに従って計算され、適切な<strong>left</strong>か<strong>right</strong>に置き換えられます。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="block">
+<h3><strong>text-align-last</strong>プロパティ</h3>
+<p>このプロパティは、文章の最後の行、または強制的に行われた改行の直前の行に対して、行揃えの位置や、均等割付を指定する際に使用します。 比較的新しい仕様であり、実装はSafari以外のブラウザで搭載されています。値には次の7種類があります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>auto</th>
+<td><strong>text-align</strong>の値と同じ方向に配置されます。 ただし <strong>text-align</strong>が<strong>justify</strong>である場合は、 text-align-last に left を設定した場合と同じ効果になります。 何も指定を行わなかった場合、この値が指定されたことになります。</td>
+</tr>
+<tr>
+<th>start</th>
+<td>最後の行の文章を行頭側に寄せます。</td>
+</tr>
+<tr>
+<th>end</th>
+<td>最後の行の文章を行末側に寄せます。</td>
+</tr>
+<tr>
+<th>left</th>
+<td>最後の行の文章を左側に寄せます。</td>
+</tr>
+<tr>
+<th>right</th>
+<td>最後の行の文章を右側に寄せます。</td>
+</tr>
+<tr>
+<th>center</th>
+<td>最後の行の文章を表示領域の中央に揃えます。</td>
+</tr>
+<tr>
+<th>justify</th>
+<td>最後の行の文章が均等割付され、行頭と行末が揃います。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="code">
+<p><span class="s2">.align-last-auto</span> { <strong>text-align-last</strong>: <strong>auto</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-last-start</span> { <strong>text-align-last</strong>: <strong>start</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-last-end</span> { <strong>text-align-last</strong>: <strong>end</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-last-left</span> { <strong>text-align-last</strong>: <strong>left</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-last-right</span> { <strong>text-align-last</strong>: <strong>right</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-last-center</span> { <strong>text-align-last</strong>: <strong>center</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-last-justify</span> { <strong>text-align-last</strong>: <strong>justify</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }</p>
+</div>
+<div class="code"><p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-last-auto</span><span class="s5">&quot;</span>&gt;<br />
+春霞　たてるやいつこ　みよしのの　よしのの山に　雪はふりつつ 読人不知 <br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-last-start</span><span class="s5">&quot;</span>&gt;<br />
+春霞　たてるやいつこ　みよしのの　よしのの山に　雪はふりつつ 読人不知 <br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-last-end</span><span class="s5">&quot;</span>&gt;<br />
+春霞　たてるやいつこ　みよしのの　よしのの山に　雪はふりつつ 読人不知 <br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-last-left</span><span class="s5">&quot;</span>&gt;<br />
+春霞　たてるやいつこ　みよしのの　よしのの山に　雪はふりつつ 読人不知 <br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-last-right</span><span class="s5">&quot;</span>&gt;<br />
+春霞　たてるやいつこ　みよしのの　よしのの山に　雪はふりつつ 読人不知 <br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-last-center</span><span class="s5">&quot;</span>&gt;<br />
+春霞　たてるやいつこ　みよしのの　よしのの山に　雪はふりつつ 読人不知 <br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-last-justify</span><span class="s5">&quot;</span>&gt;<br />
+春霞　たてるやいつこ　みよしのの　よしのの山に　雪はふりつつ 読人不知 <br />
+&lt;/<span class="s4">div</span>&gt;</p>
+</div>
+<div class="image" id="S1_IMG4">
+<div class="div1"><img src="img/e5_sct1_img4.png" alt="" width="868" height="731" /></div>
+</div>
+</div>
+<div class="block">
+<h3><strong>text-align</strong>プロパティ</h3>
+<p><strong>text-align</strong>は、上記の<strong>text-align-all</strong>と<strong>text-align-last</strong>を一度に指定する<strong>shorthand</strong>プロパティとなります。 <strong>text-align</strong>に<strong>justify-all</strong>以外を指定すると、<strong>text-align-last</strong>は<strong>auto</strong>にリセットされるという仕様になっています。 値には次の8種類があります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>start</th>
+<td>文章を行頭側に寄せます。通常は左寄せになりますが、アラビア語など右から左に記述する言語では右寄せになります。</td>
+</tr>
+<tr>
+<th>end</th>
+<td>文章を行末側に寄せます。通常は右寄せになりますが、アラビア語など右から左に記述する言語では左寄せになります。</td>
+</tr>
+<tr>
+<th>left</th>
+<td>文章を左側に寄せます。</td>
+</tr>
+<tr>
+<th>right</th>
+<td>文章を右側に寄せます。</td>
+</tr>
+<tr>
+<th>center</th>
+<td>文章を表示領域の中央に揃えます。</td>
+</tr>
+<tr>
+<th>justify</th>
+<td>文章が均等割付され、行頭と行末が揃います。テキストは最終行を除いて、その左右の端が行ボックスの左右の端に揃うように語間が空けられます。</td>
+</tr>
+<tr>
+<th>match-parent</th>
+<td><strong>start</strong>と<strong>end</strong>の値が親要素のdirectionに従って計算され、適切な<strong>left</strong>か<strong>right</strong>に置き換えられます。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>また、テキストのレイアウトやブロックの流れる方向を指定できる<strong>writng-mode</strong>プロパティで、<strong>vertical</strong>(縦書き)を指定した時は、指定された範囲内での方向関係が右に90°回転するので、<strong>left</strong>と<strong>right</strong>は次のようになります。</p>
+<ul>
+<li>left 文章を上側に寄せます。</li>
+<li>right 文章を下側に寄せます。</li>
+</ul>
+<div class="code"><p><span class="s2">.align-start</span> { <strong>text-align</strong>: <strong>start</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-end</span> { <strong>text-align</strong>: <strong>end</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-left</span> { <strong>text-align</strong>: <strong>left</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-right</span> { <strong>text-align</strong>: <strong>right</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-center</span> { <strong>text-align</strong>: <strong>center</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-justify</span> { <strong>text-align</strong>: <strong>justify</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }<br />
+<span class="s2">.align-atch-parent</span> { <strong>text-align</strong>: <strong>match-parent</strong>; <span class="s4">width</span>: <span class="s5">390px</span>; <span class="s4">background-color</span>: <span class="s5">#b5b29d</span>;  }</p>
+</div>
+<div class="code"><p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-start float-left</span><span class="s5">&quot;</span>&gt;<br />
+スタイルシートはひとつひとつのプロパティを扱うのはとても簡単ですが、<br />
+多くのプロパティを知って理解し、html全体として最適なプロパティを各所に指定していくのは、<br />
+意外と難しいものです。 &lt;<span class="s4">br</span>&gt;<br />
+Style sheet is very easy to use with each single property.<br />
+But, To surprisingly it is difficult to understand so many properties<br />
+and to place the property correctly in each DOM.<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-end float-left</span><span class="s5">&quot;</span>&gt;<br />
+スタイルシートはひとつひとつのプロパティを扱うのはとても簡単ですが、<br />
+多くのプロパティを知って理解し、html全体として最適なプロパティを各所に指定していくのは、<br />
+意外と難しいものです。 &lt;<span class="s4">br</span>&gt;<br />
+Style sheet is very easy to use with each single property.<br />
+But, To surprisingly it is difficult to understand so many properties<br />
+and to place the property correctly in each DOM.<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-right float-left</span><span class="s5">&quot;</span>&gt;<br />
+スタイルシートはひとつひとつのプロパティを扱うのはとても簡単ですが、<br />
+多くのプロパティを知って理解し、html全体として最適なプロパティを各所に指定していくのは、<br />
+意外と難しいものです。 &lt;<span class="s4">br</span>&gt;<br />
+Style sheet is very easy to use with each single property.<br />
+But, To surprisingly it is difficult to understand so many properties<br />
+and to place the property correctly in each DOM.<br />
+&lt;/<span class="s4">div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-center float-left</span><span class="s5">&quot;</span>&gt;<br />
+スタイルシートはひとつひとつのプロパティを扱うのはとても簡単ですが、<br />
+多くのプロパティを知って理解し、html全体として最適なプロパティを各所に指定していくのは、<br />
+意外と難しいものです。 &lt;<span class="s4">br</span>&gt;<br />
+Style sheet is very easy to use with each single property.<br />
+But, To surprisingly it is difficult to understand so many properties<br />
+and to place the property correctly in each DOM.<br />
+&lt;<span class="s4">/div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-justify float-left</span><span class="s5">&quot;</span>&gt;<br />
+スタイルシートはひとつひとつのプロパティを扱うのはとても簡単ですが、<br />
+多くのプロパティを知って理解し、html全体として最適なプロパティを各所に指定していくのは、<br />
+意外と難しいものです。 &lt;<span class="s4">br</span>&gt;<br />
+Style sheet is very easy to use with each single property.<br />
+But, To surprisingly it is difficult to understand so many properties<br />
+and to place the property correctly in each DOM.<br />
+&lt;<span class="s4">/div</span>&gt;</p>
+<p>&lt;<span class="s4">div</span>  <span class="s5">class=&quot;</span><span class="s2">align-match-parent float-left</span><span class="s5">&quot;</span>&gt;<br />
+スタイルシートはひとつひとつのプロパティを扱うのはとても簡単ですが、<br />
+多くのプロパティを知って理解し、html全体として最適なプロパティを各所に指定していくのは、<br />
+意外と難しいものです。 &lt;<span class="s4">br</span>&gt;<br />
+Style sheet is very easy to use with each single property.<br />
+But, To surprisingly it is difficult to understand so many properties<br />
+and to place the property correctly in each DOM.<br />
+&lt;<span class="s4">/div</span>&gt;</p>
+</div>
+<div class="image" id="S1_IMG5">
+<div class="div1"><img src="img/e5_sct1_img5.png" alt="" width="871" height="2145" /></div>
+</div>
+</div>
+</div></section>
+
+</div>
+<!-- /CONTENTS -->
+</div>
+
+<div id="pageBottom">
+<div class="up">
+<p><a href="#container"><img src="img/up.png" alt="" width="19" height="25" /></a>
+</p>
+</div>
+<footer><div id="footer">
+<ul>
+<li><a href="./#SCT2">縦書きとは</a></li>
+<li><a href="./#SCT3">委員会について</a></li>
+<li><a href="./#SCT4">アワードについて</a></li>
+<li><a href="./#SCT5">技術解説</a></li>
+<li><a href="./#SCT6">事例紹介</a></li>
+</ul>
+<div>
+<p class="note">当サイトはウェブブラウザの先進的な機能を使ってレイアウトされており、古いブラウザでは意図したとおりに表現されないことがあります。本来のレイアウトでご覧頂くには最新のウェブブラウザをご利用ください。<br />
+<br />
+当サイトはこのサイトはソフトバンク・テクノロジー株式会社の協力により Webフォントサービス FONTPLUS を使用しています。<br />
+<br />
+記載されている商品またはサービス等の名称は、各社の商標または登録商標です。</p>
+<p class="copyright">Copyright &#169; 2017 -
+<br />縦書きWeb普及委員会
+<br />All rights reserved.</p>
+</div>
+</div></footer>
+<!-- /FOOTER -->
+</div>
+</div>
+</body>
+
+</html>

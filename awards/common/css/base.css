@@ -9,7 +9,7 @@ margin: 0;
 padding: 0;
 font-size: 12px;
 line-height: 1.5;
-color: #1b2437;
+color: #000;
 }
 
 body * {
@@ -18,16 +18,16 @@ padding: 0;
 }
 a:link {
 position: relative;
-color: #0039dc;
+color: #000;
 text-decoration: underline;
 }
 a:active,
 a:visited { 
-color: #0039dc;
+color: #000;
 text-decoration: none;
 }
 a:hover { 
-color: #0039dc;
+color: #000;
 text-decoration: none;
 }
 
