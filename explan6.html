@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="縦書きWeb普及委員会は、日本の文化である縦書きを利用したWebコンテンツの普及促進に取り組んでいます。" />
+<meta name="keywords" content="" />
+<title>縦書きレイアウトとＣＳＳテクニック│縦書きWeb普及委員会</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- OGP -->
+<meta property="og:title" content="縦書きWeb普及委員会" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://tategaki.github.io" />
+<meta property="og:image" content="http://tategaki.github.io/images/tategaki/ogp_1200_iinkai.png" />
+<meta property="og:site_name" content="縦書きWeb普及委員会" />
+<meta property="og:description" content="縦書きWeb普及委員会は、日本の文化である縦書きを利用したWebコンテンツの普及促進に取り組んでいます。" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="http://tategaki.github.io/images/tategaki/iinkai_120_icon.png" />
+
+<link href="/images/tategaki/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="common/css/base.css" media="all" />
+<link rel="stylesheet" type="text/css" href="common/css/frame.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/explan.css" media="all" />
+<!-- <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?u~KAt6a6kmU%3D&delay=2&timeout=60&aa=1&ab=1&ab=1" charset="utf-8"></script> -->
+<script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?dcA13TVgii4%3D&amp;aa=1" charset="utf-8"></script>
+<script type="text/javascript" src="common/js/jquery.min.js"></script>
+<script src="common/js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+<script type="text/javascript" src="common/js/common.js"></script>
+<script type="text/javascript" src="js/explan.js"></script>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70024452-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="E5">
+<div id="container">
+<div id="pageTop">
+<header><div id="header">
+<div class="logo"><a href="./"><img src="img/logo.png" alt="" width="45" height="122" /></a></div>
+<nav>
+<div class="menu">
+<div>
+<ul>
+<li><a href="./#SCT2">縦書きとは<span>VERTICAL WRITING</span></a></li>
+<li><a href="./#SCT3">委員会の活動<span>ABOUT</span></a></li>
+<li><a href="./#SCT4">アワードについて<span>AWARD</span></a></li>
+<li><a href="./#SCT5">技術解説<span>TECHNIQUES</span></a></li>
+<li><a href="./#SCT6">縦書きの事例<span>SAMPLES</span></a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div></header>
+<!-- /#header -->
+</div>
+<div id="pageBody">
+<div id="contents">
+
+<h1>縦書き<br />
+レイアウト<br />
+とＣＳＳ<br>
+テクニック</h1>
+<section><div class="section" id="SCT1">
+<h2>縦書きレイアウトに使用するCSSプロパティ</h2>
+<div class="block">
+<p>見出しや文章を縦書きにする際に使用する主なプロパティは以下になります。</p>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>書式</th>
+<th>解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>writing-mode: <span>値;</span></th>
+<td>縦書き・横書きを指定する</td>
+</tr>
+<tr>
+<th>column-count: <span>値;</span></th>
+<td>カラム数を指定する</td>
+</tr>
+<tr>
+<th>column-gap: <span>値;</span></th>
+<td>カラムの間隔を指定する</td>
+</tr>
+<tr>
+<th>display: <span>値;</span></th>
+<td>要素の表示形式を指定する</td>
+</tr>
+<tr>
+<th>height: <span>値;</span></th>
+<td>高さを指定する</td>
+</tr>
+<tr>
+<th>text-align: <span>値;</span></th>
+<td>行揃えの位置・均等割付を指定する</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="block">
+<h3><strong>縦書きの中央寄せ</strong></h3>
+<p>縦書きの見出しや本文を中央寄せにする場合、ブロック要素のままだとEdge（エッジ）などの一部のブラウザで中央寄せにはならないので「display: inline-block;」を活用しましょう。また縦書きの文章には、高さを指定することも重要です。</p>
+<p>また、文字のカラム数は「column-count」でそのカラムとの空きは「column-gap」を指定して調整すると綺麗にそろえることができます。「column-width」は縦書きの場合、高さを指定しているため出番はありません。このプロパティはレスポンシブなどでカラム幅を指定する際に使用します。</p>
+<p>以下は縦書きレイアウトの中央寄せを想定したCSSの記述とそれに対するマークアップ方法です。</p>
+<div class="code"><p><span class="s2">.box</span> { <br />
+&nbsp;&nbsp;<strong>text-align</strong>: <span class="s3">center</span>;<br />
+}</p>
+<p><span class="s2">.exp</span> { <br />
+&nbsp;&nbsp;<strong>-webkit-writing-mode</strong>: <span class="s3">vertical-rl</span>;<br />
+&nbsp;&nbsp;<strong>-moz-writing-mode</strong>: <span class="s3">vertical-rl</span>;<br />
+&nbsp;&nbsp;<strong>-ms-writing-mode</strong>: <span class="s3">tb-rl</span>;<br />
+&nbsp;&nbsp;<strong>-ms-writing-mode</strong>: <span class="s3">vertical-rl</span>;<br />
+&nbsp;&nbsp;<strong>writing-mode</strong>: <span class="s3">vertical-rl</span>;<br />
+&nbsp;&nbsp;<strong>-webkit-column-count</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>-moz-column-count</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>-ms-column-count</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>column-count</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>-webkit-column-gap</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>-moz-column-gap</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>-ms-column-gap</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>column-gap</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>display</strong>: <span class="s3">inline-block</span>;<br />
+&nbsp;&nbsp;<strong>height</strong>: <span class="s6">数値</span>;<br />
+&nbsp;&nbsp;<strong>text-align</strong>: <span class="s3">left</span>;<br />
+}</p></div>
+<div class="code"><p>&lt;<span class="s4">div</span> <span class="s5">class=&quot;</span><span class="s2">box</span><span class="s5">&quot;</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="s4">div</span> <span class="s5">class=&quot;</span><span class="s2">exp</span><span class="s5">&quot;</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="s4">p</span>&gt;文章が入ります～…&lt;/<span class="s4">p</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="s4">p</span>&gt;文章が入ります～…&lt;/<span class="s4">p</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="s4">div</span>&gt;<br>
+&lt;/<span class="s4">div</span>&gt;</p>
+</div>
+</div>
+<div class="block">
+<h3>例）2カラム、カラム空き30px、高さ500pxの場合</h3>
+<div class="html" id="S1_IMG1">
+<div class="box">
+<div class="exp">
+<p>日本語組版において、縦書きと横書きの選択肢があるということは極めて自然なことですが、Webサイト制作の中で自由な組版を実装するための技術はこれまで標準化されておらず、縦書きの実装はJavaScript等による強引な手段でしか実現できないという問題を抱えていました。</p>
+<p>私たち『縦書きWeb普及委員会』は、縦書きと横書きが混在する日本語組版の文化をWebに継承し、自由な組版を実装するための規格をWeb標準とすべく、Webに関連する各種技術の国際標準化団体であるW3Cと協議を重ねながら、CSSにおける新たな組版規格である〝Writing Modes〟の標準化に向け、様々な取り組みを行なっています。</p>
+<p>『たてよこWebアワード』は、こうした取り組みのひとつとして、CSS Writing Modesを用いた縦書き実装の指標となるような優れたWebサイトを表彰することを目的としたアワードです。</p>
+<p>縦書きによってWebに新たな化学反応を引き起こす、そんな作品の応募をお待ちしています。</p>
+</div>
+</div>
+<style>
+#S1_IMG1 .box {
+text-align: center;
+}
+#S1_IMG1 .exp {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+height: 500px;
+text-align: left;
+-webkit-column-count: 2;
+-moz-column-count: 2;
+-ms-column-count: 2;
+column-count: 2;
+-moz-column-gap: 30px;
+-webkit-column-gap: 30px;
+-ms-column-gap: 30px;
+column-gap: 30px;
+display: inline-block;
+}
+</style>
+</div>
+</div>
+<div class="block">
+<h3>例）3カラム、カラム空き30px、高さ500pxの場合</h3>
+<div class="html" id="S1_IMG2">
+<div class="box">
+<div class="exp">
+<p>日本語組版において、縦書きと横書きの選択肢があるということは極めて自然なことですが、Webサイト制作の中で自由な組版を実装するための技術はこれまで標準化されておらず、縦書きの実装はJavaScript等による強引な手段でしか実現できないという問題を抱えていました。</p>
+<p>私たち『縦書きWeb普及委員会』は、縦書きと横書きが混在する日本語組版の文化をWebに継承し、自由な組版を実装するための規格をWeb標準とすべく、Webに関連する各種技術の国際標準化団体であるW3Cと協議を重ねながら、CSSにおける新たな組版規格である〝Writing Modes〟の標準化に向け、様々な取り組みを行なっています。</p>
+<p>『たてよこWebアワード』は、こうした取り組みのひとつとして、CSS Writing Modesを用いた縦書き実装の指標となるような優れたWebサイトを表彰することを目的としたアワードです。</p>
+<p>縦書きによってWebに新たな化学反応を引き起こす、そんな作品の応募をお待ちしています。</p>
+</div>
+</div>
+<style>
+#S1_IMG2 .box {
+text-align: center;
+}
+#S1_IMG2 .exp {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+height: 500px;
+text-align: left;
+-webkit-column-count: 3;
+-moz-column-count: 3;
+-ms-column-count: 3;
+column-count: 3;
+-moz-column-gap: 30px;
+-webkit-column-gap: 30px;
+-ms-column-gap: 30px;
+column-gap: 30px;
+display: inline-block;
+}
+</style>
+</div>
+</div>
+<div class="block">
+<h3><strong>縦書きの右寄せ・左寄せ</strong></h3>
+<p>縦書きレイアウトの右寄せ・左寄せに関しましては複数の指定方法がありますが、上記で説明した中央寄せのCSS指定から「text-align: center;」を変えるだけでも変更する事が可能です。</p>
+<h3>例）左寄せ。3カラム、カラム空き30px、高さ500pxの場合</h3>
+<div class="code"><p><span class="s2">.box</span> { <br />
+&nbsp;&nbsp;<strong>text-align</strong>: <span class="s3">left</span>;<br />
+}</p></div>
+<div class="html" id="S1_IMG3">
+<div class="box">
+<div class="exp">
+<p>日本語組版において、縦書きと横書きの選択肢があるということは極めて自然なことですが、Webサイト制作の中で自由な組版を実装するための技術はこれまで標準化されておらず、縦書きの実装はJavaScript等による強引な手段でしか実現できないという問題を抱えていました。</p>
+<p>私たち『縦書きWeb普及委員会』は、縦書きと横書きが混在する日本語組版の文化をWebに継承し、自由な組版を実装するための規格をWeb標準とすべく、Webに関連する各種技術の国際標準化団体であるW3Cと協議を重ねながら、CSSにおける新たな組版規格である〝Writing Modes〟の標準化に向け、様々な取り組みを行なっています。</p>
+<p>『たてよこWebアワード』は、こうした取り組みのひとつとして、CSS Writing Modesを用いた縦書き実装の指標となるような優れたWebサイトを表彰することを目的としたアワードです。</p>
+<p>縦書きによってWebに新たな化学反応を引き起こす、そんな作品の応募をお待ちしています。</p>
+</div>
+</div>
+<style>
+#S1_IMG3 .box {
+text-align: left;
+}
+#S1_IMG3 .exp {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+height: 500px;
+text-align: left;
+-webkit-column-count: 3;
+-moz-column-count: 3;
+-ms-column-count: 3;
+column-count: 3;
+-moz-column-gap: 30px;
+-webkit-column-gap: 30px;
+-ms-column-gap: 30px;
+column-gap: 30px;
+display: inline-block;
+}
+</style>
+</div>
+</div>
+<div class="block">
+<h3>例）右寄せ。3カラム、カラム空き30px、高さ500pxの場合</h3>
+<div class="code"><p><span class="s2">.box</span> { <br />
+&nbsp;&nbsp;<strong>text-align</strong>: <span class="s3">right</span>;<br />
+}</p></div>
+<div class="html" id="S1_IMG4">
+<div class="box">
+<div class="exp">
+<p>日本語組版において、縦書きと横書きの選択肢があるということは極めて自然なことですが、Webサイト制作の中で自由な組版を実装するための技術はこれまで標準化されておらず、縦書きの実装はJavaScript等による強引な手段でしか実現できないという問題を抱えていました。</p>
+<p>私たち『縦書きWeb普及委員会』は、縦書きと横書きが混在する日本語組版の文化をWebに継承し、自由な組版を実装するための規格をWeb標準とすべく、Webに関連する各種技術の国際標準化団体であるW3Cと協議を重ねながら、CSSにおける新たな組版規格である〝Writing Modes〟の標準化に向け、様々な取り組みを行なっています。</p>
+<p>『たてよこWebアワード』は、こうした取り組みのひとつとして、CSS Writing Modesを用いた縦書き実装の指標となるような優れたWebサイトを表彰することを目的としたアワードです。</p>
+<p>縦書きによってWebに新たな化学反応を引き起こす、そんな作品の応募をお待ちしています。</p>
+</div>
+</div>
+<style>
+#S1_IMG4 .box {
+text-align: right;
+}
+#S1_IMG4 .exp {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+height: 500px;
+text-align: left;
+-webkit-column-count: 3;
+-moz-column-count: 3;
+-ms-column-count: 3;
+column-count: 3;
+-moz-column-gap: 30px;
+-webkit-column-gap: 30px;
+-ms-column-gap: 30px;
+column-gap: 30px;
+display: inline-block;
+}
+</style>
+</div>
+</div>
+<div class="block">
+<h3><strong>縦書きの均等割付</strong></h3>
+<p>横書き同様に縦書きでも均等割付を指定することが出来ます。</p>
+<h3>例）均等割付。3カラム、カラム空き30px、高さ500pxの場合</h3>
+<div class="code"><p><span class="s2">.exp</span> { <br />
+&nbsp;&nbsp;<strong>text-align</strong>: <span class="s3">justify</span>;<br />
+&nbsp;&nbsp;<strong>text-justify</strong>: <span class="s3">inter-ideograph</span>;<br />
+}</p></div>
+<div class="html" id="S1_IMG5">
+<div class="box">
+<div class="exp">
+<p>日本語組版において、縦書きと横書きの選択肢があるということは極めて自然なことですが、Webサイト制作の中で自由な組版を実装するための技術はこれまで標準化されておらず、縦書きの実装はJavaScript等による強引な手段でしか実現できないという問題を抱えていました。</p>
+<p>私たち『縦書きWeb普及委員会』は、縦書きと横書きが混在する日本語組版の文化をWebに継承し、自由な組版を実装するための規格をWeb標準とすべく、Webに関連する各種技術の国際標準化団体であるW3Cと協議を重ねながら、CSSにおける新たな組版規格である〝Writing Modes〟の標準化に向け、様々な取り組みを行なっています。</p>
+<p>『たてよこWebアワード』は、こうした取り組みのひとつとして、CSS Writing Modesを用いた縦書き実装の指標となるような優れたWebサイトを表彰することを目的としたアワードです。</p>
+<p>縦書きによってWebに新たな化学反応を引き起こす、そんな作品の応募をお待ちしています。</p>
+</div>
+</div>
+<style>
+#S1_IMG5 .box {
+text-align: center;
+}
+#S1_IMG5 .exp {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+height: 500px;
+text-align: left;
+-webkit-column-count: 3;
+-moz-column-count: 3;
+-ms-column-count: 3;
+column-count: 3;
+-moz-column-gap: 30px;
+-webkit-column-gap: 30px;
+-ms-column-gap: 30px;
+column-gap: 30px;
+display: inline-block;
+text-align: justify;
+text-justify: inter-ideograph;
+}
+</style>
+</div>
+</div>
+<div class="block">
+<h3><strong>縦書きの禁則処理</strong></h3>
+<p>横書き同様に縦書きでも禁則処理を指定することが出来ます。</p>
+<h3>例）禁則処理。word-breakプロパティ</h3>
+<div class="code"><p>
+<span class="s2">.wbreak-normal</span> { <strong>word-break</strong>: <span class="s3">normal</span>; <strong>background-color</strong>: <span class="s3">#90ee90</span>; }<br />
+<span class="s2">.wbreak-keep-all</span> { <strong>word-break</strong>: <span class="s3">keep-all</span>; <strong>background-color</strong>: <span class="s3">#90ee90</span>; }<br />
+<span class="s2">.wbreak-break-all</span> { <strong>word-break</strong>: <span class="s3">break-all</span>; <strong>background-color</strong>: <span class="s3">#90ee90</span>; }<br />
+</p></div>
+<div class="html" id="S1_IMG6">
+<div class="box">
+<div class="exp">
+<p class="wbreak-normal">
+	word-break:normal;の場合<br>
+    He who runs after two hares will catch neither.
+    二兎を追う者は、　一兎をも得ず
+</p>
+<p class="wbreak-keep-all">
+	word-break:keep-all;の場合<br>
+    He who runs after two hares will catch neither.
+    二兎を追う者は、　一兎をも得ず
+</p>
+<p class="wbreak-break-all">
+	word-break:break-all;の場合<br>
+    He who runs after two hares will catch neither.
+    二兎を追う者は、　一兎をも得ず
+</p>
+</div>
+</div>
+<style>
+#S1_IMG6 .box {
+text-align: center;
+}
+#S1_IMG6 .exp {
+-webkit-writing-mode: vertical-rl;
+-moz-writing-mode: vertical-rl;
+-ms-writing-mode: tb-rl;
+-ms-writing-mode: vertical-rl;
+writing-mode: vertical-rl;
+height: 150px;
+text-align: left;
+display: inline-block;
+word-break: break-all;
+}
+#S1_IMG6 .exp p {
+	margin: 0 20px !important;
+}
+#S1_IMG6 .wbreak-normal { word-break:normal; background-color:#90ee90; }
+#S1_IMG6 .wbreak-keep-all { word-break:keep-all; background-color:#90ee90; }
+#S1_IMG6 .wbreak-break-all { word-break:break-all; background-color:#90ee90; }
+</style>
+</div>
+</div>
+</div></section>
+<section><div class="section" id="SCT2">
+<h2>縦書きレイアウトとbackground-clipプロパティ</h2>
+<div class="block">
+<p>今回、たてよこＷｅｂアワード2017の制作に当たっては、文字に対してマスクを使用したアニメーションにチャレンジしました。「background-clip」自体は比較的新しいブラウザであれば対応されていると思い検証したが結果NGとなりました。</p>
+<p>理由としては、縦書きにすると一部のブラウザでマスクが掛らなくなる。「column-count」のカラム指定で文章が上下に別れている場合、背景が想定していた表示になりませんでした。</p>
+</div>
+</div></section>
+<section><div class="section" id="SCT3">
+<h2>CSSアニメーションによる円運動</h2>
+<div class="block">
+<p>また、たてよこＷｅｂアワード2017で使用しているイラストではCSSアニメーションによる円運動を取り入れています。要素単体では実現が難しいアニメーションでも入れ子にすることで再現できるようになります。</p>
+<div class="code">
+
+<p><span class="s2">.circle</span> {<br />
+&nbsp;&nbsp;<strong>position</strong>: <span class="s3">relative</span>;<br />
+&nbsp;&nbsp;<strong>background-color</strong>: <span class="s3">#c00</span>;<br />
+&nbsp;&nbsp;<strong>width</strong>: <span class="s3">150px</span>;<br />
+&nbsp;&nbsp;<strong>height</strong>: <span class="s3">50px</span>;<br />
+&nbsp;&nbsp;<strong>transform-origin</strong>:<span class="s3">0 50%</span>;<br />
+&nbsp;&nbsp;<strong>animation</strong>: <span class="s3">circleBase 5s linear infinite</span>;<br />
+}</p>
+<p><span class="s2">.cont</span> {<br>
+&nbsp;&nbsp;<strong>position</strong>: <span class="s3">absolute</span>;<br />
+&nbsp;&nbsp;<strong>right</strong>: <span class="s3">-25px</span>;<br />
+&nbsp;&nbsp;<strong>top</strong>: <span class="s3">0</span>;<br />
+&nbsp;&nbsp;<strong>width</strong>: <span class="s3">50px</span>;<br />
+&nbsp;&nbsp;<strong>height</strong>: <span class="s3">50px</span>;<br />
+&nbsp;&nbsp;<strong>background-color</strong>: <span class="s3">#ccc</span>;<br />
+&nbsp;&nbsp;<strong>animation</strong>: <span class="s3">circleInner 5s linear infinite</span>;<br />
+}</p>
+<p><span class="s2">@keyframes circleBase</span> {<br />
+0% {<strong>transform</strong>: <span class="s3">rotate(0deg)</span>}<br />
+100% {<strong>transform</strong>: <span class="s3">rotate(-360deg)</span>}<br />
+}</p>
+<p><span class="s2">@keyframes circleInner</span> {<br />
+0% {<strong>transform</strong>: <span class="s3">rotate(0deg)</span>}<br />
+100% {<strong>transform</strong>: <span class="s3">rotate(360deg)</span>}<br />
+}</p></div>
+<div class="code"><p>&lt;<span class="s4">div</span> <span class="s5">class=&quot;</span><span class="s2">circle</span><span class="s5">&quot;</span>&gt;<br>
+&lt;<span class="s4">div</span> <span class="s5">class=&quot;</span><span class="s2">cont</span><span class="s5">&quot;</span>&gt;&lt;/<span class="s4">div</span>&gt;<br>
+&lt;/<span class="s4">div</span>&gt;</p>
+</div>
+<div class="html" id="S2_IMG1">
+<div class="circle">
+<div class="cont"></div>
+</div>
+<style>
+#S2_IMG1 {
+position: relative;
+padding 0 !important;
+height: 400px;
+}
+#S2_IMG1 .circle {
+position: absolute;
+left: 50%;
+top: 50%;
+margin-top: -25px;
+background-color: #c00;
+width: 150px;
+height: 50px;
+transform-origin:0 50%;
+animation: circleBase 5s linear infinite;
+}
+#S2_IMG1 .cont {
+position: absolute;
+right: -25px;
+top: 0;
+width: 50px;
+height: 50px;
+background-color: #ccc;
+animation: circleInner 5s linear infinite;
+float: right;
+}
+@keyframes circleBase {
+0% {transform: rotate(0deg)}
+100% {transform: rotate(-360deg)}
+}
+@keyframes circleInner {
+0% {transform: rotate(0deg)}
+100% {transform: rotate(360deg)}
+}
+</style>
+</div>
+</div>
+</div></section>
+
+</div>
+<!-- /CONTENTS -->
+</div>
+
+<div id="pageBottom">
+<div class="up">
+<p><a href="#container"><img src="img/up.png" alt="" width="19" height="25" /></a>
+</p>
+</div>
+<footer><div id="footer">
+<ul>
+<li><a href="./#SCT2">縦書きとは</a></li>
+<li><a href="./#SCT3">委員会について</a></li>
+<li><a href="./#SCT4">アワードについて</a></li>
+<li><a href="./#SCT5">技術解説</a></li>
+<li><a href="./#SCT6">事例紹介</a></li>
+</ul>
+<div>
+<p class="note">当サイトはウェブブラウザの先進的な機能を使ってレイアウトされており、古いブラウザでは意図したとおりに表現されないことがあります。本来のレイアウトでご覧頂くには最新のウェブブラウザをご利用ください。<br />
+<br />
+当サイトはこのサイトはソフトバンク・テクノロジー株式会社の協力により Webフォントサービス FONTPLUS を使用しています。<br />
+<br />
+記載されている商品またはサービス等の名称は、各社の商標または登録商標です。</p>
+<p class="copyright">Copyright &#169; 2017 -
+<br />縦書きWeb普及委員会
+<br />All rights reserved.</p>
+</div>
+</div></footer>
+<!-- /FOOTER -->
+</div>
+</div>
+</body>
+
+</html>
