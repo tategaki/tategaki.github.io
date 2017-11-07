@@ -99,6 +99,10 @@ margin-bottom: 25px;
     background-color: #f0f0eb;
     padding: 20px;
 }
+#contents .section .html p {
+    margin: 0;
+    padding: 0;
+}
 #contents .section .image div {
 box-sizing: border-box;
 background-color: #f0f0eb;
