@@ -95,6 +95,10 @@ list-style-type: disc;
 position: relative;
 margin-bottom: 25px;
 }
+#contents .section .html {
+    background-color: #f0f0eb;
+    padding: 20px;
+}
 #contents .section .image div {
 box-sizing: border-box;
 background-color: #f0f0eb;
