@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* COMMON */
 
 body {
@@ -22,11 +21,11 @@ color: #000;
 text-decoration: underline;
 }
 a:active,
-a:visited { 
+a:visited {
 color: #000;
 text-decoration: none;
 }
-a:hover { 
+a:hover {
 color: #000;
 text-decoration: none;
 }
@@ -38,7 +37,7 @@ a {
 -o-transition: opacity 0.3s ease;
 transition: opacity 0.3s ease;
 }
-a:hover { 
+a:hover {
 filter:alpha(opacity=60);
 -moz-opacity: 0.6;
 opacity: 0.6;
@@ -74,4 +73,3 @@ select,
 input {
 vertical-align:baseline;
 }
-
