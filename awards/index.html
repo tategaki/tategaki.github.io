@@ -1,14 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="たてよこWebアワードは、CSSの新たな組版規格を使用し次世代のWebタイポグラフィに挑戦したデザインや取り組みを表彰するためのアワードです。" />
-<meta name="keywords" content="" />
+<meta charset="utf-8">
+<meta name="description" content="たてよこWebアワードは、CSSの新たな組版規格を使用し次世代のWebタイポグラフィに挑戦したデザインや取り組みを表彰するためのアワードです。">
+<meta name="keywords" content="">
 <title>たてよこWebアワード</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-
 <!-- OGP -->
 <meta property="og:title" content="たてよこWebアワード">
 <meta property="og:type" content="website">
@@ -24,10 +21,11 @@
 <link rel="manifest" href="./manifest.json">
 <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#d60d21">
 <meta name="theme-color" content="#ffffff">
-
-<link rel="stylesheet" type="text/css" href="common/css/base.css" media="screen, projection, print" />
-<link rel="stylesheet" type="text/css" href="common/css/frame.css" media="screen, projection, print" />
-<link rel="stylesheet" type="text/css" href="css/top.css" media="screen, projection, print" />
+<link rel="stylesheet" type="text/css" href="css/media.css">
+<!--
+<link rel="stylesheet" type="text/css" href="common/css/base.css" media="screen, projection, print">
+<link rel="stylesheet" type="text/css" href="common/css/frame.css" media="screen, projection, print">
+<link rel="stylesheet" type="text/css" href="css/top.css" media="screen, projection, print">-->
 <!-- <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?u~KAt6a6kmU%3D&delay=2&timeout=60&aa=1&ab=1&ab=1" charset="utf-8"></script> -->
 <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?dcA13TVgii4%3D&amp;aa=1" charset="utf-8"></script>
 <script type="text/javascript" src="common/js/jquery.min.js"></script>
@@ -48,7 +46,7 @@ ga('send', 'pageview');
 <div id="container">
 <div id="pageTop">
 <header><div id="header">
-<p class="title init"><a href="#pageTop">たてよこ<br />Web<br />アワード</a></p>
+<p class="title init"><a href="#pageTop">たてよこ<br>Web<br>アワード</a></p>
 <nav class="init">
 <div class="menu">
 <div>
@@ -68,7 +66,7 @@ ga('send', 'pageview');
 <!-- /#header -->
 <div class="link init">
 <div class="bg"></div>
-<p><a href="faq.html">縦書き実装<br />コーディング<br />解説<span> ＆ </span>FAQ</a>
+<p><a href="faq.html">縦書き実装<br>コーディング<br>解説<span> ＆ </span>FAQ</a>
 </p>
 </div>
 </div>
@@ -101,29 +99,29 @@ ga('send', 'pageview');
 <dt class="init"><span>―</span>基本条件</dt>
 <dd class="init">CSS Writing Modes（writing-mode）による縦書きを使用し、指定する複数のモダンブラウザ（Microsoft Edge / Safari / Firefox / Google Chrome 各最新版）に対応したWebサイトであること。個人・法人・年齢・国籍は問いません。原則として、応募作品は入選・入賞に関わらず、当サイト等で公開します。ただし、著作権侵害その他、公開にふさわしくない内容と主催者が判断した場合はこの限りではありません。</dd>
 <dt class="init"><span>―</span>作品形態</dt>
-<dd class="init">コンテンツを問わず、応募時点で一般に公開されているWebサイトであること。（商用サイト可）<br />
+<dd class="init">コンテンツを問わず、応募時点で一般に公開されているWebサイトであること。（商用サイト可）<br>
 ※ 制作用のコンテンツ素材を用意できない場合は、Wikipediaの利用規約に従い、<a href="https://ja.wikipedia.org/wiki/%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%81%A8%E6%A8%AA%E6%9B%B8%E3%81%8D" target="_blank">Wikipedia『縦書き横書き』</a>も使用可能です。</dd>
 <dt class="init"><span>―</span>応募方法</dt>
 <dd class="init">応募フォームにWebサイトのURLと、&#9312;Webサイトの制作意図、&#9313;縦書きを利用して実現したいこと、&#9314;評価してほしいポイントを記入し、応募規約に同意の上で応募してください。（応募フォームは<a href="https://www.est.co.jp/tategaki/tategaki-entry.asp">こちら</a>）</dd>
 <dt class="init"><span>―</span>募集期間・結果発表</dt>
-<dd class="init">2017年10月16日［月］～ 12月25日［月］<br />
+<dd class="init">2017年10月16日［月］～ 12月25日［月］<br>
 審査結果は2018年1月以降に本Webサイト上で発表。</dd>
 </dl>
 <dl class="dl2">
 <dt class="init"><span>―</span>審査・賞</dt>
 <dd class="init">CSS Writing Modes を使用した縦書きと、クロスブラウザ環境で一定の完成度を実現していることを前提に、「有用性」「新規性」「デザイン性」「技術力」の観点から、審査員が採点。採点結果にもとづき、デザインも含めた完成度、縦書きの活用度、縦書き普及への貢献性、作品性やアイディア性、新しいWeb技術の活用などの観点も加味して選考、賞および受賞作品を決定します。受賞作品には賞金、賞品あり。
-<!--<br />
-・デザインも含めた完成度<br />
-・縦書きの活用度、縦書き普及への貢献<br />
-・作品性やアイディア性<br />
+<!--<br>
+・デザインも含めた完成度<br>
+・縦書きの活用度、縦書き普及への貢献<br>
+・作品性やアイディア性<br>
 ・新しいWeb技術の活用、など--></dd>
 <dt class="init"><span>―</span>審査員</dt>
-<dd class="init">● 縦書きWeb普及委員会<br />
-<br />
-● 宮後優子（外部審査員）<br />
-デザインエディター。『Typography』編集長。東京藝術大学美術学部芸術学科卒業後、出版社の編集者に。1998年よりデザイン雑誌・書籍の取材や編集に携わる。デザイン専門誌『デザインの現場』編集長を経て、2012年に文字デザイン専門誌『Typography』を創刊。『欧文書体』（小林章著）、『欧文組版』（髙岡昌生著）などの書籍編集を担当し、両著者とともにタイポグラフィのイベント「TypeTalks」を共同主宰。<br />
-<br />
-● カワセ タケヒロ（外部審査員）<br />
+<dd class="init">● 縦書きWeb普及委員会<br>
+<br>
+● 宮後優子（外部審査員）<br>
+デザインエディター。『Typography』編集長。東京藝術大学美術学部芸術学科卒業後、出版社の編集者に。1998年よりデザイン雑誌・書籍の取材や編集に携わる。デザイン専門誌『デザインの現場』編集長を経て、2012年に文字デザイン専門誌『Typography』を創刊。『欧文書体』（小林章著）、『欧文組版』（髙岡昌生著）などの書籍編集を担当し、両著者とともにタイポグラフィのイベント「TypeTalks」を共同主宰。<br>
+<br>
+● カワセ タケヒロ（外部審査員）<br>
 コンセプター、グラフィックデザイナー。musubime（ムスビメ）主宰。FabLab Nagano外部アドバイザー。高校在学中に世界保健機関（ＷＨＯ）の準会員ＮＧＯ・国際医学生連盟の日本支部でウェブマスターを担当。都内制作会社数社を経て2011年に独立。ＣＩ計画、グラフィック、Web、映像など、ブランディングに関する設計・制作を中心に活動中。</dd>
 </dl>
 </div>
@@ -137,45 +135,45 @@ ga('send', 'pageview');
 <div class="banner">
 <!--<h3 class="init">協賛企業</h3>-->
 <ul class="sponsors">
-<li class="init"><a href="http://jp.access-company.com/" target="_blank"><img src="img/bnr_01.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="https://www.internetacademy.jp/" target="_blank"><img src="img/bnr_02.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="https://www.webdino.org/" target="_blank"><img src="img/bnr_24.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.kodansha.co.jp/" target="_blank"><img src="img/bnr_03.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.justsystems.com/jp/" target="_blank"><img src="img/bnr_04.png" alt="" width="320" height="96" /></a></li>
-<!-- li class="init"><a href="http://www.pubridge.jp/" target="_blank"><img src="img/bnr_05.png" alt="" width="320" height="96" /></a></li -->
-<li class="init"><a href="http://www.sony.co.jp/" target="_blank"><img src="img/bnr_06.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.softbanktech.co.jp/" target="_blank"><img src="img/bnr_07.png" alt="" width="320" height="96" /></a></li>
-<!-- li class="init"><a href="http://www.taishukan.co.jp/" target="_blank"><img src="img/bnr_08.png" alt="" width="320" height="96" /></a></li -->
-<li class="init"><a href="http://www.dnp.co.jp/" target="_blank"><img src="img/bnr_09.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.microsoft.com/ja-jp/" target="_blank"><img src="img/bnr_10.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.ntt.co.jp/" target="_blank"><img src="img/bnr_11.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.pixiv.co.jp/" target="_blank"><img src="img/bnr_12.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.bpsinc.jp/" target="_blank"><img src="img/bnr_13.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://vivliostyle.com/ja/" target="_blank"><img src="img/bnr_14.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://bookwalker.jp/" target="_blank"><img src="img/bnr_15.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://corp.rakuten.co.jp/" target="_blank"><img src="img/bnr_16.png" alt="" width="320" height="96" /></a></li>
+<li class="init"><a href="http://jp.access-company.com/" target="_blank"><img src="img/bnr_01.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="https://www.internetacademy.jp/" target="_blank"><img src="img/bnr_02.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="https://www.webdino.org/" target="_blank"><img src="img/bnr_24.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.kodansha.co.jp/" target="_blank"><img src="img/bnr_03.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.justsystems.com/jp/" target="_blank"><img src="img/bnr_04.png" alt="" width="320" height="96"></a></li>
+<!-- li class="init"><a href="http://www.pubridge.jp/" target="_blank"><img src="img/bnr_05.png" alt="" width="320" height="96"></a></li -->
+<li class="init"><a href="http://www.sony.co.jp/" target="_blank"><img src="img/bnr_06.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.softbanktech.co.jp/" target="_blank"><img src="img/bnr_07.png" alt="" width="320" height="96"></a></li>
+<!-- li class="init"><a href="http://www.taishukan.co.jp/" target="_blank"><img src="img/bnr_08.png" alt="" width="320" height="96"></a></li -->
+<li class="init"><a href="http://www.dnp.co.jp/" target="_blank"><img src="img/bnr_09.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.microsoft.com/ja-jp/" target="_blank"><img src="img/bnr_10.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.ntt.co.jp/" target="_blank"><img src="img/bnr_11.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.pixiv.co.jp/" target="_blank"><img src="img/bnr_12.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.bpsinc.jp/" target="_blank"><img src="img/bnr_13.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://vivliostyle.com/ja/" target="_blank"><img src="img/bnr_14.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://bookwalker.jp/" target="_blank"><img src="img/bnr_15.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://corp.rakuten.co.jp/" target="_blank"><img src="img/bnr_16.png" alt="" width="320" height="96"></a></li>
 </ul>
 
 <!--
 <h3 class="init">協賛団体</h3>
 <ul class="cooperation">
-<li class="init"><a href="http://idpf.org/" target="_blank"><img src="img/bnr_17.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.aebs.or.jp/" target="_blank"><img src="img/bnr_18.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.jagat.or.jp/" target="_blank"><img src="img/bnr_19.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.jbpa.or.jp/" target="_blank"><img src="img/bnr_20.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="http://www.jepa.or.jp/" target="_blank"><img src="img/bnr_21.png" alt="" width="320" height="96" /></a></li>
+<li class="init"><a href="http://idpf.org/" target="_blank"><img src="img/bnr_17.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.aebs.or.jp/" target="_blank"><img src="img/bnr_18.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.jagat.or.jp/" target="_blank"><img src="img/bnr_19.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.jbpa.or.jp/" target="_blank"><img src="img/bnr_20.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="http://www.jepa.or.jp/" target="_blank"><img src="img/bnr_21.png" alt="" width="320" height="96"></a></li>
 </ul>
 -->
 
 <h3 class="init">後援</h3>
 <ul class="support">
-<li class="init"><a href="http://www.soumu.go.jp/" target="_blank"><img src="img/bnr_22.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="https://www.w3.org/" target="_blank"><img src="img/bnr_23.png" alt="" width="320" height="96" /></a></li>
+<li class="init"><a href="http://www.soumu.go.jp/" target="_blank"><img src="img/bnr_22.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="https://www.w3.org/" target="_blank"><img src="img/bnr_23.png" alt="" width="320" height="96"></a></li>
 </ul>
-<h3 class="partners init">メディア<br />パートナー</h3>
+<h3 class="partners init">メディア<br>パートナー</h3>
 <ul class="partners">
-<li class="init"><a href="http://internet.watch.impress.co.jp/" target="_blank"><img src="img/bnr_25.png" alt="" width="320" height="96" /></a></li>
-<li class="init"><a href="https://www.facebook.com/TypographyMagazine/" target="_blank"><img src="img/bnr_27.png" alt="" width="320" height="96" /></a></li>
+<li class="init"><a href="http://internet.watch.impress.co.jp/" target="_blank"><img src="img/bnr_25.png" alt="" width="320" height="96"></a></li>
+<li class="init"><a href="https://www.facebook.com/TypographyMagazine/" target="_blank"><img src="img/bnr_27.png" alt="" width="320" height="96"></a></li>
 </ul>
 </div>
 </div>
@@ -187,22 +185,22 @@ ga('send', 'pageview');
 </div>
 <div class="cont">
 <div class="tit">
-<p class="init">2017<br />11/15</p>
+<p class="init">2017<br>11/15</p>
 <h3 class="init">
-<span>いま知って<br />おくべき、<br />Ｗｅｂと<br />文字の話。</span>
+<span>いま知って<br>おくべき、<br>Ｗｅｂと<br>文字の話。</span>
 </h3>
 </div>
 <dl class="dl1">
 <dt class="init"><span>―</span>日時・会場</dt>
-<dd class="init">2017年11月15日〈水〉　19：30～21：00<br />
-（終了後に懇親会を予定）<br />
-<br />
-<a href="https://iioffice.liginc.co.jp/" target="_blank">いいオフィス iiofice</a>（株式会社LIG）<br />
-☎ 03-5812-4433<br />
-東京都台東区東上野2-18-7 共同ビル 3F<br />
+<dd class="init">2017年11月15日〈水〉　19：30～21：00<br>
+（終了後に懇親会を予定）<br>
+<br>
+<a href="https://iioffice.liginc.co.jp/" target="_blank">いいオフィス iiofice</a>（株式会社LIG）<br>
+☎ 03-5812-4433<br>
+東京都台東区東上野2-18-7 共同ビル 3F<br>
 ［ <a href="https://goo.gl/maps/Liwugwr3agq" target="_blank">Googleマップ</a> ］</dd>
 <dt class="init"><span>―</span>参加費</dt>
-<dd class="init">500円 ［税込］<br />
+<dd class="init">500円 ［税込］<br>
 デジタルハリウッドSTUDIOの学生は無料</dd>
 <dt class="init"><span>―</span>定員</dt>
 <dd class="init">100名（満員御礼）</dd>
@@ -211,9 +209,9 @@ ga('send', 'pageview');
 <dt class="init"><span>―</span>対象</dt>
 <dd class="init">Webデザイナー、グラフィックデザイナー、コーダーなど、Webサイトの制作に携わる方や興味のある方。</dd>
 <dt class="init"><span>―</span>登壇</dt>
-<dd class="init">宮後優子（Typography編集長）<br />
-カワセ タケヒロ（デザイナー ／ musubime主宰）<br />
-真鍋 智彦（Webプログラマー ／ ネオルド代表）<br />
+<dd class="init">宮後優子（Typography編集長）<br>
+カワセ タケヒロ（デザイナー ／ musubime主宰）<br>
+真鍋 智彦（Webプログラマー ／ ネオルド代表）<br>
 もりた（Webデザイナー ／ LIG）</dd>
 <dt class="init"><span>―</span>参加お申し込み</dt>
 <dd class="init"><a href="https://lig.connpass.com/event/70507/" target="_blank">株式会社LIGイベントページ</a>からお申し込みください。</dd>
@@ -226,9 +224,9 @@ ga('send', 'pageview');
 <h2>《 主催 》</h2>
 </div>
 <div class="cont">
-<div class="image init"><a href="http://tategaki.github.io/" target="_blank"><img src="img/sct4_img.png" alt="" width="81" height="225" /></a></div>
+<div class="image init"><a href="http://tategaki.github.io/" target="_blank"><img src="img/sct4_img.png" alt="" width="81" height="225"></a></div>
 <ul class="init">
-<li><a href="http://tategaki.github.io/" target="_blank">縦書きWeb普及委員会<br /><span>（次世代Webブラウザのテキストレイアウトに関する検討会）</span></a></li>
+<li><a href="http://tategaki.github.io/" target="_blank">縦書きWeb普及委員会<br><span>（次世代Webブラウザのテキストレイアウトに関する検討会）</span></a></li>
 <li><a href="http://www.est.co.jp/" target="_blank">運営：イースト株式会社</a></li>
 </ul>
 <p class="link init"><a href="mailto:tategaki@est.co.jp">お問い合わせ</a></p>
@@ -251,12 +249,12 @@ ga('send', 'pageview');
 <li><a href="mailto:tategaki@est.co.jp">お問い合せ</a></li>
 </ul>
 <div>
-<p class="note init">当サイトはウェブブラウザの先進的な機能を使ってレイアウトされており、古いブラウザでは意図したとおりに表現されないことがあります。本来のレイアウトでご覧頂くには最新のウェブブラウザをご利用ください。<br />
-当サイトはこのサイトはソフトバンク・テクノロジー株式会社の協力により Webフォントサービス FONTPLUS を使用しています。<br />
+<p class="note init">当サイトはウェブブラウザの先進的な機能を使ってレイアウトされており、古いブラウザでは意図したとおりに表現されないことがあります。本来のレイアウトでご覧頂くには最新のウェブブラウザをご利用ください。<br>
+当サイトはこのサイトはソフトバンク・テクノロジー株式会社の協力により Webフォントサービス FONTPLUS を使用しています。<br>
 記載されている商品またはサービス等の名称は、各社の商標または登録商標です。</p>
 <p class="copyright init">Copyright &#169; 2017 -
-<br />縦書きWeb普及委員会
-<br />All rights reserved.</p>
+<br>縦書きWeb普及委員会
+<br>All rights reserved.</p>
 </div>
 </div></footer>
 <!-- /FOOTER -->
