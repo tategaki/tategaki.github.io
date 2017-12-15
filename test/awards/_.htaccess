@@ -1,0 +1,12 @@
+
+# BEGIN heteml
+# 注意:
+# このブロックはヘテムルのコントロールパネルによって作成されました。
+# # BEGIN heteml 〜 # END heteml は編集を行わないようにご注意ください。
+
+AuthUserFile /home/sites/heteml/users/u/n/-/un-antique/web/musubime/test/tateyoko-awd/.htpasswd
+AuthGroupFile /dev/null
+AuthName "pls ID and PW."
+AuthType Basic
+require valid-user
+# END heteml
