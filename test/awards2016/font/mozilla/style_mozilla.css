@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "kozei";
+  src: url("Kozei-mozilla.woff") format('woff');
+}
+
+.vrl {
+	font-family: "kozei";
+	direction: rtl;
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	-moz-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	-webkit-text-orientation: upright;
+	-moz-text-orientation: upright;
+	-ms-text-orientation: upright;
+	text-orientation: upright;
+	
+	font-variant-ligatures: contextual;
+	font-feature-settings: "liga", "vkrn", "calt";
+}

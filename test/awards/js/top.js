@@ -45,7 +45,7 @@ var scrollEvent = function() {
 				movieShow = false;
 			}
 		}
-		var elmTop3 = $('#SCT1 .cont').offset().top;
+		/*var elmTop3 = $('#SCT1 .cont').offset().top;
 		if (scrTop > elmTop3 - winHeight){
 			if(movieShow2) {
 			console.log('aaa');
@@ -59,12 +59,13 @@ var scrollEvent = function() {
 				});
 				movieShow2 = false;
 			}
-		}
+		}*/
 	});
 }
 var menuShow = function() {
 	$('#VISUAL #LED').prepend('<div class="mask"></div>');
-	$('#VISUAL,#SCT1').prepend('<div class="movie"><div><span class="s1"></span><span class="s2"></span></div></div>');
+	//$('#VISUAL,#SCT1').prepend('<div class="movie"><div><span class="s1"></span><span class="s2"></span></div></div>');
+	$('#VISUAL').prepend('<div class="movie"><div><span class="s1"></span><span class="s2"></span></div></div>');
 	$('nav').prepend('<p class="btn"><a class="menu-trigger" href="#"><span></span><span></span><i>MENU</i></a></p>');
 	$('nav .btn a').click(function(){
 		$(this).toggleClass('active');
@@ -117,6 +118,11 @@ $(function(){
 				titShow = false;
 			}
 		}
+	});
+	$('#SCT0 .otherBotton a').click(function(){
+		$('#SCT0 .other').slideDown();
+		$('#SCT0 .otherBotton').hide();
+		return false;
 	});
 	$('#VISUAL .lead').scrollLeft($('#VISUAL .lead div').width());
 	$('#SCT4 .view').scrollLeft($('#SCT4 .view .cnt').width());
