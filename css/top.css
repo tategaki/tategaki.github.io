@@ -28,23 +28,36 @@ text-align: center;
 #VISUAL {
 position: relative;
 width: 100%;
-display: table;
+height: 100%;
 }
 #VISUAL .cont {
 position: relative;
-display: table-cell;
 vertical-align: middle;
 text-align: center;
+width: 100%;
+height: 100%;
+}
+#VISUAL .gmark {
+position: absolute;
+left: 50%;
+top: 50%;
+-webkit-transform: translateY(-110%);
+transform: translateY(-110%);
+margin-left: -60px;
+font-size: 0;
+letter-spacing: 0;
 }
 #VISUAL h1 {
-position: relative;
+position: absolute;
+top: 50%;
+left: 50%;
 -webkit-writing-mode: vertical-rl;
 -moz-writing-mode: vertical-rl;
 -ms-writing-mode: tb-rl;
 -ms-writing-mode: vertical-rl;
 writing-mode: vertical-rl;
 box-sizing: border-box;
-margin: 0 auto 0 auto;
+margin-left: -78px;
 width: 156px;
 font-family: 'FOT-筑紫B丸ゴシック Std B','TsukuBRdGothicStd-B',sans-serif;
 font-size: 32px;
